@@ -15,7 +15,7 @@ repos:
       # Checks yaml files for parseable syntax
       - id: check-yaml
       # Prevents git from committing large files
-      - id: check-added-large-files
+      # - id: check-added-large-files
   - repo: local
     hooks:
       - id: stweep
