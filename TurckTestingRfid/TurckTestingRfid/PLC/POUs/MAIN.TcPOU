@@ -1,12 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1">
-  <POU Name="MAIN" Id="{dd7b1ca3-48b8-4b4b-827b-c46336d569fa}">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{dd7b1ca3-48b8-4b4b-827b-c46336d569fa}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+    //Instantiate the function block (FB_BusMode)
+    turckRfid : RFID_FB_U.FB_Compact;
+
+    // Working buffers for the read and write data
+    abyReadData : ARRAY[0..127] OF BYTE;
+    abyWriteData : ARRAY[0..127] OF BYTE;
+
+    // Create mapping to the I/O data of the corresponding channel
+    stBusModeRfidDiagMap AT %I* : ChannelDiag_t;
+
+    stCompactModeInputMap AT %I* : RFID_FB_U.CompactInput_t;
+    stCompactModeOutputMap AT %Q* : RFID_FB_U.CompactOutput_t;
+    // The Rx & Tx data mapping shown below is for example purposes only.
+    // The actual array size can be 8,16,32,64 or 128 depending on slot configuration of the TBEC-LL-4RFID-8DXP box in the IO tree
+    abyRxDataMapBusMode AT %I* : ARRAY[0..127] OF BYTE;
+    abyTxDataMapBusMode AT %Q* : ARRAY[0..127] OF BYTE;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[turckRfid(
+    xExecute:=,
+    rStatusMapping:=stCompactModeInputMap,
+    rControlMapping:=stCompactModeOutputMap,
+
+    pReadDataMapping:=abyRxDataMapBusMode,
+    pWriteDataMapping:=abyTxDataMapBusMode,
+    pDataTx:=abyWriteData,
+    pDataRx:=abyReadData
+);
+
+//wichtig beim schreiben, length mitgeben
+//bei Locked muss TO eingetellt werden, sonst kein Fehler
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
