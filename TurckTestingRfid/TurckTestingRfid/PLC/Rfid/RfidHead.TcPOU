@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="RfidHead" Id="{493afb4f-2fea-099f-1b9d-030e31435103}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK RfidHead
+VAR
+    //Instantiate the function block (FB_BusMode)
+    turckRfid : RFID_FB_U.FB_Compact;
+
+    // Working buffers for the read and write data
+    myReadData : ARRAY[0..127] OF BYTE;
+    myWriteData : ARRAY[0..127] OF BYTE;
+
+    // Create mapping to the I/O data of the corresponding channel
+    stCompactModeRfidDiagMap AT %I* : ChannelDiag_t;
+
+    stCompactModeInputMap AT %I* : RFID_FB_U.CompactInput_t;
+    stCompactModeOutputMap AT %Q* : RFID_FB_U.CompactOutput_t;
+    // The Rx & Tx data mapping shown below is for example purposes only.
+    // The actual array size can be 8,16,32,64 or 128 depending on slot configuration of the TBEC-LL-4RFID-8DXP box in the IO tree
+    abyRxDataMapCompactMode AT %I* : ARRAY[0..127] OF BYTE;
+    abyTxDataMapCompactMode AT %Q* : ARRAY[0..127] OF BYTE;
+
+    state : (Idle,
+        Inventory,
+        ReadBlock,
+        WriteBlock,
+        LockBlock,
+        Abort,
+        Error);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[turckRfid(
+    xExecute:=,
+    rStatusMapping:=stCompactModeInputMap,
+    rControlMapping:=stCompactModeOutputMap,
+
+    pReadDataMapping:=abyRxDataMapCompactMode,
+    pWriteDataMapping:=abyTxDataMapCompactMode,
+    pDataTx:=myWriteData,
+    pDataRx:=myReadData
+);
+
+//wichtig beim schreiben, length mitgeben
+//bei Locked muss TO eingetellt werden, sonst kein Fehler
+Case state of
+    Idle:
+        turckRfid.eCommand := RFID_FB_U.COMMAND.IDLE;
+        turckRfid.xExecute := FALSE;
+        turckRfid.xAbort := FALSE;
+
+    Inventory:
+        turckRfid.eCommand := RFID_FB_U.COMMAND.INVENTORY;
+        turckRfid.xExecute := TRUE;
+
+        IF turckRfid.xError THEN
+            state := Error;
+        ELSIF turckRfid.xDone THEN
+            state := Idle;
+            //            turckRfid.pDataTx := ADR(myWriteData);
+            //            turckRfid.pDataRx := ADR(myReadData);
+        END_IF
+
+    ReadBlock:
+        turckRfid.eCommand := RFID_FB_U.COMMAND.READ;
+        turckRfid.uiDataLength := 4;
+        turckRfid.xExecute := TRUE;
+
+        IF turckRfid.xError THEN
+            state := Error;
+        ELSIF turckRfid.xDone THEN
+            state := Idle;
+            turckRfid.pDataTx := ADR(myWriteData);
+            turckRfid.pDataRx := ADR(myReadData);
+        END_IF
+
+    WriteBlock:
+        turckRfid.eCommand := RFID_FB_U.COMMAND.WRITE;
+        turckRfid.uiDataLength := 4;
+        turckRfid.xExecute := TRUE;
+
+        IF turckRfid.xError THEN
+            state := Error;
+        ELSIF turckRfid.xDone THEN
+            state := Idle;
+            turckRfid.pDataTx := ADR(myWriteData);
+            turckRfid.pDataRx := ADR(myReadData);
+        END_IF
+
+    LockBlock:
+        turckRfid.eCommand := RFID_FB_U.COMMAND.SET_PERMA_LOCK;
+        turckRfid.xExecute := TRUE;
+
+        IF turckRfid.xError THEN
+            state := Error;
+        ELSIF turckRfid.xDone THEN
+            state := Idle;
+            turckRfid.pDataTx := ADR(myWriteData);
+            turckRfid.pDataRx := ADR(myReadData);
+        END_IF
+
+    Abort:
+        turckRfid.eCommand := RFID_FB_U.COMMAND.IDLE;
+        turckRfid.xAbort := TRUE;
+
+    Error:
+        ;
+END_CASE
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

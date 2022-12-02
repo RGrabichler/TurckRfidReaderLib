@@ -29,10 +29,14 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Rfid\RfidHead.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="Rfid" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
