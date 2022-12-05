@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="IRfidTasks" Id="{26a272db-a857-0f88-2252-988e3d5e5b9a}">
+    <Declaration><![CDATA[INTERFACE IRfidTasks
+]]></Declaration>
+    <Method Name="ReadUid" Id="{feea7b61-9dc9-0e14-11a3-c805fd5a4db1}">
+      <Declaration><![CDATA[METHOD ReadUid : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>
