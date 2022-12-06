@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="RFID_Test" Id="{4bc4c850-1311-0ca8-1d83-9cb8e9140fb1}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK RFID_Test EXTENDS TcUnit.FB_TestSuite
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

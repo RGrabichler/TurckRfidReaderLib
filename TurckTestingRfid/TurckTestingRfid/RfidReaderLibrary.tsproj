@@ -1169,7 +1169,7 @@
 			</SubItem>
 		</DataType>
 	</DataTypes>
-	<Project ProjectGUID="{261B02D7-EB78-4A5A-87D3-99C4DB7F0452}" TargetNetId="192.168.1.8.1.1" Target64Bit="true" ShowHideConfigurations="#x346">
+	<Project ProjectGUID="{261B02D7-EB78-4A5A-87D3-99C4DB7F0452}" TargetNetId="192.168.1.8.1.1" Target64Bit="true" ShowHideConfigurations="#x3c7">
 		<System>
 			<Settings MaxCpus="4" NonWinCpus="1">
 				<Cpu CpuId="3"/>
@@ -1182,22 +1182,22 @@
 		</System>
 		<Plc>
 			<Project GUID="{F0BAB1E7-B207-4D97-B1F2-FE3D9803120C}" Name="PLC" PrjFilePath="PLC\PLC.plcproj" TmcFilePath="PLC\PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC\PLC.tmc" TmcHash="{79DD0746-3DBA-A7D9-158E-487834D47691}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC\PLC.tmc" TmcHash="{F2F9A14F-1D90-446D-CB25-057830DCEC28}">
 					<Name>PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>MAIN._app._mainStation.turckRfidHead.stCompactModeRfidDiagMap</Name>
+							<Name>PRG_TEST._testSuite._mainStation.turckRfidHead.stCompactModeRfidDiagMap</Name>
 							<Comment><![CDATA[ Create mapping to the I/O data of the corresponding channel]]></Comment>
 							<Type GUID="{36A4FBAD-E7AD-7ADA-0D35-5693FE62BE91}" Namespace="RFID_FB_U">ChannelDiag_t</Type>
 						</Var>
 						<Var>
-							<Name>MAIN._app._mainStation.turckRfidHead.stCompactModeInputMap</Name>
+							<Name>PRG_TEST._testSuite._mainStation.turckRfidHead.stCompactModeInputMap</Name>
 							<Type GUID="{5F45B98A-6DB9-433C-BFDA-04A29A349B31}" Namespace="RFID_FB_U">CompactInput_t</Type>
 						</Var>
 						<Var>
-							<Name>MAIN._app._mainStation.turckRfidHead.abyRxDataMapCompactMode</Name>
+							<Name>PRG_TEST._testSuite._mainStation.turckRfidHead.abyRxDataMapCompactMode</Name>
 							<Comment><![CDATA[ The Rx & Tx data mapping shown below is for example purposes only.
  The actual array size can be 8,16,32,64 or 128 depending on slot configuration of the TBEC-LL-4RFID-8DXP box in the IO tree]]></Comment>
 							<Type GUID="{53AB2BCA-C5AB-B7CE-D17C-430953A42679}">ARRAY [0..127] OF BYTE</Type>
@@ -1206,11 +1206,11 @@
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>MAIN._app._mainStation.turckRfidHead.stCompactModeOutputMap</Name>
+							<Name>PRG_TEST._testSuite._mainStation.turckRfidHead.stCompactModeOutputMap</Name>
 							<Type GUID="{3F02461E-B16F-14F9-0D78-1E609CD28A09}" Namespace="RFID_FB_U">CompactOutput_t</Type>
 						</Var>
 						<Var>
-							<Name>MAIN._app._mainStation.turckRfidHead.abyTxDataMapCompactMode</Name>
+							<Name>PRG_TEST._testSuite._mainStation.turckRfidHead.abyTxDataMapCompactMode</Name>
 							<Type GUID="{53AB2BCA-C5AB-B7CE-D17C-430953A42679}">ARRAY [0..127] OF BYTE</Type>
 						</Var>
 					</Vars>
@@ -1259,19 +1259,5 @@
 				</Instance>
 			</Project>
 		</Plc>
-		<Io>
-			<Device File="Device 2 (EtherCAT).xti" Id="2"/>
-		</Io>
 	</Project>
-	<Mappings>
-		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
-		<OwnerA Name="TIPC^PLC^PLC Instance">
-			<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (TBEC-LL-4RFID-8DXP)">
-				<Link VarA="PlcTask Inputs^MAIN._app._mainStation.turckRfidHead.abyRxDataMapCompactMode" VarB="Module 2 (128 Byte read)^Inputs 128 Byte read^RD"/>
-				<Link VarA="PlcTask Inputs^MAIN._app._mainStation.turckRfidHead.stCompactModeInputMap" VarB="Module 1 (HF compact)^Inputs HF compact^Resp"/>
-				<Link VarA="PlcTask Outputs^MAIN._app._mainStation.turckRfidHead.abyTxDataMapCompactMode" VarB="Module 3 (128 Byte write)^Outputs 128 Byte write^WD"/>
-				<Link VarA="PlcTask Outputs^MAIN._app._mainStation.turckRfidHead.stCompactModeOutputMap" VarB="Module 1 (HF compact)^Outputs HF compact^Cmd"/>
-			</OwnerB>
-		</OwnerA>
-	</Mappings>
 </TcSmProject>

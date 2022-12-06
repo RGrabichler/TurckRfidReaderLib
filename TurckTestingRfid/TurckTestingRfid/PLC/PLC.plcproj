@@ -17,22 +17,25 @@
     <LibraryReferences>{08cfa5ec-be79-4a04-ada0-80de2c70a767}</LibraryReferences>
     <Company>Gema</Company>
     <Released>false</Released>
-    <Title>Test</Title>
-    <ProjectVersion>1.0.0.0</ProjectVersion>
-    <DefaultNamespace>PLC</DefaultNamespace>
+    <Title>Rfid Reader</Title>
+    <ProjectVersion>0.1.1.1</ProjectVersion>
+    <DefaultNamespace>RG</DefaultNamespace>
     <CombineIds>true</CombineIds>
+    <Author>RG</Author>
+    <Description>Functionlity of RFID Reader</Description>
+    <LibraryCategories>
+      <LibraryCategory>
+        <Id>{be549c8e-54c2-41a3-bf8e-7f8b7c7453e8}</Id>
+        <Version>1.0.0.0</Version>
+        <DefaultName>RG</DefaultName>
+      </LibraryCategory>
+    </LibraryCategories>
+    <SelectedLibraryCategories>
+      <Id>{be549c8e-54c2-41a3-bf8e-7f8b7c7453e8}</Id>
+    </SelectedLibraryCategories>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="PlcTask.TcTTO">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\AppContext.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\MAIN.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\MainStation.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rfid\IRfidTasks.TcIO">
@@ -44,12 +47,30 @@
     <Compile Include="Rfid\Tasks\ReadUidTask.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Test\Context\AppContext.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Test\Context\MainStation.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Test\Context\PRG_TEST.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Test\RfidHead_Test.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Version\Global_Version.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="Test" />
     <Folder Include="Rfid" />
     <Folder Include="Rfid\Tasks" />
+    <Folder Include="Test\Context" />
+    <Folder Include="Version" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
@@ -94,6 +115,10 @@
       <DefaultResolution>TcoPneumatics, 0.10.0.31 (Vortex.Library)</DefaultResolution>
       <Namespace>TcoPneumatics</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="TcUnit">
+      <DefaultResolution>TcUnit, * (www.tcunit.org)</DefaultResolution>
+      <Namespace>TcUnit</Namespace>
+    </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="PLC.tmc">
@@ -106,6 +131,12 @@
     </PlaceholderResolution>
     <PlaceholderResolution Include="RFID FB U">
       <Resolution>RFID universal data interface TwinCAT, 1.0.0.0 (Turck)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="SysDir">
+      <Resolution>SysDir, 3.5.12.0 (System)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="SysFile">
+      <Resolution>SysFile, 3.5.9.0 (System)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="SystemMemory">
       <Resolution>SysMem, 3.5.5.0 (System)</Resolution>
@@ -154,6 +185,9 @@
     </PlaceholderResolution>
     <PlaceholderResolution Include="TcoPneumatics">
       <Resolution>TcoPneumatics, 0.10.0.31 (Vortex.Library)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="TcUnit">
+      <Resolution>TcUnit, 1.2.0.0 (www.tcunit.org)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
   <ProjectExtensions>

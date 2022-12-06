@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="RfidHead_Test" Id="{a47ac61a-ee48-008c-0014-60e0cecfdf35}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK RfidHead_Test EXTENDS TcUnit.FB_TestSuite
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[ExecuteReadUid_ExpectUidAsStringStatusDone();]]></ST>
+    </Implementation>
+    <Method Name="ExecuteReadUid_ExpectUidAsStringStatusDone" Id="{4cf9c36f-72dc-08b9-1fac-7b31252a268f}">
+      <Declaration><![CDATA[METHOD PRIVATE ExecuteReadUid_ExpectUidAsStringStatusDone
+VAR_INST
+    turckRfidHead : RfidHead(THIS^, T#1MS);
+    sUId          : T_MaxString;
+    _uid          : BOOL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[TcUnit.TEST('ExecuteReadUid_ExpectUidAsStringStatusDone');
+turckRfidHead();
+
+IF _uid THEN
+    turckRfidHead.ReadUidMethod();
+    _uid := FALSE;
+END_IF
+
+IF turckRfidHead.ReadUidTask.Done then
+    sUId := turckRfidHead.sUId;
+END_IF
+
+TcUnit.TEST_FINISHED();]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>
