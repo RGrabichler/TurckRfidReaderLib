@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_Compact_Wrapper" Id="{8d4cc182-4513-0b94-3b4e-5b2c8ab97a80}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Compact_Wrapper IMPLEMENTS IRfidHeadWrapper
+VAR
+    //Instantiate the function block
+    turckRfid : RFID_FB_U.FB_Compact;
+
+    // Create mapping to the I/O data of the corresponding channel
+    stCompactModeInputMap  AT %I* : RFID_FB_U.CompactInput_t;
+    stCompactModeOutputMap AT %Q* : RFID_FB_U.CompactOutput_t;
+    // The Rx & Tx data mapping shown below is for example purposes only.
+    // The actual array size can be 8,16,32,64 or 128 depending on slot configuration of the TBEC-LL-4RFID-8DXP box in the IO tree
+    abyRxDataMapCompactMode AT %I* : ARRAY[0..127] OF BYTE;
+    abyTxDataMapCompactMode AT %Q* : ARRAY[0..127] OF BYTE;
+
+    // Working buffers for the read and write data
+    myReadData  : ARRAY[0..127] OF BYTE;
+    myWriteData : ARRAY[0..127] OF BYTE;
+
+    xDone               : BOOL;
+    xBusy               : BOOL;
+    xError              : BOOL;
+    xAborted            : BOOL;
+    eErrorID            : RFID_FB_U.ERROR;
+    xTP                 : BOOL;
+    xRWHeadNotCOnnected : BOOL;
+    uiDataRxLength      : UINT;
+
+    xExecute         : BOOL;
+    xAbort           : BOOL;
+    udiTimeOut       : UDINT;
+    eCommand         : RFID_FB_U.COMMAND;
+    rStatusMapping   : RFID_FB_U.CompactInput_t;
+    rControllMapping : RFID_FB_U.CompactOutput_t;
+    udiStartAdress   : UDINT;
+    uiDataLenght     : UINT;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+turckRfid
+(
+    xExecute              := xExecute
+    , xAbort              := xAbort
+    , udiTimeOut          := udiTimeOut
+    , xDone               => xDone
+    , xBusy               => xBusy
+    , xError              => xError
+    , xAborted            => xAborted
+    , eCommand            := eCommand
+    , rStatusMapping      := stCompactModeInputMap
+    , rControlMapping     := stCompactModeOutputMap
+    , udiStartAddress     := udiStartAdress
+    , uiDataLength        := uiDataLenght
+    , eErrorID            => eErrorID
+    , xTP                 => xTP
+    , xRWHeadNotConnected => xRWHeadNotCOnnected
+    , uiDataRxLength      => uiDataRxLength
+    , pReadDataMapping    := abyRxDataMapCompactMode
+    , pWriteDataMapping   := abyTxDataMapCompactMode
+    , pDataTx             := myWriteData
+    , pDataRx             := myReadData
+);]]></ST>
+    </Implementation>
+    <Method Name="Execute" Id="{c0b52ea2-2941-0b16-0340-1df47a458bbf}">
+      <Declaration><![CDATA[METHOD Execute
+VAR_INPUT
+    xExecute          : BOOL;
+    xAbort            : BOOL;
+    udiTimeOut        : UDINT;
+    eCommand          : RFID_FB_U.COMMAND;
+    rControllMapping  : RFID_FB_U.CompactOutput_t;
+    udiStartAdress    : UDINT;
+    udiDataLenght      : UINT;
+    pWriteDataMapping : ARRAY[0..127] OF BYTE;
+    pDataTx           : ARRAY[0..127] OF BYTE;
+
+END_VAR
+VAR_OUTPUT
+    xDone               : BOOL;
+    xBusy               : BOOL;
+    xError              : BOOL;
+    xAborted            : BOOL;
+    eErrorID            : RFID_FB_U.ERROR;
+    xTP                 : BOOL;
+    xRWHeadNotCOnnected : BOOL;
+    uiDataRxLength      : UINT;
+    rStatusMapping      : RFID_FB_U.CompactInput_t;
+    pReadDataMapping    : ARRAY[0..127] OF BYTE;
+    pDataRx             : ARRAY[0..127] OF BYTE;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Map();
+
+THIS^.xExecute                := xExecute;
+this^.xAbort                  := xAbort;
+this^.udiTimeOut              := udiTimeOut;
+xDone                         := THIS^.xDone;
+xBusy                         := this^.xBusy;
+xError                        := this^.xError;
+xAborted                      := this^.xAborted;
+THIS^.eCommand                := eCommand;
+rStatusMapping                := THIS^.stCompactModeInputMap;
+this^.stCompactModeOutputMap  := rControllMapping;
+this^.udiStartAdress          := udiStartAdress;
+THIS^.uiDataLenght            := udiDataLenght;
+eErrorID                      := THIS^.eErrorID;
+xTP                           := this^.xTP;
+xRWHeadNotCOnnected           := THIS^.xRWHeadNotCOnnected;
+uiDataRxLength                := this^.uiDataRxLength;
+pReadDataMapping              := THIS^.abyRxDataMapCompactMode;
+THIS^.abyTxDataMapCompactMode := pWriteDataMapping;
+THIS^.myWriteData             := pDataTx;
+pDataRx                       := THIS^.myReadData;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Map" Id="{3ba8a062-5758-0d1f-28f2-c25a52a10c48}">
+      <Declaration><![CDATA[METHOD PRIVATE Map ]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[turckRfid
+(
+    xExecute              := xExecute
+    , xAbort              := xAbort
+    , udiTimeOut          := udiTimeOut
+    , xDone               => xDone
+    , xBusy               => xBusy
+    , xError              => xError
+    , xAborted            => xAborted
+    , eCommand            := eCommand
+    , rStatusMapping      := stCompactModeInputMap
+    , rControlMapping     := stCompactModeOutputMap
+    , udiStartAddress     := udiStartAdress
+    , uiDataLength        := uiDataLenght
+    , eErrorID            => eErrorID
+    , xTP                 => xTP
+    , xRWHeadNotConnected => xRWHeadNotCOnnected
+    , uiDataRxLength      => uiDataRxLength
+    , pReadDataMapping    := abyRxDataMapCompactMode
+    , pWriteDataMapping   := abyTxDataMapCompactMode
+    , pDataTx             := myWriteData
+    , pDataRx             := myReadData
+);]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="RfidHead_Test" Id="{a47ac61a-ee48-008c-0014-60e0cecfdf35}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK RfidHead_Test EXTENDS TcUnit.FB_TestSuite IMPLEMENTS TcoCore.ITcoContext
+VAR
+    //Context for TcOpen
+    _nfContext : TcoCore.TcoContextNfCompatibility;
+END_VAR
+VAR
+    //    sut : RfidHead(THIS^, T#1MS);
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[_nfContext.VolatileOpen(); //Required for TCopen
+//==============================================
+ExecuteReadUid_ExpectUidAsStringStatusDone();
+//==============================================
+_nfContext.VolatileClose();]]></ST>
+    </Implementation>
+    <Folder Name="ITcoContext" Id="{33bfe112-ae2f-05c8-0e05-c3229ef70521}" />
+    <Property Name="Context" Id="{7de64d48-d0a2-056e-34b7-aac880c979a6}" FolderPath="ITcoContext\">
+      <Declaration><![CDATA[PROPERTY Context : TcoCore.ITcoContext
+]]></Declaration>
+      <Get Name="Get" Id="{9ffe307f-0b04-0675-1acb-4e6595656874}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Context := This^._nfContext;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="EndCycleCount" Id="{e7bb6f42-b928-0ade-1561-23e4edad0343}" FolderPath="ITcoContext\">
+      <Declaration><![CDATA[PROPERTY EndCycleCount : ULINT
+]]></Declaration>
+      <Get Name="Get" Id="{a0db9c75-1b3b-0832-3ccc-1ca1f40db07c}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[EndCycleCount := THIS^._nfContext._endCycleCount;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="Environment" Id="{e633166a-bd98-0388-2aea-6b9efca83b09}" FolderPath="ITcoContext\">
+      <Declaration><![CDATA[PROPERTY Environment : TcoCore.ITcoContextEnvironment
+]]></Declaration>
+      <Get Name="Get" Id="{b02663ba-e6d6-0463-271f-5e82d1a9f4c9}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Environment := THIS^._nfContext._settings;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="ExecuteReadUid_ExpectUidAsStringStatusDone" Id="{4cf9c36f-72dc-08b9-1fac-7b31252a268f}">
+      <Declaration><![CDATA[METHOD PRIVATE ExecuteReadUid_ExpectUidAsStringStatusDone
+VAR_INST
+    sUId : T_MaxString := 'E0';
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[TcUnit.TEST('ExecuteReadUid_ExpectUidAsStringStatusDone');
+//Arrange
+//sut();
+
+//Act
+
+//Assert
+//AssertEquals_STRING(Expected := sUId, Actual := sut.sUId, Message := 'UID passt nicht');
+
+//IF _uid THEN
+//    turckRfidHead.ReadUidMethod();
+//    _uid := FALSE;
+//END_IF
+
+//IF turckRfidHead.ReadUidTask.Done then
+//    sUId := turckRfidHead.sUId;
+//END_IF
+
+TcUnit.TEST_FINISHED();]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="Identity" Id="{1675f325-25d1-008c-3992-a738fcd9949a}" FolderPath="ITcoContext\">
+      <Declaration><![CDATA[PROPERTY Identity : ULINT
+]]></Declaration>
+      <Get Name="Get" Id="{14ac6c95-310e-0e1e-28d6-3f3616785801}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Identity := THIS^._nfContext._Identity;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="Logger" Id="{b14992b0-967b-0e92-3b9d-8efda5b8ea8b}" FolderPath="ITcoContext\">
+      <Declaration><![CDATA[PROPERTY Logger : TcoCore.ITcoLogger
+]]></Declaration>
+      <Get Name="Get" Id="{e7264cb3-b6d7-066e-214a-e06a571621db}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Logger := THIS^._nfContext._logger;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="RealTimeClock" Id="{150839af-3f34-0d7e-310c-8ded726d6b4f}" FolderPath="ITcoContext\">
+      <Declaration><![CDATA[PROPERTY RealTimeClock : TcoCore.ITcoRtc
+]]></Declaration>
+      <Get Name="Get" Id="{26577072-4d1b-0c47-2218-b9aea55e7819}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[RealTimeClock := THIS^._nfContext._rtc;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="StartCycleCount" Id="{87fd4da8-3313-0074-15f8-03823e1ffcda}" FolderPath="ITcoContext\">
+      <Declaration><![CDATA[PROPERTY StartCycleCount : ULINT
+]]></Declaration>
+      <Get Name="Get" Id="{e2f4d863-cdc3-0322-31cb-7a3cd062c769}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[StartCycleCount := THIS^._nfContext._startCycleCount;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+  </POU>
+</TcPlcObject>

@@ -18,7 +18,7 @@
     <Company>Gema</Company>
     <Released>false</Released>
     <Title>Rfid Reader</Title>
-    <ProjectVersion>0.1.1.1</ProjectVersion>
+    <ProjectVersion>0.1.1.3</ProjectVersion>
     <DefaultNamespace>RG</DefaultNamespace>
     <CombineIds>true</CombineIds>
     <Author>RG</Author>
@@ -38,25 +38,31 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Rfid\IRfidTasks.TcIO">
+    <Compile Include="POUs\Context\MainStation.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Rfid\RfidHead.TcPOU">
+    <Compile Include="POUs\Context\PRG_TEST.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Rfid\Tasks\ReadUidTask.TcPOU">
+    <Compile Include="POUs\Context\TcUnitContext.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Context\AppContext.TcPOU">
+    <Compile Include="POUs\Rfid\IRfidTasks.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Context\MainStation.TcPOU">
+    <Compile Include="POUs\Rfid\RfidHead.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\Context\PRG_TEST.TcPOU">
+    <Compile Include="POUs\Rfid\Tasks\ReadUidTask.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\RfidHead_Test.TcPOU">
+    <Compile Include="POUs\Rfid\Wrapper\FB_Compact_Wrapper.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Rfid\Wrapper\IRfidHeadWrapper.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Test\RfidHead_Test.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Version\Global_Version.TcGVL">
@@ -66,10 +72,12 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
-    <Folder Include="Test" />
-    <Folder Include="Rfid" />
-    <Folder Include="Rfid\Tasks" />
-    <Folder Include="Test\Context" />
+    <Folder Include="POUs\Context" />
+    <Folder Include="POUs\Mock" />
+    <Folder Include="POUs\Rfid" />
+    <Folder Include="POUs\Rfid\Wrapper" />
+    <Folder Include="POUs\Rfid\Tasks" />
+    <Folder Include="POUs\Test" />
     <Folder Include="Version" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
@@ -99,22 +107,6 @@
       <DefaultResolution>TcoCore, 0.10.0.31 (Vortex.Library)</DefaultResolution>
       <Namespace>TcoCore</Namespace>
     </PlaceholderReference>
-    <PlaceholderReference Include="TcoData">
-      <DefaultResolution>TcoData, 0.10.0.31 (Vortex.Library)</DefaultResolution>
-      <Namespace>TcoData</Namespace>
-    </PlaceholderReference>
-    <PlaceholderReference Include="TcoDrivesBeckhoff">
-      <DefaultResolution>TcoDrivesBeckhoff, 0.10.0.31 (Vortex.Library)</DefaultResolution>
-      <Namespace>TcoDrivesBeckhoff</Namespace>
-    </PlaceholderReference>
-    <PlaceholderReference Include="TcoElements">
-      <DefaultResolution>TcoElements, 0.10.0.31 (Vortex.Library)</DefaultResolution>
-      <Namespace>TcoElements</Namespace>
-    </PlaceholderReference>
-    <PlaceholderReference Include="TcoPneumatics">
-      <DefaultResolution>TcoPneumatics, 0.10.0.31 (Vortex.Library)</DefaultResolution>
-      <Namespace>TcoPneumatics</Namespace>
-    </PlaceholderReference>
     <PlaceholderReference Include="TcUnit">
       <DefaultResolution>TcUnit, * (www.tcunit.org)</DefaultResolution>
       <Namespace>TcUnit</Namespace>
@@ -141,24 +133,6 @@
     <PlaceholderResolution Include="SystemMemory">
       <Resolution>SysMem, 3.5.5.0 (System)</Resolution>
     </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_Drive">
-      <Resolution>Tc2_Drive, 3.3.8.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_EtherCAT">
-      <Resolution>Tc2_EtherCAT, 3.3.21.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_IoFunctions">
-      <Resolution>Tc2_IoFunctions, 3.3.13.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_Math">
-      <Resolution>Tc2_Math, 3.3.1.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_MC2">
-      <Resolution>Tc2_MC2, 3.3.48.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="Tc2_MC2_Drive">
-      <Resolution>Tc2_MC2_Drive, 3.3.29.0 (Beckhoff Automation GmbH)</Resolution>
-    </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Standard">
       <Resolution>Tc2_Standard, 3.3.3.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
@@ -173,18 +147,6 @@
     </PlaceholderResolution>
     <PlaceholderResolution Include="TcoCore">
       <Resolution>TcoCore, 0.10.0.30 (Vortex.Library)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="TcoData">
-      <Resolution>TcoData, 0.10.0.31 (Vortex.Library)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="TcoDrivesBeckhoff">
-      <Resolution>TcoDrivesBeckhoff, 0.10.0.31 (Vortex.Library)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="TcoElements">
-      <Resolution>TcoElements, 0.10.0.31 (Vortex.Library)</Resolution>
-    </PlaceholderResolution>
-    <PlaceholderResolution Include="TcoPneumatics">
-      <Resolution>TcoPneumatics, 0.10.0.31 (Vortex.Library)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="TcUnit">
       <Resolution>TcUnit, 1.2.0.0 (www.tcunit.org)</Resolution>
