@@ -3,22 +3,24 @@
   <POU Name="RfidHead" Id="{493afb4f-2fea-099f-1b9d-030e31435103}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK RfidHead EXTENDS TcoCore.TcoComponent
 VAR_OUTPUT
-    sUId : T_MaxString;
+
 END_VAR
 VAR
-    _itfRfidHeadWrapper      : IRfidHeadWrapper;
-    _readUidTask             : ReadUidTask(THIS^);
-    _readDataFixedLengthTask : ReadDataFixedLengthTask(THIS^);
+    _itfRfidHeadWrapper : IRfidHeadWrapper;
+    _readUidTask        : ReadUidTask(THIS^);
+    _readDataTask       : ReadDataTask(THIS^);
 
-    _rfidInOut : RfidInOut;
-    _error     : ErrorIDMappingLibraryTurck;
+    _rfidInOut      : RfidInOut;
+    _error          : ErrorIDMappingLibraryTurck;
+    _uiDataRxLength : UINT;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[Map();
 
-_readUidTask(rfidInOut := _rfidInOut, ActionDesc := '<#ReadUid#>', sUid => sUId);
-
+_readUidTask(rfidInOut := _rfidInOut, ActionDesc := '<#ReadUid#>');
+_readDataTask(rfidInOut := _rfidInOut, ActionDesc := '<#ReadData#>');
 //wichtig beim schreiben, length mitgeben
 //bei Locked muss TO eingetellt werden, sonst kein Fehler
 //Case state of
@@ -88,7 +90,30 @@ _readUidTask(rfidInOut := _rfidInOut, ActionDesc := '<#ReadUid#>', sUid => sUId)
     </Implementation>
     <Folder Name="Map" Id="{cd40435f-5c26-09ae-1e38-f99a4c292282}" />
     <Folder Name="Operations" Id="{2fef21cf-9c05-04f4-1bea-25266e40a24e}" />
+    <Folder Name="Status" Id="{3d6ba951-6a9b-0fff-2d86-cd7887b5b213}" />
     <Folder Name="Tasks" Id="{23e14438-eac4-034b-0edc-fee6588e71d3}" />
+    <Property Name="Data" Id="{ef0b1373-bd73-0421-1d50-11ba2cd35e17}" FolderPath="Status\">
+      <Declaration><![CDATA[PROPERTY Data : Tc2_System.T_MaxString]]></Declaration>
+      <Get Name="Get" Id="{fb3003a2-6234-0736-3dc9-c19b27efd92a}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Data := _readDataTask.Data;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="DataRxLength" Id="{806c09f9-9a9f-0b82-1797-5714afe369e2}" FolderPath="Status\">
+      <Declaration><![CDATA[PROPERTY DataRxLength : UINT]]></Declaration>
+      <Get Name="Get" Id="{5c6ae917-ddb8-0b0d-3578-b6c9fb33d086}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[DataRxLength := _uiDataRxLength;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
     <Method Name="FB_init" Id="{5c728eda-1054-0afb-0bbe-1c87d3a0e8be}">
       <Declaration><![CDATA[METHOD FB_init : BOOL
 VAR_INPUT
@@ -107,7 +132,7 @@ END_VAR
 {warning disable C0316}
 SUPER^.FB_init(bInitRetains, bInCopyCode, ParentObject);
 
-RfidHead._itfRfidHeadWrapper := itfRfidHeadWrapper;
+THIS^._itfRfidHeadWrapper := itfRfidHeadWrapper;
 
 THIS^._rfidInOut.udiTimeOut := TIME_TO_UDINT(udiTimeOut) * _microToMillis;
 
@@ -127,7 +152,7 @@ END_VAR
 ]]></Declaration>
         <Implementation>
           <ST><![CDATA[//collected Error from Tasks
-IsError := this^.ReadUidTask.Error;]]></ST>
+IsError := this^.ReadUidTask.Error or this^.ReadDataTask.Error;]]></ST>
         </Implementation>
       </Get>
     </Property>
@@ -142,7 +167,7 @@ IsError := this^.ReadUidTask.Error;]]></ST>
     , udiTimeOut          := _rfidInOut.udiTimeOut
     , eCommand            := _rfidInOut.eCommand
     , udiStartAdress      := _rfidInOut.udiStartAdress
-    , udiDataLenght       := _rfidInOut.udiDataLenght
+    , uiDataLenght       := _rfidInOut.uiDataLenght
     , myWriteData         := _rfidInOut.myWriteData
     , myReadData          => _rfidInOut.myReadData
     , xDone               => _rfidInOut.xDone
@@ -157,27 +182,29 @@ IsError := this^.ReadUidTask.Error;]]></ST>
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="ReadDataFixedLenghtMethod" Id="{ca54f775-5c7d-0798-3c67-bb1974437feb}" FolderPath="Operations\">
-      <Declaration><![CDATA[METHOD ReadDataFixedLenghtMethod : TcoCore.ITcoTaskStatus
+    <Method Name="ReadDataMethod" Id="{ca54f775-5c7d-0798-3c67-bb1974437feb}" FolderPath="Operations\">
+      <Declaration><![CDATA[METHOD ReadDataMethod : TcoCore.ITcoTaskStatus
 VAR_INPUT
-END_VAR
-]]></Declaration>
+    udiDataLength : UINT;
+END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF (ReadUidTask <> 0) THEN
-    ReadUidMethod := ReadUidTask.Invoke();
+        <ST><![CDATA[IF (ReadDataTask <> 0) THEN
+    _rfidInOut.uiDataLenght := udiDataLength;
+    _uiDataRxLength         := _rfidInOut.uiDataRxLength;
+    ReadDataMethod          := ReadDataTask.Invoke();
 END_IF
 ]]></ST>
       </Implementation>
     </Method>
-    <Property Name="ReadDataFixedLengthTask" Id="{f2a4eda4-79f0-0f3c-0f2b-cab3382f90be}" FolderPath="Tasks\">
-      <Declaration><![CDATA[PROPERTY ReadDataFixedLengthTask : TcoCore.ITcoTask
+    <Property Name="ReadDataTask" Id="{f2a4eda4-79f0-0f3c-0f2b-cab3382f90be}" FolderPath="Tasks\">
+      <Declaration><![CDATA[PROPERTY ReadDataTask : TcoCore.ITcoTask
 ]]></Declaration>
       <Get Name="Get" Id="{09dfc2a3-c078-0b1b-2502-5704b7359233}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[ReadUidTask := _readUidTask;
+          <ST><![CDATA[ReadDataTask := _readDataTask;
 ]]></ST>
         </Implementation>
       </Get>
@@ -218,26 +245,14 @@ END_VAR
 METHOD Restore : ITcoRestorable
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[//IF (AutoReadDataTask <> 0) THEN
-//    AutoReadDataTask.Restore();
-//END_IF;
+        <ST><![CDATA[IF (ReadUidTask <> 0) THEN
+    ReadUidTask.Restore();
+END_IF;
 
-//IF (AutoWriteDataTask <> 0) THEN
-//    AutoWriteDataTask.Restore();
-//END_IF;
-
-//IF (ReadUidTask <> 0) THEN
-//    ReadUidTask.Restore();
-//END_IF;
-
-//IF (ReadCodingTask <> 0) THEN
-//    ReadCodingTask.Restore();
-//END_IF;
-
-//IF (WriteCodingTask <> 0) THEN
-//	WriteCodingTask.Abort();
-//    WriteCodingTask.Restore();
-//END_IF;     ]]></ST>
+IF (ReadDataTask <> 0) THEN
+    ReadDataTask.Restore();
+END_IF;
+]]></ST>
       </Implementation>
     </Method>
     <Method Name="ServiceMode" Id="{23444148-1419-01fe-26ba-ed704a6461e8}">
@@ -247,5 +262,16 @@ METHOD Restore : ITcoRestorable
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Method>
+    <Property Name="Uid" Id="{9dfec227-5963-0db5-3cb6-766e5179f7f5}" FolderPath="Status\">
+      <Declaration><![CDATA[PROPERTY Uid : Tc2_System.T_MaxString]]></Declaration>
+      <Get Name="Get" Id="{6ef5e442-ac9b-0d4f-2b4b-82bd147f1556}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Uid := _readUidTask.Uid;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
   </POU>
 </TcPlcObject>

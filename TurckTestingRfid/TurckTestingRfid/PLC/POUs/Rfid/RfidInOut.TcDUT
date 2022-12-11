@@ -12,7 +12,7 @@
         udiTimeOut          : UDINT;
         eCommand            : RFID_FB_U.COMMAND;
         udiStartAdress      : UDINT;
-        udiDataLenght       : UINT;
+        uiDataLenght       : UINT;
         xDone               : BOOL;
         xBusy               : BOOL;
         xError              : BOOL;

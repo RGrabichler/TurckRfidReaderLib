@@ -47,10 +47,10 @@
     <Compile Include="POUs\Context\TcUnitContext.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Rfid\ErrorIDMappingLibraryTurck.TcDUT">
+    <Compile Include="POUs\Mock\RfidMockNoRfidInRange.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Rfid\IRfidTasks.TcIO">
+    <Compile Include="POUs\Rfid\ErrorIDMappingLibraryTurck.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Rfid\RfidHead.TcPOU">
@@ -62,7 +62,7 @@
     <Compile Include="POUs\Rfid\Tasks\ReadUidTask.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Rfid\Tasks\ReadDataFixedLengthTask.TcPOU">
+    <Compile Include="POUs\Rfid\Tasks\ReadDataTask.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Rfid\Wrapper\IRfidHeadWrapper.TcIO">

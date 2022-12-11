@@ -1,27 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="ReadDataFixedLengthTask" Id="{39863ee7-b445-00ab-0c61-a72312274d41}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK ReadDataFixedLengthTask EXTENDS TcoCore.TcoTask
+  <POU Name="ReadDataTask" Id="{39863ee7-b445-00ab-0c61-a72312274d41}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK ReadDataTask EXTENDS TcoCore.TcoTask
 VAR_IN_OUT
     rfidInOut : RfidInOut;
 END_VAR
 VAR_INPUT
     ActionDesc : STRING(25);
 END_VAR
-VAR_OUTPUT
-    sData : Tc2_System.T_MaxString;
-END_VAR
-
 VAR
     _stringBuilder : TcoCore.StringBuilder;
     _state         : INT;
     _coding        : ARRAY[0..3] OF BYTE;
     _index         : INT;
     _hex           : Tc2_System.T_MaxString := '16# ';
-    _delay         : TIME                   := T#1MS;
-    _uidDataLength : UINT                   := 4;
 
     _eErrorID : ErrorIDMappingLibraryTurck;
+    _data     : Tc2_System.T_MaxString;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -46,13 +41,12 @@ END_VAR
             END_IF
         20:
             //Command setzen
-            rfidInOut.eCommand      := command.READ;
-            rfidInOut.udiDataLenght := _uidDataLength;
-            _state                  := 30;
+            rfidInOut.eCommand := RFID_FB_U.COMMAND.READ;
+            _state             := 30;
         30:
             // Start der Operation
             rfidInOut.xExecute := TRUE;
-            sData              := '';
+            _data              := '';
 
             _state := 40;
         40:
@@ -60,13 +54,13 @@ END_VAR
             IF rfidInOut.xError THEN
                 ;
             ELSIF rfidInOut.xDone THEN
-                FOR _index := 0 TO UINT_TO_INT(rfidInOut.udiDataLenght - 1) DO
+                FOR _index := 0 TO UINT_TO_INT(rfidInOut.uiDataLenght - 1) DO
                     rfidInOut.myReadData[_index] :=
                         (THIS^.rfidInOut.myReadData[_index]);
 
-                    sData := Concat
+                    _data := Concat
                     (
-                        sData
+                        _data
                         , BYTE_TO_HEXSTR(in := rfidInOut.myReadData[_index], iPrecision := 2, bLoCase := FALSE)
                     );
                 END_FOR
@@ -79,6 +73,19 @@ END_VAR
 END_IF
 ]]></ST>
     </Implementation>
+    <Folder Name="Status" Id="{337b6cc7-ab67-0f18-25a2-73dcc5271b32}" />
+    <Folder Name="TcOpen" Id="{ca9742aa-a3ab-06a8-2f34-3fe9f17c7aa7}" />
+    <Property Name="Data" Id="{168999c8-9e53-0f90-33ee-85ccb5e9b3f2}" FolderPath="Status\">
+      <Declaration><![CDATA[PROPERTY Data : Tc2_System.T_MaxString]]></Declaration>
+      <Get Name="Get" Id="{735fa13e-645b-0d9d-2540-10dc04fa9a0f}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Data := _data;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
     <Method Name="FB_init" Id="{0fb1265e-d3da-04f4-140d-ddf91a1833fb}">
       <Declaration><![CDATA[METHOD PUBLIC FB_init : BOOL
 VAR_INPUT
@@ -94,7 +101,23 @@ SUPER^.FB_init(bInitRetains, bInCopyCode, ParentObject);
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="OnDone" Id="{10058ea7-ec09-082c-2789-322adf1aea28}">
+    <Method Name="OnAbort" Id="{f0cfc9f2-4ab8-0745-3ed4-1d8eefdbf030}" FolderPath="TcOpen\">
+      <Declaration><![CDATA[(*~
+    <docu>
+        <summary>
+            Executes when task is aborted.
+        </summary>
+    </docu>
+~*)
+METHOD PROTECTED OnAbort
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[RfidInOut.eCommand := RFID_FB_U.COMMAND.IDLE;
+RfidInOut.xExecute := FALSE;
+RfidInOut.xAbort   := FALSE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="OnDone" Id="{10058ea7-ec09-082c-2789-322adf1aea28}" FolderPath="TcOpen\">
       <Declaration><![CDATA[(*~
     <docu>
         <summary>
@@ -107,10 +130,10 @@ METHOD PROTECTED OnDone
       <Implementation>
         <ST><![CDATA[{warning disable C0371}
 rfidInOut.xExecute := FALSE;
-]]></ST>
+rfidInOut.eCommand := RFID_FB_U.COMMAND.IDLE;]]></ST>
       </Implementation>
     </Method>
-    <Method Name="OnError" Id="{a99e695d-88b1-0d1d-10b2-738eda9b2a54}">
+    <Method Name="OnError" Id="{a99e695d-88b1-0d1d-10b2-738eda9b2a54}" FolderPath="TcOpen\">
       <Declaration><![CDATA[(*~
     <docu>
         <summary>
@@ -129,7 +152,7 @@ _eErrorID := rfidInOut.eErrorID;
 THIS^.Messenger.Build().Append('Rfid Schreib/Lesekopf Fehler : ').Append(to_string(THIS^._eErrorID)).As().AsError();]]></ST>
       </Implementation>
     </Method>
-    <Method Name="OnStart" Id="{408d708d-df53-0e30-1fe2-0160f3dc9208}">
+    <Method Name="OnStart" Id="{408d708d-df53-0e30-1fe2-0160f3dc9208}" FolderPath="TcOpen\">
       <Declaration><![CDATA[(*~
     <docu>
         <summary>
@@ -148,7 +171,7 @@ _state             := 10;
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Restore" Id="{193402f8-baad-07a9-25ba-b624c28e0ab7}">
+    <Method Name="Restore" Id="{193402f8-baad-07a9-25ba-b624c28e0ab7}" FolderPath="TcOpen\">
       <Declaration><![CDATA[(*~
     <docu>
         <summary>
@@ -165,8 +188,8 @@ METHOD Restore : ITcoRestorable
         <ST><![CDATA[{warning disable C0371}
 RfidInOut.eCommand := RFID_FB_U.COMMAND.IDLE;
 RfidInOut.xExecute := FALSE;
-RfidInOut.xAbort   := true;
-]]></ST>
+RfidInOut.xAbort   := false;
+SUPER^.Restore();]]></ST>
       </Implementation>
     </Method>
   </POU>
