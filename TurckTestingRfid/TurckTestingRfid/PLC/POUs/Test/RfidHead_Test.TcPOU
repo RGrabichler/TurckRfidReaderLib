@@ -8,11 +8,14 @@ VAR
 END_VAR
 VAR
     //    sut : RfidHead(THIS^, T#1MS);
+    _wrapper_RfidMockNoRfidInRange                   : RfidMockNoRfidInRange;
+    _executeTasksNoTagInRange_ExpectErrorWithTimeOut : RfidHead(THIS^, _wrapper_RfidMockNoRfidInRange, T#10MS);
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[_nfContext.VolatileOpen(); //Required for TCopen
 //==============================================
 ExecuteReadUid_ExpectUidAsStringStatusDone();
+ExecuteTasksNoTagInRange_ExpectErrorWithTimeOut();
 //==============================================
 _nfContext.VolatileClose();]]></ST>
     </Implementation>
@@ -66,6 +69,57 @@ END_VAR]]></Declaration>
 //Act
 
 //Assert
+//AssertEquals_STRING(Expected := sUId, Actual := sut.sUId, Message := 'UID passt nicht');
+
+//IF _uid THEN
+//    turckRfidHead.ReadUidMethod();
+//    _uid := FALSE;
+//END_IF
+
+//IF turckRfidHead.ReadUidTask.Done then
+//    sUId := turckRfidHead.sUId;
+//END_IF
+
+TcUnit.TEST_FINISHED();]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="ExecuteTasksNoTagInRange_ExpectErrorWithTimeOut" Id="{ea59a3f7-4d2f-0eda-320a-232679f4280a}">
+      <Declaration><![CDATA[METHOD Private ExecuteTasksNoTagInRange_ExpectErrorWithTimeOut
+VAR_INST
+    _udiDataLength : INT := 10;
+    _result       : BOOL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[TcUnit.TEST('ExecuteReadUidMethodNoTagInRange_ExpectErrorWithTimeOut');
+//Arrange
+_executeTasksNoTagInRange_ExpectErrorWithTimeOut();
+
+//Act
+_executeTasksNoTagInRange_ExpectErrorWithTimeOut.ReadDataMethod(_udiDataLength);
+_executeTasksNoTagInRange_ExpectErrorWithTimeOut();
+
+IF _executeTasksNoTagInRange_ExpectErrorWithTimeOut.ReadDataTask.Busy THEN
+    RETURN;
+ELSE
+    //Assert
+    _result := TRUE;
+
+    AssertEquals_BOOL
+    (
+        _result
+        , _executeTasksNoTagInRange_ExpectErrorWithTimeOut.ReadDataMethod(_udiDataLength).Error
+        , 'Method did not throw Error'
+    );
+
+    AssertEquals_BOOL
+    (
+        _result
+        , _executeTasksNoTagInRange_ExpectErrorWithTimeOut.ReadDataTask.Error
+        , 'Task did not throw Error'
+    );
+
+END_IF
+
 //AssertEquals_STRING(Expected := sUId, Actual := sut.sUId, Message := 'UID passt nicht');
 
 //IF _uid THEN
