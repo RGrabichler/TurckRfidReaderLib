@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="TcUnitContext" Id="{2da24530-dff0-0692-31cc-7d1c8ae0062d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK TcUnitContext EXTENDS TcoCore.TcoContext
+VAR
+    _mainStation : MainStation(THIS^);
+
+    {attribute addProperty Name "Versionsnummer Plc"}
+    _sVersion : STRING(23);
+    //~
+    _stProgramVersion : ST_LibVersion;
+    //~
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Main" Id="{b9f25391-5ed9-0189-2133-22c18130ed74}">
+      <Declaration><![CDATA[(*~
+    <docu>
+        <summary>
+            Main method of the TcoContext. This is the entry point of any control logic that belongs to this context.
+            The call of this method is ensured by calling the <c>InstanceName.Run()</c> method, and it must not be called explicitly.
+            This method is abstract, and it must be overridden in derived block.
+        </summary>
+    </docu>
+~*)
+METHOD PROTECTED Main
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+_mainStation();
+]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

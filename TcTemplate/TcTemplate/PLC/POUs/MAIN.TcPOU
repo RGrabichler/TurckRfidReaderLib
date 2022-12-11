@@ -3,7 +3,7 @@
   <POU Name="MAIN" Id="{dd7b1ca3-48b8-4b4b-827b-c46336d569fa}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-	_app : AppContext;
+    _app : AppContext;
 END_VAR
 ]]></Declaration>
     <Implementation>
