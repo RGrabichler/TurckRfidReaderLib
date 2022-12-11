@@ -6,75 +6,18 @@ VAR_OUTPUT
     sUId : T_MaxString;
 END_VAR
 VAR
-    xExecute          : BOOL;
-    xAbort            : BOOL;
-    udiTimeOut        : UDINT;
-    eCommand          : RFID_FB_U.COMMAND;
-    rControllMapping  : RFID_FB_U.CompactOutput_t;
-    udiStartAdress    : UDINT;
-    uiDataLenght      : UINT;
-    pWriteDataMapping : ARRAY[0..127] OF BYTE;
-    pDataTx           : ARRAY[0..127] OF BYTE;
+    _itfRfidHeadWrapper      : IRfidHeadWrapper;
+    _readUidTask             : ReadUidTask(THIS^);
+    _readDataFixedLengthTask : ReadDataFixedLengthTask(THIS^);
 
-    xDone               : BOOL;
-    xBusy               : BOOL;
-    xError              : BOOL;
-    xAborted            : BOOL;
-    eErrorID            : RFID_FB_U.ERROR;
-    xTP                 : BOOL;
-    xRWHeadNotCOnnected : BOOL;
-    udiDataRxLength      : UINT;
-    rStatusMapping      : RFID_FB_U.CompactInput_t;
-    pReadDataMapping    : ARRAY[0..127] OF BYTE;
-    pDataRx             : ARRAY[0..127] OF BYTE;
-END_VAR
-VAR
-    _itfRfidHeadWrapper : IRfidHeadWrapper;
-
-    _readUidTask : ReadUidTask(THIS^, _itfRfidHeadWrapper);
-
+    _rfidInOut : RfidInOut;
+    _error     : ErrorIDMappingLibraryTurck;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//_readUidTask(turckRfid := turckRfid, ActionDesc := '<#ReadUid#>', sUid => sUId);
-//turckRfid.Execute
-//(
-//    xExecute            :=
-//    , rStatusMapping    := stCompactModeInputMap
-//    , rControlMapping   := stCompactModeOutputMap
-//    , pReadDataMapping  := abyRxDataMapCompactMode
-//    , pWriteDataMapping := abyTxDataMapCompactMode
-//    , pDataTx           := myWriteData
-//    , pDataRx           := myReadData
-//);
+      <ST><![CDATA[Map();
 
-_itfRfidHeadWrapper.Execute
-(
-    xExecute              := xExecute
-    , xAbort              := xAbort
-    , udiTimeOut          := udiTimeOut
-    , eCommand            := eCommand
-    , rControllMapping    := rControllMapping
-    , udiStartAdress      := udiStartAdress
-    , udiDataLenght        := uiDataLenght
-    , pWriteDataMapping   := pWriteDataMapping
-    , pDataTx             := pDataTx
-    , xDone               => xDone
-    , xBusy               => xBusy
-    , xError              => xError
-    , xAborted            => xAborted
-    , eErrorID            => eErrorID
-    , xTP                 => xTP
-    , xRWHeadNotCOnnected => xRWHeadNotCOnnected
-    , uiDataRxLength      => udiDataRxLength
-    , rStatusMapping      => rStatusMapping
-    , pReadDataMapping    => pReadDataMapping
-    , pDataRx             => pDataRx
-);
-
-IF _itfRfidHeadWrapper <> 0 THEN
-    _readUidTask();
-END_IF
+_readUidTask(rfidInOut := _rfidInOut, ActionDesc := '<#ReadUid#>', sUid => sUId);
 
 //wichtig beim schreiben, length mitgeben
 //bei Locked muss TO eingetellt werden, sonst kein Fehler
@@ -97,27 +40,27 @@ END_IF
 //        END_IF
 
 //    ReadBlock:
-//        turckRfid.eCommand := RFID_FB_U.COMMAND.READ;
+//        turckRfid.eCommand     := RFID_FB_U.COMMAND.READ;
 //        turckRfid.uiDataLength := 4;
-//        turckRfid.xExecute := TRUE;
+//        turckRfid.xExecute     := TRUE;
 
 //        IF turckRfid.xError THEN
 //            state := Error;
 //        ELSIF turckRfid.xDone THEN
-//            state := Idle;
+//            state             := Idle;
 //            turckRfid.pDataTx := ADR(myWriteData);
 //            turckRfid.pDataRx := ADR(myReadData);
 //        END_IF
 
 //    WriteBlock:
-//        turckRfid.eCommand := RFID_FB_U.COMMAND.WRITE_AND_VERIFY;
+//        turckRfid.eCommand     := RFID_FB_U.COMMAND.WRITE_AND_VERIFY;
 //        turckRfid.uiDataLength := 4;
-//        turckRfid.xExecute := TRUE;
+//        turckRfid.xExecute     := TRUE;
 
 //        IF turckRfid.xError THEN
 //            state := Error;
 //        ELSIF turckRfid.xDone THEN
-//            state := Idle;
+//            state             := Idle;
 //            turckRfid.pDataTx := ADR(myWriteData);
 //            turckRfid.pDataRx := ADR(myReadData);
 //        END_IF
@@ -129,20 +72,21 @@ END_IF
 //        IF turckRfid.xError THEN
 //            state := Error;
 //        ELSIF turckRfid.xDone THEN
-//            state := Idle;
+//            state             := Idle;
 //            turckRfid.pDataTx := ADR(myWriteData);
 //            turckRfid.pDataRx := ADR(myReadData);
 //        END_IF
 
 //    Abort:
 //        turckRfid.eCommand := RFID_FB_U.COMMAND.IDLE;
-//        turckRfid.xAbort := TRUE;
+//        turckRfid.xAbort   := TRUE;
 
 //    Error:
 //        ;
 //END_CASE
 ]]></ST>
     </Implementation>
+    <Folder Name="Map" Id="{cd40435f-5c26-09ae-1e38-f99a4c292282}" />
     <Folder Name="Operations" Id="{2fef21cf-9c05-04f4-1bea-25266e40a24e}" />
     <Folder Name="Tasks" Id="{23e14438-eac4-034b-0edc-fee6588e71d3}" />
     <Method Name="FB_init" Id="{5c728eda-1054-0afb-0bbe-1c87d3a0e8be}">
@@ -151,38 +95,90 @@ VAR_INPUT
     bInitRetains       : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
     bInCopyCode        : BOOL; // if TRUE, the instance afterwards gets moved into the copy code (online change)
     ParentObject       : ITcoObject;
-    udiTimeOut         : TIME;
     itfRfidHeadWrapper : IRfidHeadWrapper;
+    udiTimeOut         : TIME;
 END_VAR
 VAR
-    convertToMicroToMillis : UDINT := 1000;
+    _microToMillis : UDINT := 1000;
 END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[// This is not clear to me... I from time to time the consumer code does not see 'FB_init' of 'TcoObject', that's why overridden here with super call...
 {warning disable C0316}
 SUPER^.FB_init(bInitRetains, bInCopyCode, ParentObject);
-THIS^.udiTimeOut          := TIME_TO_UDINT(udiTimeOut) * convertToMicroToMillis;
-THIS^._itfRfidHeadWrapper := itfRfidHeadWrapper;
+
+RfidHead._itfRfidHeadWrapper := itfRfidHeadWrapper;
+
+THIS^._rfidInOut.udiTimeOut := TIME_TO_UDINT(udiTimeOut) * _microToMillis;
 
 _readUidTask.FB_init
 (
-    bInitRetains         := bInitRetains
-    , bInCopyCode        := bInCopyCode
-    , ParentObject       := ParentObject
-    , itfRfidHeadWrapper := itfRfidHeadWrapper
+    bInitRetains   := bInitRetains
+    , bInCopyCode  := bInCopyCode
+    , ParentObject := ParentObject
 );]]></ST>
       </Implementation>
     </Method>
-    <Property Name="IsError" Id="{c09710c1-6429-0e43-3cb1-3fa923c76e5f}">
-      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
-PROPERTY IsError : BOOL]]></Declaration>
-      <Get Name="Get" Id="{2b8ed4f9-085d-0b68-38ad-326d61037f23}">
+    <Property Name="IsError" Id="{296913bd-79e4-0a35-04f0-670be6d31523}">
+      <Declaration><![CDATA[PROPERTY IsError : BOOL]]></Declaration>
+      <Get Name="Get" Id="{2e5dbd4b-6d4c-0006-18b2-afaf9cfb619e}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[IsError := ReadUidTask.Error;]]></ST>
+          <ST><![CDATA[//collected Error from Tasks
+IsError := this^.ReadUidTask.Error;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Map" Id="{0f981536-50dd-0388-20ac-aec63d1ae3c0}" FolderPath="Map\">
+      <Declaration><![CDATA[METHOD Private Map : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_itfRfidHeadWrapper.Execute
+(
+    xExecute              := _rfidInOut.xExecute
+    , xAbort              := _rfidInOut.xAbort
+    , udiTimeOut          := _rfidInOut.udiTimeOut
+    , eCommand            := _rfidInOut.eCommand
+    , udiStartAdress      := _rfidInOut.udiStartAdress
+    , udiDataLenght       := _rfidInOut.udiDataLenght
+    , myWriteData         := _rfidInOut.myWriteData
+    , myReadData          => _rfidInOut.myReadData
+    , xDone               => _rfidInOut.xDone
+    , xBusy               => _rfidInOut.xBusy
+    , xError              => _rfidInOut.xError
+    , xAborted            => _rfidInOut.xAborted
+    , eErrorID            => _rfidInOut.eErrorID
+    , xTP                 => _rfidInOut.xTP
+    , xRWHeadNotCOnnected => _rfidInOut.xRWHeadNotCOnnected
+    , uiDataRxLength      => _rfidInOut.uiDataRxLength
+);
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="ReadDataFixedLenghtMethod" Id="{ca54f775-5c7d-0798-3c67-bb1974437feb}" FolderPath="Operations\">
+      <Declaration><![CDATA[METHOD ReadDataFixedLenghtMethod : TcoCore.ITcoTaskStatus
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF (ReadUidTask <> 0) THEN
+    ReadUidMethod := ReadUidTask.Invoke();
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="ReadDataFixedLengthTask" Id="{f2a4eda4-79f0-0f3c-0f2b-cab3382f90be}" FolderPath="Tasks\">
+      <Declaration><![CDATA[PROPERTY ReadDataFixedLengthTask : TcoCore.ITcoTask
+]]></Declaration>
+      <Get Name="Get" Id="{09dfc2a3-c078-0b1b-2502-5704b7359233}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[ReadUidTask := _readUidTask;
+]]></ST>
         </Implementation>
       </Get>
     </Property>
@@ -222,9 +218,9 @@ END_VAR
 METHOD Restore : ITcoRestorable
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[IF (ReadUidTask <> 0) THEN
-    ReadUidTask.Restore();
-END_IF;
+        <ST><![CDATA[//IF (AutoReadDataTask <> 0) THEN
+//    AutoReadDataTask.Restore();
+//END_IF;
 
 //IF (AutoWriteDataTask <> 0) THEN
 //    AutoWriteDataTask.Restore();
@@ -241,19 +237,11 @@ END_IF;
 //IF (WriteCodingTask <> 0) THEN
 //	WriteCodingTask.Abort();
 //    WriteCodingTask.Restore();
-//END_IF;    ]]></ST>
+//END_IF;     ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="ServiceMode" Id="{c8436f55-4a15-04a3-0a72-f480ef0481d3}">
-      <Declaration><![CDATA[(*~
-    <docu>
-        <summary>
-            Custom service (manual, maintenance) logic.
-            This method must be implemented in derived class.
-        </summary>
-    </docu>
-~*)
-METHOD PROTECTED ServiceMode
+    <Method Name="ServiceMode" Id="{23444148-1419-01fe-26ba-ed704a6461e8}">
+      <Declaration><![CDATA[METHOD PROTECTED ServiceMode
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[]]></ST>

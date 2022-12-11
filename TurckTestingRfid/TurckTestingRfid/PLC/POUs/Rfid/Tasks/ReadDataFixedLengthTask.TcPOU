@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
-  <POU Name="ReadUidTask" Id="{9afc1438-72f3-0359-0d5e-5ae786851400}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK ReadUidTask EXTENDS TcoCore.TcoTask
+  <POU Name="ReadDataFixedLengthTask" Id="{39863ee7-b445-00ab-0c61-a72312274d41}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK ReadDataFixedLengthTask EXTENDS TcoCore.TcoTask
 VAR_IN_OUT
     rfidInOut : RfidInOut;
 END_VAR
@@ -9,17 +9,17 @@ VAR_INPUT
     ActionDesc : STRING(25);
 END_VAR
 VAR_OUTPUT
-    sUid : Tc2_System.T_MaxString;
+    sData : Tc2_System.T_MaxString;
 END_VAR
 
 VAR
     _stringBuilder : TcoCore.StringBuilder;
     _state         : INT;
-    _coding        : ARRAY[0..7] OF BYTE;
+    _coding        : ARRAY[0..3] OF BYTE;
     _index         : INT;
     _hex           : Tc2_System.T_MaxString := '16# ';
     _delay         : TIME                   := T#1MS;
-    _uidDataLength : UINT                   := 8;
+    _uidDataLength : UINT                   := 4;
 
     _eErrorID : ErrorIDMappingLibraryTurck;
 END_VAR
@@ -46,13 +46,13 @@ END_VAR
             END_IF
         20:
             //Command setzen
-            rfidInOut.eCommand      := command.INVENTORY;
+            rfidInOut.eCommand      := command.READ;
             rfidInOut.udiDataLenght := _uidDataLength;
             _state                  := 30;
         30:
             // Start der Operation
             rfidInOut.xExecute := TRUE;
-            sUid               := '';
+            sData              := '';
 
             _state := 40;
         40:
@@ -64,22 +64,22 @@ END_VAR
                     rfidInOut.myReadData[_index] :=
                         (THIS^.rfidInOut.myReadData[_index]);
 
-                    sUid := Concat
+                    sData := Concat
                     (
-                        sUid
+                        sData
                         , BYTE_TO_HEXSTR(in := rfidInOut.myReadData[_index], iPrecision := 2, bLoCase := FALSE)
                     );
                 END_FOR
 
                 THIS^.DoneWhen(rfidInOut.xDone);
-                THIS^.Messenger.Info('Lesen UID erfolgreich');
+                THIS^.Messenger.Info('Lesen der Daten erfolgreich');
                 _state := 0;
             END_IF
     END_CASE
 END_IF
 ]]></ST>
     </Implementation>
-    <Method Name="FB_init" Id="{ae61f780-cede-0a6c-1654-d73b277fd50f}">
+    <Method Name="FB_init" Id="{0fb1265e-d3da-04f4-140d-ddf91a1833fb}">
       <Declaration><![CDATA[METHOD PUBLIC FB_init : BOOL
 VAR_INPUT
     bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
@@ -94,7 +94,7 @@ SUPER^.FB_init(bInitRetains, bInCopyCode, ParentObject);
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="OnDone" Id="{d39af901-1596-0596-186f-e182c5594446}">
+    <Method Name="OnDone" Id="{10058ea7-ec09-082c-2789-322adf1aea28}">
       <Declaration><![CDATA[(*~
     <docu>
         <summary>
@@ -110,7 +110,7 @@ rfidInOut.xExecute := FALSE;
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="OnError" Id="{a170edc6-80d2-0c3e-1e44-de62810e3d45}">
+    <Method Name="OnError" Id="{a99e695d-88b1-0d1d-10b2-738eda9b2a54}">
       <Declaration><![CDATA[(*~
     <docu>
         <summary>
@@ -129,7 +129,7 @@ _eErrorID := rfidInOut.eErrorID;
 THIS^.Messenger.Build().Append('Rfid Schreib/Lesekopf Fehler : ').Append(to_string(THIS^._eErrorID)).As().AsError();]]></ST>
       </Implementation>
     </Method>
-    <Method Name="OnStart" Id="{430e877e-094e-0b68-257f-a24a7ae8985c}">
+    <Method Name="OnStart" Id="{408d708d-df53-0e30-1fe2-0160f3dc9208}">
       <Declaration><![CDATA[(*~
     <docu>
         <summary>
@@ -148,7 +148,7 @@ _state             := 10;
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Restore" Id="{46bde516-f86f-02c0-3aa4-3a3ecbadb808}">
+    <Method Name="Restore" Id="{193402f8-baad-07a9-25ba-b624c28e0ab7}">
       <Declaration><![CDATA[(*~
     <docu>
         <summary>

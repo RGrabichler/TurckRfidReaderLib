@@ -47,19 +47,28 @@
     <Compile Include="POUs\Context\TcUnitContext.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Rfid\ErrorIDMappingLibraryTurck.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Rfid\IRfidTasks.TcIO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Rfid\RfidHead.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Rfid\RfidInOut.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Rfid\Tasks\ReadUidTask.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Rfid\Wrapper\FB_Compact_Wrapper.TcPOU">
+    <Compile Include="POUs\Rfid\Tasks\ReadDataFixedLengthTask.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Rfid\Wrapper\IRfidHeadWrapper.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Rfid\Wrapper\Rfid_FB_Compact_Wrapper.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Test\RfidHead_Test.TcPOU">
@@ -75,8 +84,8 @@
     <Folder Include="POUs\Context" />
     <Folder Include="POUs\Mock" />
     <Folder Include="POUs\Rfid" />
-    <Folder Include="POUs\Rfid\Wrapper" />
     <Folder Include="POUs\Rfid\Tasks" />
+    <Folder Include="POUs\Rfid\Wrapper" />
     <Folder Include="POUs\Test" />
     <Folder Include="Version" />
     <Folder Include="VISUs" />
