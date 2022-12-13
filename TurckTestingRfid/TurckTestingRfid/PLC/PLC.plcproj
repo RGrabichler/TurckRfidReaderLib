@@ -47,7 +47,13 @@
     <Compile Include="POUs\Context\TcUnitContext.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Mock\RfidMockNotWorking.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Mock\RfidMockNoRfidInRange.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Mock\RfidMockWorking.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Rfid\ErrorIDMappingLibraryTurck.TcDUT">
