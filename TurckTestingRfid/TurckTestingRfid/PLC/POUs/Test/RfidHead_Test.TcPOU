@@ -215,20 +215,6 @@ END_VAR]]></Declaration>
         <ST><![CDATA[TcUnit.TEST('ExecuteReadDataWithTooLongDataLength_ExpectErrorWithErroId');
 //28 blocks, 4 bytes each, => 112 bytes max user Memory!
 
-//Assert Initial State
-_result := false;
-
-IF _firstRun THEN
-    _firstRun := FALSE;
-    THIS^.
-        AssertEquals_BOOL
-    (
-        _result
-        , sut_readDataTooLongString.ReadDataMethod(_udiDataLength).Error
-        , 'No Error should be Start Parameter'
-    );
-END_IF
-
 _errorId := sut_readDataTooLongString.ErrorId;
 
 //Arrange
@@ -346,7 +332,7 @@ IF _firstRun THEN
         AssertEquals_BOOL
     (
         _result
-        , sut_readUidNoTag.ReadDataMethod(_udiDataLength).Error
+        , sut_readUidNoTag.ReadUidMethod().Error
         , 'No Error should be Start Parameter'
     );
 END_IF

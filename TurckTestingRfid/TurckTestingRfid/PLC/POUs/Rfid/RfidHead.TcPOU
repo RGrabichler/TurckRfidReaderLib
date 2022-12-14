@@ -116,13 +116,14 @@ END_VAR
       </Get>
     </Property>
     <Property Name="ErrorId" Id="{c52d2985-6ba7-0716-2dfd-1a594a1ddd7a}" FolderPath="Status\">
-      <Declaration><![CDATA[PROPERTY ErrorId : REFERENCE TO ErrorIDMappingLibraryTurck]]></Declaration>
+      <Declaration><![CDATA[PROPERTY ErrorId : ErrorIDMappingLibraryTurck]]></Declaration>
       <Get Name="Get" Id="{5b2044d3-69dd-0afa-2375-17078387a94c}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[ErrorId REF= _errorId;]]></ST>
+          <ST><![CDATA[{warning disable C0371}
+ErrorId := _rfidInOut.eErrorID;]]></ST>
         </Implementation>
       </Get>
     </Property>
@@ -192,8 +193,8 @@ IsError := this^.ReadUidTask.Error or this^.ReadDataTask.Error;]]></ST>
     , uiDataRxLength      => _rfidInOut.uiDataRxLength
 );
 
-{warning disable C0371}
-_errorId := _rfidInOut.eErrorID;]]></ST>
+
+]]></ST>
       </Implementation>
     </Method>
     <Method Name="ReadDataMethod" Id="{ca54f775-5c7d-0798-3c67-bb1974437feb}" FolderPath="Operations\">

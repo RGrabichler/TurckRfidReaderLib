@@ -28,7 +28,6 @@ VAR
         , ReadUid
         , ReadData
         , WriteData
-        , Done
         , Error);
     _errorId : ErrorIDMappingLibraryTurck;
     _index   : INT;
@@ -91,7 +90,6 @@ CASE _states OF
         IF uiDataLenght > 112 THEN
             _states  := Error;
             _errorId := ErrorIDMappingLibraryTurck.COMMAND_LENGTH_OUTSIDE_TAG_SPECS;
-
         END_IF
 
         IF eCommand = RFID_FB_U.COMMAND.INVENTORY THEN
@@ -99,26 +97,25 @@ CASE _states OF
                 myReadData[_index] := _resultUid[_index];
             END_FOR
 
-            _states := Done;
-
+            _busy := FALSE;
+            xDone := TRUE;
         ELSIF eCommand = RFID_FB_U.COMMAND.READ THEN
             FOR _index := 0 TO UINT_TO_INT(uiDataLenght) - 1 DO
                 myReadData[_index] := 16#05 + INT_TO_BYTE(_index);
             END_FOR
 
-            _states := Done;
+            _busy := FALSE;
+            xDone := TRUE; //
 
         ELSIF eCommand = RFID_FB_U.COMMAND.WRITE THEN
-            _states := Done;
+            _busy := FALSE;
+            xDone := TRUE;
+
+        ELSIF eCommand = RFID_FB_U.COMMAND.SET_PERMA_LOCK THEN
+            _busy := FALSE;
+            xDone := TRUE;
         END_IF
 
-    Done:
-        _busy := FALSE;
-        xDone := TRUE;
-
-        _executionTimer(in := FALSE);
-        _timeOut(in := FALSE);
-        _states := Idle;
 
     Error:
         _executionTimer(in := FALSE);
