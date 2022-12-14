@@ -24,24 +24,24 @@ END_VAR]]></Declaration>
     <Method Name="Execute" Id="{25e575f0-c2a6-0c6e-123b-04eae164f46c}">
       <Declaration><![CDATA[METHOD Execute
 VAR_INPUT
-    xExecute	: BOOL;
-    xAbort	: BOOL;
-    udiTimeOut	: UDINT;
-    eCommand	: RFID_FB_U.COMMAND;
-    udiStartAdress	: UDINT;
-    uiDataLenght	: UINT;
-    myWriteData	: ARRAY [0..127] OF BYTE;
+    xExecute       : BOOL;
+    xAbort         : BOOL;
+    udiTimeOut     : UDINT;
+    eCommand       : RFID_FB_U.COMMAND;
+    udiStartAdress : UDINT;
+    uiDataLenght   : UINT;
+    myWriteData    : ARRAY[0..127] OF BYTE;
 END_VAR
 VAR_OUTPUT
-    myReadData	: ARRAY [0..127] OF BYTE;
-    xDone	: BOOL;
-    xBusy	: BOOL;
-    xError	: BOOL;
-    xAborted	: BOOL;
-    eErrorID	: RFID_FB_U.ERROR;
-    xTP	: BOOL;
-    xRWHeadNotCOnnected	: BOOL;
-    uiDataRxLength	: UINT;
+    myReadData          : ARRAY[0..127] OF BYTE;
+    xDone               : BOOL;
+    xBusy               : BOOL;
+    xError              : BOOL;
+    xAborted            : BOOL;
+    eErrorID            : RFID_FB_U.ERROR;
+    xTP                 : BOOL;
+    xRWHeadNotCOnnected : BOOL;
+    uiDataRxLength      : UINT;
 END_VAR
 ]]></Declaration>
       <Implementation>

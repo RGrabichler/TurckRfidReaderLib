@@ -26,7 +26,7 @@ VAR_INPUT
     udiTimeOut     : UDINT;
     eCommand       : RFID_FB_U.COMMAND;
     udiStartAdress : UDINT;
-    uiDataLenght  : UINT;
+    uiDataLenght   : UINT;
     myWriteData    : ARRAY[0..127] OF BYTE;
 END_VAR
 VAR_OUTPUT

@@ -33,8 +33,6 @@ ExecuteReadDataNoTagInRange_ExpectErrorWithNoTag();
 ExecuteReadUid_ExpectUidAsStringStatusDone();
 ExecuteReadData_ExpectDataAsStringStatusDone();
 
-
-
 //weitere Tests
 // zulange uiDataLength Error
 // TimeOut Error
