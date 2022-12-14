@@ -13,7 +13,7 @@ VAR
     _state         : INT;
     _coding        : ARRAY[0..3] OF BYTE;
     _index         : INT;
-    _hex           : Tc2_System.T_MaxString := '16# ';
+    _hex           : Tc2_System.T_MaxString := '16#';
 
     _eErrorID : ErrorIDMappingLibraryTurck;
     _data     : Tc2_System.T_MaxString;
@@ -61,9 +61,15 @@ END_VAR
                     _data := Concat
                     (
                         _data
-                        , BYTE_TO_HEXSTR(in := rfidInOut.myReadData[_index], iPrecision := 2, bLoCase := FALSE)
+                        , Concat
+                        (
+                            ' '
+                            , BYTE_TO_HEXSTR(in := rfidInOut.myReadData[_index], iPrecision := 2, bLoCase := FALSE)
+                        )
                     );
                 END_FOR
+
+                _data := Concat(_hex, _data);
 
                 THIS^.DoneWhen(rfidInOut.xDone);
                 THIS^.Messenger.Info('Lesen der Daten erfolgreich');

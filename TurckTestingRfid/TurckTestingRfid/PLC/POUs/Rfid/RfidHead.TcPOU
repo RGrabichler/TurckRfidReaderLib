@@ -11,7 +11,7 @@ VAR
     _readDataTask       : ReadDataTask(THIS^);
 
     _rfidInOut      : RfidInOut;
-    _error          : ErrorIDMappingLibraryTurck;
+    _errorId        : ErrorIDMappingLibraryTurck;
     _uiDataRxLength : UINT;
 
 END_VAR
@@ -90,9 +90,10 @@ _readDataTask(rfidInOut := _rfidInOut, ActionDesc := '<#ReadData#>');
     </Implementation>
     <Folder Name="Map" Id="{cd40435f-5c26-09ae-1e38-f99a4c292282}" />
     <Folder Name="Operations" Id="{2fef21cf-9c05-04f4-1bea-25266e40a24e}" />
+    <Folder Name="Output" Id="{0a6561f6-0582-09f4-1cdc-80a3b7b9cb60}" />
     <Folder Name="Status" Id="{3d6ba951-6a9b-0fff-2d86-cd7887b5b213}" />
     <Folder Name="Tasks" Id="{23e14438-eac4-034b-0edc-fee6588e71d3}" />
-    <Property Name="Data" Id="{ef0b1373-bd73-0421-1d50-11ba2cd35e17}" FolderPath="Status\">
+    <Property Name="Data" Id="{ef0b1373-bd73-0421-1d50-11ba2cd35e17}" FolderPath="Output\">
       <Declaration><![CDATA[PROPERTY Data : Tc2_System.T_MaxString]]></Declaration>
       <Get Name="Get" Id="{fb3003a2-6234-0736-3dc9-c19b27efd92a}">
         <Declaration><![CDATA[VAR
@@ -103,7 +104,7 @@ END_VAR
         </Implementation>
       </Get>
     </Property>
-    <Property Name="DataRxLength" Id="{806c09f9-9a9f-0b82-1797-5714afe369e2}" FolderPath="Status\">
+    <Property Name="DataRxLength" Id="{806c09f9-9a9f-0b82-1797-5714afe369e2}" FolderPath="Output\">
       <Declaration><![CDATA[PROPERTY DataRxLength : UINT]]></Declaration>
       <Get Name="Get" Id="{5c6ae917-ddb8-0b0d-3578-b6c9fb33d086}">
         <Declaration><![CDATA[VAR
@@ -111,6 +112,17 @@ END_VAR
 ]]></Declaration>
         <Implementation>
           <ST><![CDATA[DataRxLength := _uiDataRxLength;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="ErrorId" Id="{c52d2985-6ba7-0716-2dfd-1a594a1ddd7a}" FolderPath="Status\">
+      <Declaration><![CDATA[PROPERTY ErrorId : REFERENCE TO ErrorIDMappingLibraryTurck]]></Declaration>
+      <Get Name="Get" Id="{5b2044d3-69dd-0afa-2375-17078387a94c}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[ErrorId REF= _errorId;]]></ST>
         </Implementation>
       </Get>
     </Property>
@@ -144,7 +156,7 @@ _readUidTask.FB_init
 );]]></ST>
       </Implementation>
     </Method>
-    <Property Name="IsError" Id="{296913bd-79e4-0a35-04f0-670be6d31523}">
+    <Property Name="IsError" Id="{296913bd-79e4-0a35-04f0-670be6d31523}" FolderPath="Status\">
       <Declaration><![CDATA[PROPERTY IsError : BOOL]]></Declaration>
       <Get Name="Get" Id="{2e5dbd4b-6d4c-0006-18b2-afaf9cfb619e}">
         <Declaration><![CDATA[VAR
@@ -167,7 +179,7 @@ IsError := this^.ReadUidTask.Error or this^.ReadDataTask.Error;]]></ST>
     , udiTimeOut          := _rfidInOut.udiTimeOut
     , eCommand            := _rfidInOut.eCommand
     , udiStartAdress      := _rfidInOut.udiStartAdress
-    , uiDataLenght       := _rfidInOut.uiDataLenght
+    , uiDataLenght        := _rfidInOut.uiDataLenght
     , myWriteData         := _rfidInOut.myWriteData
     , myReadData          => _rfidInOut.myReadData
     , xDone               => _rfidInOut.xDone
@@ -179,7 +191,9 @@ IsError := this^.ReadUidTask.Error or this^.ReadDataTask.Error;]]></ST>
     , xRWHeadNotCOnnected => _rfidInOut.xRWHeadNotCOnnected
     , uiDataRxLength      => _rfidInOut.uiDataRxLength
 );
-]]></ST>
+
+{warning disable C0371}
+_errorId := _rfidInOut.eErrorID;]]></ST>
       </Implementation>
     </Method>
     <Method Name="ReadDataMethod" Id="{ca54f775-5c7d-0798-3c67-bb1974437feb}" FolderPath="Operations\">
@@ -262,7 +276,7 @@ END_IF;
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Method>
-    <Property Name="Uid" Id="{9dfec227-5963-0db5-3cb6-766e5179f7f5}" FolderPath="Status\">
+    <Property Name="Uid" Id="{9dfec227-5963-0db5-3cb6-766e5179f7f5}" FolderPath="Output\">
       <Declaration><![CDATA[PROPERTY Uid : Tc2_System.T_MaxString]]></Declaration>
       <Get Name="Get" Id="{6ef5e442-ac9b-0d4f-2b4b-82bd147f1556}">
         <Declaration><![CDATA[VAR

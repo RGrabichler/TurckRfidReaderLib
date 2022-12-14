@@ -44,9 +44,9 @@ END_VAR
             END_IF
         20:
             //Command setzen
-            rfidInOut.eCommand      := command.INVENTORY;
+            rfidInOut.eCommand     := command.INVENTORY;
             rfidInOut.uiDataLenght := _uidDataLength;
-            _state                  := 30;
+            _state                 := 30;
         30:
             // Start der Operation
             rfidInOut.xExecute := TRUE;
@@ -55,12 +55,13 @@ END_VAR
             _state := 40;
         40:
             // Warte auf Ende Operation
+            rfidInOut.myReadData[_index] :=
+                (THIS^.rfidInOut.myReadData[_index]);
+
             IF rfidInOut.xError THEN
                 ;
             ELSIF rfidInOut.xDone THEN
                 FOR _index := 0 TO UINT_TO_INT(rfidInOut.uiDataLenght - 1) DO
-                    rfidInOut.myReadData[_index] :=
-                        (THIS^.rfidInOut.myReadData[_index]);
 
                     _uid := Concat
                     (

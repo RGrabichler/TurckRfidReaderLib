@@ -8,18 +8,32 @@ VAR
 END_VAR
 VAR
     _wrapper_RfidMockNoRfidInRange : RfidMockNoRfidInRange;
-    _wrapper_RfidMockWorking       : RfidMockWorking;
-    sut_readData                   : RfidHead(THIS^, _wrapper_RfidMockNoRfidInRange, T#10MS);
-    sut_readUid                    : RfidHead(THIS^, _wrapper_RfidMockNoRfidInRange, T#10MS);
-    sut_readUidSuccess             : RfidHead(THIS^, _wrapper_RfidMockWorking, T#10MS);
-    sut_readDataSuccess            : RfidHead(THIS^, _wrapper_RfidMockWorking, T#10MS);
+
+    sut_readDataNoTag         : RfidHead(THIS^, _wrapper_RfidMockNoRfidInRange, T#10MS);
+    sut_readUidNoTag          : RfidHead(THIS^, _wrapper_RfidMockNoRfidInRange, T#10MS);
+    _wrapper_readUid          : RfidMockWorking;
+    sut_readUidSuccess        : RfidHead(THIS^, _wrapper_readUid, T#10MS);
+    _wrapper_readData         : RfidMockWorking;
+    sut_readDataSuccess       : RfidHead(THIS^, _wrapper_readData, T#10MS);
+    _wrapper_RfidMockTooLong  : RfidMockWorking;
+    sut_readDataTooLongString : RfidHead(THIS^, _wrapper_RfidMockTooLong, T#10MS);
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[_nfContext.VolatileOpen(); //Required for TCopen
 //==============================================
-ExecuteReadUid_ExpectUidAsStringStatusDone();
+
+//
+//ExecuteReadDataWithTooLongDataLength_ExpectErrorWithErroId();
+
+//
+ExecuteReadUidsNoTagInRange_ExpectErrorWithNoTag();
 ExecuteReadDataNoTagInRange_ExpectErrorWithNoTag();
+
+//
+ExecuteReadUid_ExpectUidAsStringStatusDone();
 ExecuteReadData_ExpectDataAsStringStatusDone();
+
+
 
 //weitere Tests
 // zulange uiDataLength Error
@@ -27,9 +41,9 @@ ExecuteReadData_ExpectDataAsStringStatusDone();
 // Lock, Lock mit Error
 //==============================================
 _nfContext.VolatileClose();
-
 ]]></ST>
     </Implementation>
+    <Folder Name="Error" Id="{975ec48f-bcf0-0c5d-2b83-0ed4a4227688}" />
     <Folder Name="ITcoContext" Id="{33bfe112-ae2f-05c8-0e05-c3229ef70521}" />
     <Folder Name="NoTagError" Id="{b5613e50-d453-0eae-3339-03bf860dadda}" />
     <Folder Name="ReadMockWorking" Id="{e3a719a8-eedb-0d5a-38a6-6d750e45333d}" />
@@ -78,7 +92,8 @@ VAR_INST
     _udiDataLength : INT := 4;
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[TcUnit.TEST('ExecuteReadData_ExpectDataAsStringStatusDone');
+        <ST><![CDATA[//{warning disable C0371}
+TcUnit.TEST('ExecuteReadData_ExpectDataAsStringStatusDone');
 //Arrange
 sut_readDataSuccess();
 
@@ -143,44 +158,116 @@ IF _firstRun THEN
         AssertEquals_BOOL
     (
         _result
-        , sut_readData.ReadDataMethod(_udiDataLength).Error
+        , sut_readDataNoTag.ReadDataMethod(_udiDataLength).Error
         , 'No Error should be Start Parameter'
     );
 END_IF
 
 //Arrange
-sut_readData();
+sut_readDataNoTag();
 
 //Act, Use ReadDataMethod()
-sut_readData.ReadDataMethod(_udiDataLength);
+sut_readDataNoTag.ReadDataMethod(_udiDataLength);
 
-IF sut_readData.ReadDataTask.Error
-       OR sut_readUid.ReadDataTask.Done THEN
+IF sut_readDataNoTag.ReadDataTask.Error
+       OR sut_readUidNoTag.ReadDataTask.Done THEN
     //Assert
     _result := TRUE;
 
     AssertEquals_BOOL
     (
         _result
-        , sut_readData.ReadDataMethod(_udiDataLength).Error
+        , sut_readDataNoTag.ReadDataMethod(_udiDataLength).Error
         , 'Method did not throw Error'
     );
 
     AssertEquals_BOOL
     (
         _result
-        , sut_readData.ReadDataTask.Error
+        , sut_readDataNoTag.ReadDataTask.Error
         , 'Task did not throw Error'
     );
 
     //Act, Restore(), Error shall disappear
-    sut_readData.Restore();
+    sut_readDataNoTag.Restore();
     _result := FALSE;
 
     AssertEquals_BOOL
     (
         _result
-        , sut_readData.ReadDataTask.Error
+        , sut_readDataNoTag.ReadDataTask.Error
+        , 'Reset did not Work, Still Status Error'
+    );
+
+    TcUnit.TEST_FINISHED();
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="ExecuteReadDataWithTooLongDataLength_ExpectErrorWithErroId" Id="{cbc6a826-6270-050b-3244-12340409ff79}" FolderPath="Error\">
+      <Declaration><![CDATA[METHOD PRIVATE ExecuteReadDataWithTooLongDataLength_ExpectErrorWithErroId
+VAR_INST
+    _udiDataLength : INT := 113;
+    _result        : BOOL;
+    _firstRun      : BOOL := TRUE;
+
+    _errorId : ErrorIDMappingLibraryTurck;
+
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[TcUnit.TEST('ExecuteReadDataWithTooLongDataLength_ExpectErrorWithErroId');
+//28 blocks, 4 bytes each, => 112 bytes max user Memory!
+
+//Assert Initial State
+_result := false;
+
+IF _firstRun THEN
+    _firstRun := FALSE;
+    THIS^.
+        AssertEquals_BOOL
+    (
+        _result
+        , sut_readDataTooLongString.ReadDataMethod(_udiDataLength).Error
+        , 'No Error should be Start Parameter'
+    );
+END_IF
+
+_errorId := sut_readDataTooLongString.ErrorId;
+
+//Arrange
+sut_readDataTooLongString();
+
+//Act, Use ReadDataMethod()
+sut_readDataTooLongString.ReadDataMethod(_udiDataLength);
+
+IF sut_readDataTooLongString.ReadDataTask.Error
+       OR sut_readUidNoTag.ReadDataTask.Done THEN
+
+    _errorId := sut_readDataTooLongString.ErrorId;
+    //Assert
+    _result := TRUE;
+
+    AssertEquals_BOOL
+    (
+        _result
+        , sut_readDataTooLongString.ReadDataMethod(_udiDataLength).Error
+        , 'Method must throw Error'
+    );
+
+    AssertEquals_BOOL
+    (
+        _result
+        , sut_readDataTooLongString.ReadDataTask.Error
+        , 'Task did not throw Error'
+    );
+
+    //Act, Restore(), Error shall disappear
+    sut_readDataTooLongString.Restore();
+    _result := FALSE;
+
+    AssertEquals_BOOL
+    (
+        _result
+        , sut_readDataTooLongString.ReadDataTask.Error
         , 'Reset did not Work, Still Status Error'
     );
 
@@ -261,42 +348,42 @@ IF _firstRun THEN
         AssertEquals_BOOL
     (
         _result
-        , sut_readUid.ReadDataMethod(_udiDataLength).Error
+        , sut_readUidNoTag.ReadDataMethod(_udiDataLength).Error
         , 'No Error should be Start Parameter'
     );
 END_IF
 
 //Arrange
-sut_readUid();
+sut_readUidNoTag();
 
 //Act, Use ReadUidMethod()
-IF sut_readUid.ReadUidMethod().Error
-       OR sut_readUid.ReadUidMethod().Done THEN
+IF sut_readUidNoTag.ReadUidMethod().Error
+       OR sut_readUidNoTag.ReadUidMethod().Done THEN
     //Assert
     _result := TRUE;
 
     AssertEquals_BOOL
     (
         _result
-        , sut_readUid.ReadUidMethod().Error
+        , sut_readUidNoTag.ReadUidMethod().Error
         , 'Method did not throw Error'
     );
 
     AssertEquals_BOOL
     (
         _result
-        , sut_readUid.ReadUidTask.Error
+        , sut_readUidNoTag.ReadUidTask.Error
         , 'Task did not throw Error'
     );
 
     //Act, Restore(), Error shall disappear
-    sut_readUid.Restore();
+    sut_readUidNoTag.Restore();
     _result := FALSE;
 
     AssertEquals_BOOL
     (
         _result
-        , sut_readUid.ReadUidTask.Error
+        , sut_readUidNoTag.ReadUidTask.Error
         , 'Reset did not Work, Still Status Error'
     );
 
