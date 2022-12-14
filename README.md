@@ -1,19 +1,23 @@
-# TcTemplate
+# TurckRfidReaderLib
 
-*A template repo for TwinCAT projects*
+
+*A Library for the Turck Rfid Reader Interface "RFID-Interface TBEC-LL-4RFID-8DXP"*
 
 ## How to use
 
-1. Go to https://github.com/rruiter87/TcTemplate and click **Use this template > Create new repository**.
-2. Clone the newly created repo onto your local system.
-3. Execute `init.ps1` to initialize pre-commit hooks and rename the project. Important: for this step, Python needs to be installed and the [pre-commit](https://pre-commit.com/) module as well.
+under Development, primarly for my needs! <br>
+This are my first real tries with TcUnit, Unit Testing in general, <br>
+and mocking objects, i am open to any feedback. <br>
+Thanks alot
 
-## pre-commit
+And first time to use github for more than my solo development :D
 
-The default pre-commit files has hooks for STweep, Python code, C# code, and [prettier](https://prettier.io/) for javascript, html etc. Remove any pre-commits which you do not want, or you do not have access to.
+Alot of Firsts in here!
 
 ### Requirements
 
-- Python with [pre-commit](https://pre-commit.com/)
-- [STweepCLI](https://www.stweep.com/documentation/getting-started-3/)
-- [.NET Csharpier](https://csharpier.com/)
+- Uses Precommits (thanks to https://github.com/rruiter87/TcTemplate)
+- TcUnit for Testing (https://github.com/tcunit/TcUnit)
+- TcOpen as Framework (https://github.com/TcOpenGroup/TcOpen)
+
+
