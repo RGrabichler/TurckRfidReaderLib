@@ -5,10 +5,14 @@
 
 ## How to use
 
-under Development, primarly for my needs!
-This are my first real tries with TcUnit, Unit Testing in general,
-and mocking objects, i am open to any feedback.
-Thanks
+under Development, primarly for my needs! <br>
+This are my first real tries with TcUnit, Unit Testing in general, <br>
+and mocking objects, i am open to any feedback. <br>
+Thanks alot
+
+And first time to use github for more than my solo development :D
+
+Alot of Firsts in here!
 
 ### Requirements
 
