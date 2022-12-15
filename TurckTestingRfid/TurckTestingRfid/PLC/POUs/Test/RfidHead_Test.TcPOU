@@ -23,7 +23,7 @@ END_VAR]]></Declaration>
 //==============================================
 
 //
-//ExecuteReadDataWithTooLongDataLength_ExpectErrorWithErroId();
+ExecuteReadDataWithTooLongDataLength_ExpectErrorWithErroId();
 
 //
 ExecuteReadUidsNoTagInRange_ExpectErrorWithNoTag();
@@ -138,11 +138,15 @@ END_IF]]></ST>
       </Implementation>
     </Method>
     <Method Name="ExecuteReadDataNoTagInRange_ExpectErrorWithNoTag" Id="{ea59a3f7-4d2f-0eda-320a-232679f4280a}" FolderPath="NoTagError\">
-      <Declaration><![CDATA[METHOD Private ExecuteReadDataNoTagInRange_ExpectErrorWithNoTag
+      <Declaration><![CDATA[METHOD PRIVATE ExecuteReadDataNoTagInRange_ExpectErrorWithNoTag
 VAR_INST
     _udiDataLength : INT := 10;
     _result        : BOOL;
-    _firstRun      : BOOL := true;
+    _firstRun      : BOOL := TRUE;
+
+    _expectedErrorId : RFID_FB_U.ERROR;
+    _errorId         : RFID_FB_U.ERROR;
+
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[TcUnit.TEST('ExecuteReadDataNoTagInRange_ExpectErrorWithNoTag');
@@ -186,6 +190,10 @@ IF sut_readDataNoTag.ReadDataTask.Error
         , 'Task did not throw Error'
     );
 
+    _errorId         := sut_readDataTooLongString.ErrorId;
+    _expectedErrorId := RFID_FB_U.ERROR.TIME_OUT;
+    AssertEquals(Expected := _expectedErrorId, Actual := _errorId, Message := 'ErrorId must match (TimeOut)!');
+
     //Act, Restore(), Error shall disappear
     sut_readDataNoTag.Restore();
     _result := FALSE;
@@ -208,14 +216,13 @@ VAR_INST
     _result        : BOOL;
     _firstRun      : BOOL := TRUE;
 
-    _errorId : ErrorIDMappingLibraryTurck;
+    _expectedErrorId : RFID_FB_U.ERROR;
+    _errorId         : RFID_FB_U.ERROR;
 
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[TcUnit.TEST('ExecuteReadDataWithTooLongDataLength_ExpectErrorWithErroId');
 //28 blocks, 4 bytes each, => 112 bytes max user Memory!
-
-_errorId := sut_readDataTooLongString.ErrorId;
 
 //Arrange
 sut_readDataTooLongString();
@@ -226,10 +233,13 @@ sut_readDataTooLongString.ReadDataMethod(_udiDataLength);
 IF sut_readDataTooLongString.ReadDataTask.Error
        OR sut_readUidNoTag.ReadDataTask.Done THEN
 
-    _errorId := sut_readDataTooLongString.ErrorId;
     //Assert
-    _result := TRUE;
 
+    _expectedErrorId := ERROR.COMMAND_LENGTH_OUTSIDE_TAG_SPECS;
+    _errorId         := sut_readDataTooLongString.ErrorId;
+    AssertEquals(Expected := _expectedErrorId, Actual := _errorId, Message := 'ErrorId must match!');
+
+    _result := TRUE;
     AssertEquals_BOOL
     (
         _result
@@ -244,16 +254,32 @@ IF sut_readDataTooLongString.ReadDataTask.Error
         , 'Task did not throw Error'
     );
 
+    AssertEquals_BOOL
+    (
+        _result
+        , sut_readDataTooLongString.isError
+        , 'FB must throw Error'
+    );
+
     //Act, Restore(), Error shall disappear
     sut_readDataTooLongString.Restore();
+    // more Cycles needed
+    sut_readDataTooLongString();
+    sut_readDataTooLongString();
+    sut_readDataTooLongString();
+
     _result := FALSE;
 
     AssertEquals_BOOL
     (
         _result
-        , sut_readDataTooLongString.ReadDataTask.Error
+        , sut_readDataTooLongString.IsError
         , 'Reset did not Work, Still Status Error'
     );
+
+    _errorId         := sut_readDataTooLongString.ErrorId;
+    _expectedErrorId := RFID_FB_U.ERROR.NO_ERROR;
+    AssertEquals(Expected := _expectedErrorId, Actual := _errorId, Message := 'ErrorId must match (No Error)!');
 
     TcUnit.TEST_FINISHED();
 END_IF]]></ST>

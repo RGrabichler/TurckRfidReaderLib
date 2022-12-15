@@ -64,7 +64,9 @@ END_VAR
     , pWriteDataMapping   := abyTxDataMapCompactMode
     , pDataTx             := myWriteData
     , pDataRx             := myReadData
-);]]></ST>
+);
+
+]]></ST>
       </Implementation>
     </Method>
   </POU>

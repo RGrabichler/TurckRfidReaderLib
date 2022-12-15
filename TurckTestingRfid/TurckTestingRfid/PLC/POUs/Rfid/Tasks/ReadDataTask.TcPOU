@@ -15,7 +15,7 @@ VAR
     _index         : INT;
     _hex           : Tc2_System.T_MaxString := '16#';
 
-    _eErrorID : ErrorIDMappingLibraryTurck;
+    _eErrorID : RFID_FB_U.ERROR;
     _data     : Tc2_System.T_MaxString;
 END_VAR
 ]]></Declaration>
@@ -89,6 +89,19 @@ END_VAR
 ]]></Declaration>
         <Implementation>
           <ST><![CDATA[Data := _data;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="ErrorId" Id="{9f7a31a9-875d-04e6-1604-d977f5cc870b}" FolderPath="Status\">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY ErrorId : REFERENCE TO RFID_FB_U.ERROR]]></Declaration>
+      <Get Name="Get" Id="{58f6ef8c-d374-0548-337e-e74d6227e6a8}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[{warning disable C0371}
+ErrorId REF= rfidInOut.eErrorID;]]></ST>
         </Implementation>
       </Get>
     </Property>
@@ -194,7 +207,8 @@ METHOD Restore : ITcoRestorable
         <ST><![CDATA[{warning disable C0371}
 RfidInOut.eCommand := RFID_FB_U.COMMAND.IDLE;
 RfidInOut.xExecute := FALSE;
-RfidInOut.xAbort   := false;
+RfidInOut.xAbort   := FALSE;
+//_eErrorID          := RFID_FB_U.ERROR.NO_ERROR;
 SUPER^.Restore();]]></ST>
       </Implementation>
     </Method>

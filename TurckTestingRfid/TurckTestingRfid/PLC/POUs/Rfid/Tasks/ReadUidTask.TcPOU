@@ -17,7 +17,7 @@ VAR
     _hex           : Tc2_System.T_MaxString := '16# ';
     _uidDataLength : UINT                   := 8;
 
-    _eErrorID : ErrorIDMappingLibraryTurck;
+    _eErrorID : RFID_FB_U.ERROR;
     _uid      : Tc2_System.T_MaxString;
 END_VAR
 ]]></Declaration>
@@ -183,6 +183,7 @@ METHOD Restore : ITcoRestorable
 RfidInOut.eCommand := RFID_FB_U.COMMAND.IDLE;
 RfidInOut.xExecute := FALSE;
 RfidInOut.xAbort   := FALSE;
+//THIS^.rfidInOut.eErrorID := ErrorIDMappingLibraryTurck.NO_ERROR;
 SUPER^.Restore();]]></ST>
       </Implementation>
     </Method>

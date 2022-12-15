@@ -11,7 +11,7 @@ VAR
     _readDataTask       : ReadDataTask(THIS^);
 
     _rfidInOut      : RfidInOut;
-    _errorId        : ErrorIDMappingLibraryTurck;
+    _errorId        : RFID_FB_U.ERROR;
     _uiDataRxLength : UINT;
 
 END_VAR
@@ -116,14 +116,15 @@ END_VAR
       </Get>
     </Property>
     <Property Name="ErrorId" Id="{c52d2985-6ba7-0716-2dfd-1a594a1ddd7a}" FolderPath="Status\">
-      <Declaration><![CDATA[PROPERTY ErrorId : ErrorIDMappingLibraryTurck]]></Declaration>
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY ErrorId : REFERENCE TO RFID_FB_U.ERROR]]></Declaration>
       <Get Name="Get" Id="{5b2044d3-69dd-0afa-2375-17078387a94c}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
           <ST><![CDATA[{warning disable C0371}
-ErrorId := _rfidInOut.eErrorID;]]></ST>
+ErrorId Ref= _readDataTask.ErrorId;]]></ST>
         </Implementation>
       </Get>
     </Property>
@@ -158,7 +159,8 @@ _readUidTask.FB_init
       </Implementation>
     </Method>
     <Property Name="IsError" Id="{296913bd-79e4-0a35-04f0-670be6d31523}" FolderPath="Status\">
-      <Declaration><![CDATA[PROPERTY IsError : BOOL]]></Declaration>
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY IsError : BOOL]]></Declaration>
       <Get Name="Get" Id="{2e5dbd4b-6d4c-0006-18b2-afaf9cfb619e}">
         <Declaration><![CDATA[VAR
 END_VAR

@@ -53,9 +53,6 @@
     <Compile Include="POUs\Mock\RfidMockWorking.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Rfid\ErrorIDMappingLibraryTurck.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\Rfid\RfidHead.TcPOU">
       <SubType>Code</SubType>
     </Compile>

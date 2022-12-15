@@ -28,12 +28,87 @@ VAR
         , ReadUid
         , ReadData
         , WriteData
-        , Error);
-    _errorId : ErrorIDMappingLibraryTurck;
-    _index   : INT;
+        , Error
+        , Restore);
+    _index : INT;
+
+    _rfidInOut : RfidInOut;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[
+//28 blocks, 4 bytes each, => 112 bytes max user Memory!
+
+CASE _states OF
+    Idle:
+        _rfidInOut.xbusy := _rfidInOut.xExecute;
+        _rfidInOut.xTP   := TRUE;
+
+        IF _rfidInOut.xbusy THEN
+            _states := Busy;
+        END_IF
+
+    Busy:
+
+        _rfidInOut.uiDataRxLength := _rfidInOut.uiDataLenght;
+        _timeOut(in := _rfidInOut.xbusy, PT := UDINT_TO_TIME(_rfidInOut.udiTimeOut) / _udintToMillis);
+        _executionTimer(in := _rfidInOut.xBusy);
+
+        IF _timeOut.Q THEN
+            _states             := Error;
+            _rfidInOut.eErrorID := RFID_FB_U.ERROR.TIME_OUT;
+            RETURN;
+        ELSIF _executionTimer.Q THEN
+            _states := ElectedMethod;
+        END_IF
+
+    ElectedMethod:
+        IF _rfidInOut.uiDataLenght > 112 THEN
+            _states             := Error;
+            _rfidInOut.eErrorID := RFID_FB_U.ERROR.COMMAND_LENGTH_OUTSIDE_TAG_SPECS;
+            RETURN;
+        END_IF
+
+        IF _rfidInOut.eCommand = RFID_FB_U.COMMAND.INVENTORY THEN
+            FOR _index := 0 TO 7 DO
+                _rfidInOut.myReadData[_index] := _resultUid[_index];
+            END_FOR
+
+            _rfidInOut.xbusy := FALSE;
+            _rfidInOut.xDone := TRUE;
+        ELSIF _rfidInOut.eCommand = RFID_FB_U.COMMAND.READ THEN
+
+            FOR _index := 0 TO UINT_TO_INT(_rfidInOut.uiDataLenght) - 1 DO
+                _rfidInOut.myReadData[_index] := 16#05 + INT_TO_BYTE(_index);
+            END_FOR
+
+            _rfidInOut.xbusy := FALSE;
+            _rfidInOut.xDone := TRUE; //
+
+        ELSIF _rfidInOut.eCommand = RFID_FB_U.COMMAND.WRITE THEN
+            _rfidInOut.xbusy := FALSE;
+            _rfidInOut.xDone := TRUE;
+
+        ELSIF _rfidInOut.eCommand = RFID_FB_U.COMMAND.SET_PERMA_LOCK THEN
+            _rfidInOut.xbusy := FALSE;
+            _rfidInOut.xDone := TRUE;
+        END_IF
+
+    Error:
+        _executionTimer(in := FALSE);
+        _timeOut(in := FALSE);
+        _rfidInOut.xbusy  := FALSE;
+        _rfidInOut.xError := TRUE;
+
+        IF NOT _rfidInOut.xExecute THEN
+            _States := Restore;
+        END_IF
+    Restore:
+        _rfidInOut.xDone    := FALSE;
+        _rfidInOut.xError   := FALSE;
+        _rfidInOut.eErrorID := RFID_FB_U.ERROR.NO_ERROR;
+        _States             := Idle;
+END_CASE
+]]></ST>
     </Implementation>
     <Method Name="Execute" Id="{a817b633-6e13-01d8-1d5a-85f8a1955d32}">
       <Declaration><![CDATA[METHOD Execute
@@ -61,70 +136,25 @@ VAR_INST
     _busy : BOOL;
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[
-//28 blocks, 4 bytes each, => 112 bytes max user Memory!
+        <ST><![CDATA[THIS^();
 
-CASE _states OF
-    Idle:
-        _busy := xExecute;
-        xTP   := TRUE;
+_rfidInOut.xExecute       := xExecute;
+_rfidInOut.xAbort         := xAbort;
+_rfidInOut.udiTimeOut     := udiTimeOut;
+_rfidInOut.eCommand       := eCommand;
+_rfidInOut.udiStartAdress := udiStartAdress;
+_rfidInOut.uiDataLenght   := uiDataLenght;
+_rfidInOut.myWriteData    := myWriteData;
 
-        IF _busy THEN
-            _states := Busy;
-        END_IF
-
-    Busy:
-
-        uiDataRxLength := uiDataLenght;
-        _timeOut(in := _busy, PT := UDINT_TO_TIME(udiTimeOut) / _udintToMillis);
-        _executionTimer(in := _busy);
-
-        IF _timeOut.Q THEN
-            _states  := Error;
-            _errorId := ErrorIDMappingLibraryTurck.TIME_OUT;
-        ELSIF _executionTimer.Q THEN
-            _states := ElectedMethod;
-        END_IF
-
-    ElectedMethod:
-        IF uiDataLenght > 112 THEN
-            _states  := Error;
-            _errorId := ErrorIDMappingLibraryTurck.COMMAND_LENGTH_OUTSIDE_TAG_SPECS;
-        END_IF
-
-        IF eCommand = RFID_FB_U.COMMAND.INVENTORY THEN
-            FOR _index := 0 TO 7 DO
-                myReadData[_index] := _resultUid[_index];
-            END_FOR
-
-            _busy := FALSE;
-            xDone := TRUE;
-        ELSIF eCommand = RFID_FB_U.COMMAND.READ THEN
-            FOR _index := 0 TO UINT_TO_INT(uiDataLenght) - 1 DO
-                myReadData[_index] := 16#05 + INT_TO_BYTE(_index);
-            END_FOR
-
-            _busy := FALSE;
-            xDone := TRUE; //
-
-        ELSIF eCommand = RFID_FB_U.COMMAND.WRITE THEN
-            _busy := FALSE;
-            xDone := TRUE;
-
-        ELSIF eCommand = RFID_FB_U.COMMAND.SET_PERMA_LOCK THEN
-            _busy := FALSE;
-            xDone := TRUE;
-        END_IF
-
-
-    Error:
-        _executionTimer(in := FALSE);
-        _timeOut(in := FALSE);
-        _busy  := FALSE;
-        xError := TRUE;
-END_CASE
-
-xBusy := _busy;]]></ST>
+myReadData          := _rfidInOut.myReadData;
+xDone               := _rfidInOut.xDone;
+xBusy               := _rfidInOut.xBusy;
+xError              := _rfidInOut.xError;
+xAborted            := _rfidInOut.xAborted;
+eErrorID            := _rfidInOut.eErrorID;
+xTP                 := _rfidInOut.xTP;
+xRWHeadNotCOnnected := _rfidInOut.xRWHeadNotCOnnected;
+uiDataRxLength      := _rfidInOut.uiDataRxLength;]]></ST>
       </Implementation>
     </Method>
   </POU>
