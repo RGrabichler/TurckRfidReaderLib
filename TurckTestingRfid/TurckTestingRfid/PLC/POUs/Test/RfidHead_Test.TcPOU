@@ -140,7 +140,7 @@ END_IF]]></ST>
     <Method Name="ExecuteReadDataNoTagInRange_ExpectErrorWithNoTag" Id="{ea59a3f7-4d2f-0eda-320a-232679f4280a}" FolderPath="NoTagError\">
       <Declaration><![CDATA[METHOD PRIVATE ExecuteReadDataNoTagInRange_ExpectErrorWithNoTag
 VAR_INST
-    _udiDataLength : INT := 10;
+    _udiDataLength : INT := 3;
     _result        : BOOL;
     _firstRun      : BOOL := TRUE;
 
@@ -171,8 +171,7 @@ sut_readDataNoTag();
 //Act, Use ReadDataMethod()
 sut_readDataNoTag.ReadDataMethod(_udiDataLength);
 
-IF sut_readDataNoTag.ReadDataTask.Error
-       OR sut_readUidNoTag.ReadDataTask.Done THEN
+IF sut_readDataNoTag.isError THEN
     //Assert
     _result := TRUE;
 
@@ -190,9 +189,9 @@ IF sut_readDataNoTag.ReadDataTask.Error
         , 'Task did not throw Error'
     );
 
-    _errorId         := sut_readDataTooLongString.ErrorId;
-    _expectedErrorId := RFID_FB_U.ERROR.TIME_OUT;
-    AssertEquals(Expected := _expectedErrorId, Actual := _errorId, Message := 'ErrorId must match (TimeOut)!');
+    _errorId         := sut_readDataNoTag.ErrorId;
+    _expectedErrorId := RFID_FB_U.ERROR.COMMAND_NO_TAG_FOUND;
+    AssertEquals(Expected := _expectedErrorId, Actual := _errorId, Message := 'ErrorId must match (No Tag Found)!');
 
     //Act, Restore(), Error shall disappear
     sut_readDataNoTag.Restore();
@@ -203,6 +202,16 @@ IF sut_readDataNoTag.ReadDataTask.Error
         _result
         , sut_readDataNoTag.ReadDataTask.Error
         , 'Reset did not Work, Still Status Error'
+    );
+
+    _errorId         := sut_readDataNoTag.ErrorId;
+    _expectedErrorId := RFID_FB_U.ERROR.NO_ERROR;
+
+    AssertEquals_BOOL
+    (
+        _result
+        , sut_readDataNoTag.ReadDataTask.Error
+        , 'Reset did not Work, ErrorID ahs to be No_Error'
     );
 
     TcUnit.TEST_FINISHED();
@@ -340,11 +349,15 @@ END_IF]]></ST>
       </Implementation>
     </Method>
     <Method Name="ExecuteReadUidsNoTagInRange_ExpectErrorWithNoTag" Id="{8b561928-65c2-0133-08a7-3dd2d20a1a77}" FolderPath="NoTagError\">
-      <Declaration><![CDATA[METHOD Private ExecuteReadUidsNoTagInRange_ExpectErrorWithNoTag
+      <Declaration><![CDATA[METHOD PRIVATE ExecuteReadUidsNoTagInRange_ExpectErrorWithNoTag
 VAR_INST
     _udiDataLength : INT := 10;
     _result        : BOOL;
-    _firstRun      : BOOL := true;
+    _firstRun      : BOOL := TRUE;
+
+    _errorId         : RFID_FB_U.ERROR;
+    _expectedErrorId : RFID_FB_U.ERROR;
+
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[TcUnit.TEST('ExecuteReadUidMethodNoTagInRange_ExpectErrorWithTimeOut');
@@ -385,6 +398,10 @@ IF sut_readUidNoTag.ReadUidMethod().Error
         , sut_readUidNoTag.ReadUidTask.Error
         , 'Task did not throw Error'
     );
+
+    _errorId         := sut_readUidNoTag.ErrorId;
+    _expectedErrorId := RFID_FB_U.ERROR.COMMAND_NO_TAG_FOUND;
+    AssertEquals(Expected := _expectedErrorId, Actual := _errorId, Message := 'ErrorId must match (No Tag Found)!');
 
     //Act, Restore(), Error shall disappear
     sut_readUidNoTag.Restore();

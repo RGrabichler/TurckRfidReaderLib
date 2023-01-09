@@ -117,14 +117,14 @@ END_VAR
     </Property>
     <Property Name="ErrorId" Id="{c52d2985-6ba7-0716-2dfd-1a594a1ddd7a}" FolderPath="Status\">
       <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
-PROPERTY ErrorId : REFERENCE TO RFID_FB_U.ERROR]]></Declaration>
+PROPERTY ErrorId :  RFID_FB_U.ERROR]]></Declaration>
       <Get Name="Get" Id="{5b2044d3-69dd-0afa-2375-17078387a94c}">
         <Declaration><![CDATA[VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
           <ST><![CDATA[{warning disable C0371}
-ErrorId Ref= _readDataTask.ErrorId;]]></ST>
+ErrorId := _readDataTask.ErrorId or _readUidTask.ErrorId;]]></ST>
         </Implementation>
       </Get>
     </Property>

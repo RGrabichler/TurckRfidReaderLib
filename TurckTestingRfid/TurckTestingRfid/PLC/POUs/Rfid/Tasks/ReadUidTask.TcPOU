@@ -18,6 +18,7 @@ VAR
     _uidDataLength : UINT                   := 8;
 
     _eErrorID : RFID_FB_U.ERROR;
+    _noTagFound  : BOOL;
     _uid      : Tc2_System.T_MaxString;
 END_VAR
 ]]></Declaration>
@@ -37,6 +38,7 @@ END_VAR
                         .ToString()
                 );
 
+                _noTagFound := TRUE;
                 ThrowWhen(TRUE);
             ELSE
                 _state := 20;
@@ -79,6 +81,19 @@ END_IF
     </Implementation>
     <Folder Name="Status" Id="{f530cd02-ff3a-0441-19a4-7e82bce8432a}" />
     <Folder Name="TcOpen" Id="{d95a24e3-1b2b-07fd-3418-f9e71d5998b1}" />
+    <Property Name="ErrorId" Id="{1e407204-29be-0058-0e61-c4dedc773dd4}" FolderPath="Status\">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY ErrorId : RFID_FB_U.ERROR]]></Declaration>
+      <Get Name="Get" Id="{a51997d0-3568-0e88-01cc-0cc43c0349e3}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[{warning disable C0371}
+ErrorId := _eErrorID;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
     <Method Name="FB_init" Id="{ae61f780-cede-0a6c-1654-d73b277fd50f}">
       <Declaration><![CDATA[METHOD PUBLIC FB_init : BOOL
 VAR_INPUT
@@ -142,7 +157,13 @@ METHOD PROTECTED OnError
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[{warning disable C0371}
-_eErrorID := rfidInOut.eErrorID;
+
+IF _noTagFound THEN
+    _eErrorID := RFID_FB_U.ERROR.COMMAND_NO_TAG_FOUND;
+ELSE
+    _eErrorID := rfidInOut.eErrorID;
+END_IF
+
 THIS^.Messenger.Build().Append('Rfid Schreib/Lesekopf Fehler : ').Append(to_string(THIS^._eErrorID)).As().AsError();]]></ST>
       </Implementation>
     </Method>
@@ -183,7 +204,7 @@ METHOD Restore : ITcoRestorable
 RfidInOut.eCommand := RFID_FB_U.COMMAND.IDLE;
 RfidInOut.xExecute := FALSE;
 RfidInOut.xAbort   := FALSE;
-//THIS^.rfidInOut.eErrorID := ErrorIDMappingLibraryTurck.NO_ERROR;
+_eErrorID          := RFID_FB_U.ERROR.NO_ERROR;
 SUPER^.Restore();]]></ST>
       </Implementation>
     </Method>
