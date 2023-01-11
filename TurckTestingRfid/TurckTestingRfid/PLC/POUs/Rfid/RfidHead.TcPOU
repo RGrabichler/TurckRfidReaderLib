@@ -9,6 +9,7 @@ VAR
     _itfRfidHeadWrapper : IRfidHeadWrapper;
     _readUidTask        : ReadUidTask(THIS^);
     _readDataTask       : ReadDataTask(THIS^);
+    _writeDataTask      : WriteDataTask(THIS^);
 
     _rfidInOut      : RfidInOut;
     _errorId        : RFID_FB_U.ERROR;
@@ -21,6 +22,8 @@ END_VAR
 
 _readUidTask(rfidInOut := _rfidInOut, ActionDesc := '<#ReadUid#>');
 _readDataTask(rfidInOut := _rfidInOut, ActionDesc := '<#ReadData#>');
+_writeDataTask(rfidInOut := _rfidInOut, ActionDesc := '<#WriteData#>');
+
 //wichtig beim schreiben, length mitgeben
 //bei Locked muss TO eingetellt werden, sonst kein Fehler
 //Case state of
@@ -202,7 +205,8 @@ IsError := this^.ReadUidTask.Error or this^.ReadDataTask.Error;]]></ST>
     <Method Name="ReadDataMethod" Id="{ca54f775-5c7d-0798-3c67-bb1974437feb}" FolderPath="Operations\">
       <Declaration><![CDATA[METHOD ReadDataMethod : TcoCore.ITcoTaskStatus
 VAR_INPUT
-    udiDataLength : UINT;
+    udiDataLength : UINT; //Length of the Data to read
+    MemoryAddr    : BYTE; // Memory Adress, from which to start
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF (ReadDataTask <> 0) THEN
@@ -287,6 +291,44 @@ END_VAR
 ]]></Declaration>
         <Implementation>
           <ST><![CDATA[Uid := _readUidTask.Uid;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="WriteDataMethod" Id="{19758728-f9ba-0b82-3ea1-8ece3d23c4f5}" FolderPath="Operations\">
+      <Declaration><![CDATA[METHOD WriteDataMethod : TcoCore.ITcoTaskStatus
+VAR_IN_OUT
+    WriteData : ARRAY[*] OF BYTE; //Data to write to Tag
+END_VAR
+VAR_INPUT
+    MemoryAddr : BYTE; // Memory Adress, from which to start
+END_VAR
+VAR_INST
+    _i : DINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF (WriteDataTask <> 0) THEN
+    _rfidInOut.uiDataLenght := SIZEOF(WriteData);
+
+    FOR _i := LOWER_BOUND(WriteData, 1) TO UPPER_BOUND(WriteData, 1) DO
+        _rfidInOut.myWriteData[_i] := WriteData[_i];
+    END_FOR
+
+    _uiDataRxLength := _rfidInOut.uiDataRxLength;
+    WriteDataMethod := WriteDataTask.Invoke();
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="WriteDataTask" Id="{a169d8ec-c089-0e23-0c7c-9e7cde73e5bf}" FolderPath="Tasks\">
+      <Declaration><![CDATA[PROPERTY WriteDataTask : TcoCore.ITcoTask
+]]></Declaration>
+      <Get Name="Get" Id="{8a636d2d-ef4c-0e4a-2070-06d741f758bf}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[WriteDataTask := _writeDataTask;
+]]></ST>
         </Implementation>
       </Get>
     </Property>

@@ -59,6 +59,9 @@
     <Compile Include="POUs\Rfid\RfidInOut.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Rfid\Tasks\WriteDataTask.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Rfid\Tasks\ReadUidTask.TcPOU">
       <SubType>Code</SubType>
     </Compile>
