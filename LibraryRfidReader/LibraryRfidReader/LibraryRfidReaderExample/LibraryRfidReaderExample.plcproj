@@ -1,0 +1,129 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FileVersion>1.0.0.0</FileVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{fd342a83-5c09-43ac-9622-2f479bef4a6a}</ProjectGuid>
+    <SubObjectsSortedByName>True</SubObjectsSortedByName>
+    <DownloadApplicationInfo>true</DownloadApplicationInfo>
+    <WriteProductVersion>true</WriteProductVersion>
+    <GenerateTpy>false</GenerateTpy>
+    <Name>LibraryRfidReaderExample</Name>
+    <ProgramVersion>3.1.4023.0</ProgramVersion>
+    <Application>{abb4a673-ec7b-42e7-895c-602c44fda822}</Application>
+    <TypeSystem>{3a9be9c7-90fb-413b-a8e9-093470596ff3}</TypeSystem>
+    <Implicit_Task_Info>{af904b21-05bc-46d4-b5d8-bf0340e0f8ea}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{7fe9930f-242b-4d74-86c6-c9e46f7729c6}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{221d72bf-0081-4edb-abcc-32a718471ca8}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{e98fe203-38e6-4560-a159-0233450aebf2}</LibraryReferences>
+    <Company>Gema</Company>
+    <Released>false</Released>
+    <Title>Test</Title>
+    <ProjectVersion>0.1.0.0</ProjectVersion>
+    <Placeholder>PLC</Placeholder>
+    <Author>RG</Author>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\AppContext.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\MainStation.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DUTs" />
+    <Folder Include="GVLs" />
+    <Folder Include="VISUs" />
+    <Folder Include="POUs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderReference Include="RfidReader">
+      <DefaultResolution>RfidReader, * (Gema)</DefaultResolution>
+      <Namespace>RG</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_Standard">
+      <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Standard</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_System">
+      <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_System</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_Module">
+      <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_Module</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="TcoCore">
+      <DefaultResolution>TcoCore, 0.11.0.23 (Vortex.Library)</DefaultResolution>
+      <Namespace>TcoCore</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="TcoData">
+      <DefaultResolution>TcoData, 0.11.0.23 (Vortex.Library)</DefaultResolution>
+      <Namespace>TcoData</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="TcoDrivesBeckhoff">
+      <DefaultResolution>TcoDrivesBeckhoff, 0.11.0.23 (Vortex.Library)</DefaultResolution>
+      <Namespace>TcoDrivesBeckhoff</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="TcoElements">
+      <DefaultResolution>TcoElements, 0.11.0.23 (Vortex.Library)</DefaultResolution>
+      <Namespace>TcoElements</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="TcoIo">
+      <DefaultResolution>TcoIo, 0.11.0.23 (Vortex.Library)</DefaultResolution>
+      <Namespace>TcoIo</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="TcoPneumatics">
+      <DefaultResolution>TcoPneumatics, 0.11.0.23 (Vortex.Library)</DefaultResolution>
+    </PlaceholderReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderResolution Include="TcoCore">
+      <Resolution>TcoCore, 0.11.0.23 (Vortex.Library)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="TcoData">
+      <Resolution>TcoData, 0.11.0.23 (Vortex.Library)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="TcoDrivesBeckhoff">
+      <Resolution>TcoDrivesBeckhoff, 0.11.0.23 (Vortex.Library)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="TcoElements">
+      <Resolution>TcoElements, 0.11.0.23 (Vortex.Library)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="TcoIo">
+      <Resolution>TcoIo, 0.11.0.23 (Vortex.Library)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="TcoPneumatics">
+      <Resolution>TcoPneumatics, 0.11.0.23 (Vortex.Library)</Resolution>
+    </PlaceholderResolution>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LibraryRfidReaderExample.tmc">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
+  <ProjectExtensions>
+    <PlcProjectOptions>
+      <XmlArchive>
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
+      <v n="Name">"&lt;ProjectRoot&gt;"</v>
+      <d n="SubKeys" t="Hashtable" />
+      <d n="Values" t="Hashtable" />
+    </o>
+        </Data>
+        <TypeList>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
+    </PlcProjectOptions>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,4008 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.44" ClassName="CFlbTermDef" SubType="9099">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
+			<BitSize>1</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>1</Elements>
+			</ArrayInfo>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424de6000000000000007600000028000000100000000e000000010004000000000070000000000000000000000010000000000000000000000000008000008000000080800080000000800080008080000080808000c0c0c0000000ff0000ff000004cefc00ff000000ff00ff00ffff0000ffffff00bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb00000bbbbbbbbbbb00000bbbbbbbbbbb00000bbbbbbbb00000000000bbbbb00000000000bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</ImageData>
+	</ImageDatas>
+	<Box Id="1" BoxType="9099" BoxFlags="#x00000020">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<EtherCAT SlaveType="3" AdsServerAddress="056d1ca00302e903" PdiType="#x3c80" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="35" EoeType="1" FoeType="1" VendorId="#x0000009c" ProductCode="#x05f5ec6d" RevisionNo="#x00000001" InfoDataAddr="true" InfoDataNetId="true" TimeoutStateChange1="5000" TimeoutStateChange2="150" TimeoutStateChange3="150" TimeoutStateChange4="150" GenerateOwnNetId="true" InitializeOwnNetId="true" PortPhys="17" IdentificationAdo="308" Type="TBEC-LL-4RFID-8DXP" Desc="TBEC-LL-4RFID-8DXP">
+			<SyncMan>001080002600010001000000800080008000001026010000</SyncMan>
+			<SyncMan>801080002200010002000000800080008000801022010000</SyncMan>
+			<SyncMan>001230026400010003000000000000000000001264010000</SyncMan>
+			<SyncMan>002230022000010004000000000000000000002220010000</SyncMan>
+			<Fmmu>0000000000000000001200020100000001000000000000000000000000000000</Fmmu>
+			<Fmmu>0000000000000000002200010100000002000000000000000000000000000000</Fmmu>
+			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
+			<SwitchPortData>00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</SwitchPortData>
+			<BootStrapData>0010800080108000</BootStrapData>
+			<MBoxUserCmdData>00400300090000001a00000003000000000000000000000000000000000000002000f80101000000004465616374697661746520616c6c20646961676e6f737469637300</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000002500000003000000000000000000000000000000000000002000f80201000000004f7574707574206265686176696f7220617420636f6d6d756e69636174696f6e206c6f737300</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000001400000003000000000000000000000000000000000000002000f8030100000000446561637469766174652057656273657276657200</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000002500000003000000000000000000000000000000000000002000f80601000000014c4544206265686176696f7220285057522920617420563220756e646572766f6c7461676500</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000002300000003000000000000000000000000000000000000002000f807010000000044656163746976617465206c6f616420766f6c7461676520646961676e6f737469637300</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000002300000003000000000000000000000000000000000000002000f80e01000000004465616374697661746520492f4f2d415353495354414e5420466f726365204d6f646500</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000c000000140000000300000001000903000000000000000000000000200050000400000093a42800436f6e66696775726564204d6f64756c6520494400</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000900000013000000030000000100090300000000000000000000000020008002010000000048463a2053656c65637420546167207479706500</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000a0000001600000003000000010009030000000000000000000000002000800302000000c80048463a204279706173732074696d6520282a316d732900</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000001e00000003000000010009030000000000000000000000002000800b010000000048463a204175746f74756e696e6720726561642f7772697465206865616400</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000002000000003000000010009030000000000000000000000002000800c01000000004465616374697661746520484620646574756e656420646961676e6f7374696300</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000001600000003000000010009030000000000000000000000002000801301000000004465616374697661746520646961676e6f737469637300</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000000d000000030000000100090300000000000000000000000020008014010000000048463a2049646c65206d6f646500</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000001a00000003000000010009030000000000000000000000002000801d0100000002436f6d6d616e642072657472696573206174206661696c75726500</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000c000000140000000300000002000903000000000000000000000000201050000400000080008400436f6e66696775726564204d6f64756c6520494400</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000c000000140000000300000003000903000000000000000000000000202050000400000080100200436f6e66696775726564204d6f64756c6520494400</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000c000000140000000300000004000903000000000000000000000000203050000400000093a42800436f6e66696775726564204d6f64756c6520494400</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000900000013000000030000000400090300000000000000000000000020308002010000000048463a2053656c65637420546167207479706500</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000a0000001600000003000000040009030000000000000000000000002030800302000000c80048463a204279706173732074696d6520282a316d732900</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000001e00000003000000040009030000000000000000000000002030800b010000000048463a204175746f74756e696e6720726561642f7772697465206865616400</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000002000000003000000040009030000000000000000000000002030800c01000000004465616374697661746520484620646574756e656420646961676e6f7374696300</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000001600000003000000040009030000000000000000000000002030801301000000004465616374697661746520646961676e6f737469637300</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000000d000000030000000400090300000000000000000000000020308014010000000048463a2049646c65206d6f646500</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000001a00000003000000040009030000000000000000000000002030801d0100000002436f6d6d616e642072657472696573206174206661696c75726500</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000c000000140000000300000005000903000000000000000000000000204050000400000080008400436f6e66696775726564204d6f64756c6520494400</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000c000000140000000300000006000903000000000000000000000000205050000400000080100200436f6e66696775726564204d6f64756c6520494400</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000c000000140000000300000007000903000000000000000000000000206050000400000093a42800436f6e66696775726564204d6f64756c6520494400</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000900000013000000030000000700090300000000000000000000000020608002010000000048463a2053656c65637420546167207479706500</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000a0000001600000003000000070009030000000000000000000000002060800302000000c80048463a204279706173732074696d6520282a316d732900</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000001e00000003000000070009030000000000000000000000002060800b010000000048463a204175746f74756e696e6720726561642f7772697465206865616400</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000002000000003000000070009030000000000000000000000002060800c01000000004465616374697661746520484620646574756e656420646961676e6f7374696300</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000001600000003000000070009030000000000000000000000002060801301000000004465616374697661746520646961676e6f737469637300</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000000d000000030000000700090300000000000000000000000020608014010000000048463a2049646c65206d6f646500</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000001a00000003000000070009030000000000000000000000002060801d0100000002436f6d6d616e642072657472696573206174206661696c75726500</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000c000000140000000300000008000903000000000000000000000000207050000400000080008400436f6e66696775726564204d6f64756c6520494400</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000c000000140000000300000009000903000000000000000000000000208050000400000080100200436f6e66696775726564204d6f64756c6520494400</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000c00000014000000030000000a000903000000000000000000000000209050000400000093a42800436f6e66696775726564204d6f64756c6520494400</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000900000013000000030000000a00090300000000000000000000000020908002010000000048463a2053656c65637420546167207479706500</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000a00000016000000030000000a0009030000000000000000000000002090800302000000c80048463a204279706173732074696d6520282a316d732900</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000001e000000030000000a0009030000000000000000000000002090800b010000000048463a204175746f74756e696e6720726561642f7772697465206865616400</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000900000020000000030000000a0009030000000000000000000000002090800c01000000004465616374697661746520484620646574756e656420646961676e6f7374696300</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000900000016000000030000000a0009030000000000000000000000002090801301000000004465616374697661746520646961676e6f737469637300</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000000d000000030000000a00090300000000000000000000000020908014010000000048463a2049646c65206d6f646500</MBoxUserCmdData>
+			<MBoxUserCmdData>00400300090000001a000000030000000a0009030000000000000000000000002090801d0100000002436f6d6d616e642072657472696573206174206661696c75726500</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000c00000014000000030000000b00090300000000000000000000000020a050000400000080008400436f6e66696775726564204d6f64756c6520494400</MBoxUserCmdData>
+			<MBoxUserCmdData>004003000c00000014000000030000000c00090300000000000000000000000020b050000400000080100200436f6e66696775726564204d6f64756c6520494400</MBoxUserCmdData>
+			<Pdo Name="Inputs HF compact" Index="#x1a00" Flags="#x0291" SyncMan="3">
+				<Entry Name="Resp__Response code" Index="#x6000" Sub="#x01" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Resp__Loop counter" Index="#x6000" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Tag present at r/w head" Index="#x6000" Sub="#x0b" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Antenna detuned at HF read/write head" Index="#x6000" Sub="#x0f" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Parameter not supported by read/write head" Index="#x6000" Sub="#x10" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Error reported by read/write head" Index="#x6000" Sub="#x11" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Not connected to read/write head" Index="#x6000" Sub="#x12" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__HF r/w head switched on" Index="#x6000" Sub="#x13" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Continuous mode active" Index="#x6000" Sub="#x14" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Length" Index="#x6000" Sub="#x1b" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Resp__Error code" Index="#x6000" Sub="#x1c" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Resp__Tag counter" Index="#x6000" Sub="#x1d" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Outputs HF compact" Index="#x1600" InOut="1" Flags="#x0291" SyncMan="2">
+				<Entry Name="Cmd__Command code" Index="#x7000" Sub="#x01" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Cmd__Loop counter" Index="#x7000" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__Start address" Index="#x7000" Sub="#x0b" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Cmd__Length" Index="#x7000" Sub="#x0c" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Cmd__Length of UID/EPC" Index="#x7000" Sub="#x0d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Inputs 128 Byte read" Index="#x1a10" Flags="#x0291" SyncMan="3">
+				<Entry Name="RD__Read data byte 0" Index="#x6010" Sub="#x01" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 1" Index="#x6010" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 2" Index="#x6010" Sub="#x03" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 3" Index="#x6010" Sub="#x04" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 4" Index="#x6010" Sub="#x05" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 5" Index="#x6010" Sub="#x06" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 6" Index="#x6010" Sub="#x07" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 7" Index="#x6010" Sub="#x08" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 8" Index="#x6010" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 9" Index="#x6010" Sub="#x0a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 10" Index="#x6010" Sub="#x0b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 11" Index="#x6010" Sub="#x0c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 12" Index="#x6010" Sub="#x0d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 13" Index="#x6010" Sub="#x0e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 14" Index="#x6010" Sub="#x0f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 15" Index="#x6010" Sub="#x10" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 16" Index="#x6010" Sub="#x11" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 17" Index="#x6010" Sub="#x12" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 18" Index="#x6010" Sub="#x13" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 19" Index="#x6010" Sub="#x14" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 20" Index="#x6010" Sub="#x15" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 21" Index="#x6010" Sub="#x16" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 22" Index="#x6010" Sub="#x17" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 23" Index="#x6010" Sub="#x18" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 24" Index="#x6010" Sub="#x19" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 25" Index="#x6010" Sub="#x1a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 26" Index="#x6010" Sub="#x1b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 27" Index="#x6010" Sub="#x1c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 28" Index="#x6010" Sub="#x1d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 29" Index="#x6010" Sub="#x1e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 30" Index="#x6010" Sub="#x1f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 31" Index="#x6010" Sub="#x20" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 32" Index="#x6010" Sub="#x21" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 33" Index="#x6010" Sub="#x22" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 34" Index="#x6010" Sub="#x23" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 35" Index="#x6010" Sub="#x24" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 36" Index="#x6010" Sub="#x25" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 37" Index="#x6010" Sub="#x26" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 38" Index="#x6010" Sub="#x27" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 39" Index="#x6010" Sub="#x28" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 40" Index="#x6010" Sub="#x29" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 41" Index="#x6010" Sub="#x2a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 42" Index="#x6010" Sub="#x2b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 43" Index="#x6010" Sub="#x2c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 44" Index="#x6010" Sub="#x2d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 45" Index="#x6010" Sub="#x2e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 46" Index="#x6010" Sub="#x2f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 47" Index="#x6010" Sub="#x30" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 48" Index="#x6010" Sub="#x31" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 49" Index="#x6010" Sub="#x32" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 50" Index="#x6010" Sub="#x33" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 51" Index="#x6010" Sub="#x34" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 52" Index="#x6010" Sub="#x35" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 53" Index="#x6010" Sub="#x36" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 54" Index="#x6010" Sub="#x37" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 55" Index="#x6010" Sub="#x38" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 56" Index="#x6010" Sub="#x39" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 57" Index="#x6010" Sub="#x3a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 58" Index="#x6010" Sub="#x3b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 59" Index="#x6010" Sub="#x3c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 60" Index="#x6010" Sub="#x3d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 61" Index="#x6010" Sub="#x3e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 62" Index="#x6010" Sub="#x3f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 63" Index="#x6010" Sub="#x40" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 64" Index="#x6010" Sub="#x41" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 65" Index="#x6010" Sub="#x42" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 66" Index="#x6010" Sub="#x43" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 67" Index="#x6010" Sub="#x44" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 68" Index="#x6010" Sub="#x45" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 69" Index="#x6010" Sub="#x46" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 70" Index="#x6010" Sub="#x47" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 71" Index="#x6010" Sub="#x48" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 72" Index="#x6010" Sub="#x49" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 73" Index="#x6010" Sub="#x4a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 74" Index="#x6010" Sub="#x4b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 75" Index="#x6010" Sub="#x4c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 76" Index="#x6010" Sub="#x4d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 77" Index="#x6010" Sub="#x4e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 78" Index="#x6010" Sub="#x4f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 79" Index="#x6010" Sub="#x50" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 80" Index="#x6010" Sub="#x51" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 81" Index="#x6010" Sub="#x52" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 82" Index="#x6010" Sub="#x53" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 83" Index="#x6010" Sub="#x54" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 84" Index="#x6010" Sub="#x55" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 85" Index="#x6010" Sub="#x56" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 86" Index="#x6010" Sub="#x57" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 87" Index="#x6010" Sub="#x58" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 88" Index="#x6010" Sub="#x59" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 89" Index="#x6010" Sub="#x5a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 90" Index="#x6010" Sub="#x5b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 91" Index="#x6010" Sub="#x5c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 92" Index="#x6010" Sub="#x5d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 93" Index="#x6010" Sub="#x5e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 94" Index="#x6010" Sub="#x5f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 95" Index="#x6010" Sub="#x60" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 96" Index="#x6010" Sub="#x61" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 97" Index="#x6010" Sub="#x62" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 98" Index="#x6010" Sub="#x63" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 99" Index="#x6010" Sub="#x64" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 100" Index="#x6010" Sub="#x65" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 101" Index="#x6010" Sub="#x66" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 102" Index="#x6010" Sub="#x67" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 103" Index="#x6010" Sub="#x68" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 104" Index="#x6010" Sub="#x69" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 105" Index="#x6010" Sub="#x6a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 106" Index="#x6010" Sub="#x6b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 107" Index="#x6010" Sub="#x6c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 108" Index="#x6010" Sub="#x6d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 109" Index="#x6010" Sub="#x6e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 110" Index="#x6010" Sub="#x6f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 111" Index="#x6010" Sub="#x70" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 112" Index="#x6010" Sub="#x71" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 113" Index="#x6010" Sub="#x72" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 114" Index="#x6010" Sub="#x73" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 115" Index="#x6010" Sub="#x74" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 116" Index="#x6010" Sub="#x75" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 117" Index="#x6010" Sub="#x76" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 118" Index="#x6010" Sub="#x77" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 119" Index="#x6010" Sub="#x78" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 120" Index="#x6010" Sub="#x79" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 121" Index="#x6010" Sub="#x7a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 122" Index="#x6010" Sub="#x7b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 123" Index="#x6010" Sub="#x7c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 124" Index="#x6010" Sub="#x7d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 125" Index="#x6010" Sub="#x7e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 126" Index="#x6010" Sub="#x7f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 127" Index="#x6010" Sub="#x80" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Outputs 128 Byte write" Index="#x1620" InOut="1" Flags="#x0291" SyncMan="2">
+				<Entry Name="WD__Write data byte 0" Index="#x7020" Sub="#x01" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 1" Index="#x7020" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 2" Index="#x7020" Sub="#x03" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 3" Index="#x7020" Sub="#x04" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 4" Index="#x7020" Sub="#x05" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 5" Index="#x7020" Sub="#x06" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 6" Index="#x7020" Sub="#x07" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 7" Index="#x7020" Sub="#x08" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 8" Index="#x7020" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 9" Index="#x7020" Sub="#x0a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 10" Index="#x7020" Sub="#x0b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 11" Index="#x7020" Sub="#x0c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 12" Index="#x7020" Sub="#x0d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 13" Index="#x7020" Sub="#x0e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 14" Index="#x7020" Sub="#x0f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 15" Index="#x7020" Sub="#x10" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 16" Index="#x7020" Sub="#x11" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 17" Index="#x7020" Sub="#x12" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 18" Index="#x7020" Sub="#x13" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 19" Index="#x7020" Sub="#x14" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 20" Index="#x7020" Sub="#x15" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 21" Index="#x7020" Sub="#x16" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 22" Index="#x7020" Sub="#x17" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 23" Index="#x7020" Sub="#x18" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 24" Index="#x7020" Sub="#x19" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 25" Index="#x7020" Sub="#x1a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 26" Index="#x7020" Sub="#x1b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 27" Index="#x7020" Sub="#x1c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 28" Index="#x7020" Sub="#x1d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 29" Index="#x7020" Sub="#x1e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 30" Index="#x7020" Sub="#x1f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 31" Index="#x7020" Sub="#x20" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 32" Index="#x7020" Sub="#x21" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 33" Index="#x7020" Sub="#x22" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 34" Index="#x7020" Sub="#x23" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 35" Index="#x7020" Sub="#x24" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 36" Index="#x7020" Sub="#x25" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 37" Index="#x7020" Sub="#x26" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 38" Index="#x7020" Sub="#x27" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 39" Index="#x7020" Sub="#x28" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 40" Index="#x7020" Sub="#x29" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 41" Index="#x7020" Sub="#x2a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 42" Index="#x7020" Sub="#x2b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 43" Index="#x7020" Sub="#x2c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 44" Index="#x7020" Sub="#x2d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 45" Index="#x7020" Sub="#x2e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 46" Index="#x7020" Sub="#x2f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 47" Index="#x7020" Sub="#x30" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 48" Index="#x7020" Sub="#x31" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 49" Index="#x7020" Sub="#x32" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 50" Index="#x7020" Sub="#x33" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 51" Index="#x7020" Sub="#x34" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 52" Index="#x7020" Sub="#x35" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 53" Index="#x7020" Sub="#x36" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 54" Index="#x7020" Sub="#x37" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 55" Index="#x7020" Sub="#x38" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 56" Index="#x7020" Sub="#x39" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 57" Index="#x7020" Sub="#x3a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 58" Index="#x7020" Sub="#x3b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 59" Index="#x7020" Sub="#x3c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 60" Index="#x7020" Sub="#x3d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 61" Index="#x7020" Sub="#x3e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 62" Index="#x7020" Sub="#x3f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 63" Index="#x7020" Sub="#x40" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 64" Index="#x7020" Sub="#x41" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 65" Index="#x7020" Sub="#x42" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 66" Index="#x7020" Sub="#x43" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 67" Index="#x7020" Sub="#x44" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 68" Index="#x7020" Sub="#x45" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 69" Index="#x7020" Sub="#x46" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 70" Index="#x7020" Sub="#x47" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 71" Index="#x7020" Sub="#x48" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 72" Index="#x7020" Sub="#x49" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 73" Index="#x7020" Sub="#x4a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 74" Index="#x7020" Sub="#x4b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 75" Index="#x7020" Sub="#x4c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 76" Index="#x7020" Sub="#x4d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 77" Index="#x7020" Sub="#x4e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 78" Index="#x7020" Sub="#x4f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 79" Index="#x7020" Sub="#x50" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 80" Index="#x7020" Sub="#x51" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 81" Index="#x7020" Sub="#x52" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 82" Index="#x7020" Sub="#x53" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 83" Index="#x7020" Sub="#x54" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 84" Index="#x7020" Sub="#x55" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 85" Index="#x7020" Sub="#x56" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 86" Index="#x7020" Sub="#x57" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 87" Index="#x7020" Sub="#x58" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 88" Index="#x7020" Sub="#x59" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 89" Index="#x7020" Sub="#x5a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 90" Index="#x7020" Sub="#x5b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 91" Index="#x7020" Sub="#x5c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 92" Index="#x7020" Sub="#x5d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 93" Index="#x7020" Sub="#x5e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 94" Index="#x7020" Sub="#x5f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 95" Index="#x7020" Sub="#x60" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 96" Index="#x7020" Sub="#x61" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 97" Index="#x7020" Sub="#x62" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 98" Index="#x7020" Sub="#x63" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 99" Index="#x7020" Sub="#x64" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 100" Index="#x7020" Sub="#x65" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 101" Index="#x7020" Sub="#x66" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 102" Index="#x7020" Sub="#x67" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 103" Index="#x7020" Sub="#x68" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 104" Index="#x7020" Sub="#x69" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 105" Index="#x7020" Sub="#x6a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 106" Index="#x7020" Sub="#x6b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 107" Index="#x7020" Sub="#x6c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 108" Index="#x7020" Sub="#x6d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 109" Index="#x7020" Sub="#x6e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 110" Index="#x7020" Sub="#x6f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 111" Index="#x7020" Sub="#x70" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 112" Index="#x7020" Sub="#x71" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 113" Index="#x7020" Sub="#x72" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 114" Index="#x7020" Sub="#x73" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 115" Index="#x7020" Sub="#x74" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 116" Index="#x7020" Sub="#x75" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 117" Index="#x7020" Sub="#x76" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 118" Index="#x7020" Sub="#x77" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 119" Index="#x7020" Sub="#x78" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 120" Index="#x7020" Sub="#x79" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 121" Index="#x7020" Sub="#x7a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 122" Index="#x7020" Sub="#x7b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 123" Index="#x7020" Sub="#x7c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 124" Index="#x7020" Sub="#x7d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 125" Index="#x7020" Sub="#x7e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 126" Index="#x7020" Sub="#x7f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 127" Index="#x7020" Sub="#x80" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Inputs HF compact" Index="#x1a30" Flags="#x0291" SyncMan="3">
+				<Entry Name="Resp__Response code" Index="#x6030" Sub="#x01" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Resp__Loop counter" Index="#x6030" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Tag present at r/w head" Index="#x6030" Sub="#x0b" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Antenna detuned at HF read/write head" Index="#x6030" Sub="#x0f" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Parameter not supported by read/write head" Index="#x6030" Sub="#x10" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Error reported by read/write head" Index="#x6030" Sub="#x11" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Not connected to read/write head" Index="#x6030" Sub="#x12" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__HF r/w head switched on" Index="#x6030" Sub="#x13" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Continuous mode active" Index="#x6030" Sub="#x14" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Length" Index="#x6030" Sub="#x1b" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Resp__Error code" Index="#x6030" Sub="#x1c" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Resp__Tag counter" Index="#x6030" Sub="#x1d" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Outputs HF compact" Index="#x1630" InOut="1" Flags="#x0291" SyncMan="2">
+				<Entry Name="Cmd__Command code" Index="#x7030" Sub="#x01" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Cmd__Loop counter" Index="#x7030" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__Start address" Index="#x7030" Sub="#x0b" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Cmd__Length" Index="#x7030" Sub="#x0c" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Cmd__Length of UID/EPC" Index="#x7030" Sub="#x0d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Inputs 128 Byte read" Index="#x1a40" Flags="#x0291" SyncMan="3">
+				<Entry Name="RD__Read data byte 0" Index="#x6040" Sub="#x01" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 1" Index="#x6040" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 2" Index="#x6040" Sub="#x03" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 3" Index="#x6040" Sub="#x04" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 4" Index="#x6040" Sub="#x05" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 5" Index="#x6040" Sub="#x06" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 6" Index="#x6040" Sub="#x07" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 7" Index="#x6040" Sub="#x08" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 8" Index="#x6040" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 9" Index="#x6040" Sub="#x0a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 10" Index="#x6040" Sub="#x0b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 11" Index="#x6040" Sub="#x0c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 12" Index="#x6040" Sub="#x0d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 13" Index="#x6040" Sub="#x0e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 14" Index="#x6040" Sub="#x0f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 15" Index="#x6040" Sub="#x10" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 16" Index="#x6040" Sub="#x11" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 17" Index="#x6040" Sub="#x12" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 18" Index="#x6040" Sub="#x13" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 19" Index="#x6040" Sub="#x14" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 20" Index="#x6040" Sub="#x15" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 21" Index="#x6040" Sub="#x16" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 22" Index="#x6040" Sub="#x17" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 23" Index="#x6040" Sub="#x18" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 24" Index="#x6040" Sub="#x19" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 25" Index="#x6040" Sub="#x1a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 26" Index="#x6040" Sub="#x1b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 27" Index="#x6040" Sub="#x1c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 28" Index="#x6040" Sub="#x1d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 29" Index="#x6040" Sub="#x1e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 30" Index="#x6040" Sub="#x1f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 31" Index="#x6040" Sub="#x20" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 32" Index="#x6040" Sub="#x21" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 33" Index="#x6040" Sub="#x22" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 34" Index="#x6040" Sub="#x23" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 35" Index="#x6040" Sub="#x24" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 36" Index="#x6040" Sub="#x25" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 37" Index="#x6040" Sub="#x26" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 38" Index="#x6040" Sub="#x27" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 39" Index="#x6040" Sub="#x28" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 40" Index="#x6040" Sub="#x29" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 41" Index="#x6040" Sub="#x2a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 42" Index="#x6040" Sub="#x2b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 43" Index="#x6040" Sub="#x2c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 44" Index="#x6040" Sub="#x2d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 45" Index="#x6040" Sub="#x2e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 46" Index="#x6040" Sub="#x2f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 47" Index="#x6040" Sub="#x30" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 48" Index="#x6040" Sub="#x31" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 49" Index="#x6040" Sub="#x32" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 50" Index="#x6040" Sub="#x33" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 51" Index="#x6040" Sub="#x34" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 52" Index="#x6040" Sub="#x35" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 53" Index="#x6040" Sub="#x36" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 54" Index="#x6040" Sub="#x37" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 55" Index="#x6040" Sub="#x38" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 56" Index="#x6040" Sub="#x39" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 57" Index="#x6040" Sub="#x3a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 58" Index="#x6040" Sub="#x3b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 59" Index="#x6040" Sub="#x3c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 60" Index="#x6040" Sub="#x3d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 61" Index="#x6040" Sub="#x3e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 62" Index="#x6040" Sub="#x3f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 63" Index="#x6040" Sub="#x40" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 64" Index="#x6040" Sub="#x41" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 65" Index="#x6040" Sub="#x42" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 66" Index="#x6040" Sub="#x43" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 67" Index="#x6040" Sub="#x44" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 68" Index="#x6040" Sub="#x45" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 69" Index="#x6040" Sub="#x46" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 70" Index="#x6040" Sub="#x47" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 71" Index="#x6040" Sub="#x48" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 72" Index="#x6040" Sub="#x49" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 73" Index="#x6040" Sub="#x4a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 74" Index="#x6040" Sub="#x4b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 75" Index="#x6040" Sub="#x4c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 76" Index="#x6040" Sub="#x4d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 77" Index="#x6040" Sub="#x4e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 78" Index="#x6040" Sub="#x4f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 79" Index="#x6040" Sub="#x50" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 80" Index="#x6040" Sub="#x51" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 81" Index="#x6040" Sub="#x52" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 82" Index="#x6040" Sub="#x53" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 83" Index="#x6040" Sub="#x54" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 84" Index="#x6040" Sub="#x55" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 85" Index="#x6040" Sub="#x56" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 86" Index="#x6040" Sub="#x57" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 87" Index="#x6040" Sub="#x58" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 88" Index="#x6040" Sub="#x59" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 89" Index="#x6040" Sub="#x5a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 90" Index="#x6040" Sub="#x5b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 91" Index="#x6040" Sub="#x5c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 92" Index="#x6040" Sub="#x5d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 93" Index="#x6040" Sub="#x5e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 94" Index="#x6040" Sub="#x5f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 95" Index="#x6040" Sub="#x60" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 96" Index="#x6040" Sub="#x61" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 97" Index="#x6040" Sub="#x62" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 98" Index="#x6040" Sub="#x63" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 99" Index="#x6040" Sub="#x64" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 100" Index="#x6040" Sub="#x65" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 101" Index="#x6040" Sub="#x66" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 102" Index="#x6040" Sub="#x67" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 103" Index="#x6040" Sub="#x68" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 104" Index="#x6040" Sub="#x69" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 105" Index="#x6040" Sub="#x6a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 106" Index="#x6040" Sub="#x6b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 107" Index="#x6040" Sub="#x6c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 108" Index="#x6040" Sub="#x6d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 109" Index="#x6040" Sub="#x6e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 110" Index="#x6040" Sub="#x6f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 111" Index="#x6040" Sub="#x70" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 112" Index="#x6040" Sub="#x71" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 113" Index="#x6040" Sub="#x72" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 114" Index="#x6040" Sub="#x73" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 115" Index="#x6040" Sub="#x74" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 116" Index="#x6040" Sub="#x75" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 117" Index="#x6040" Sub="#x76" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 118" Index="#x6040" Sub="#x77" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 119" Index="#x6040" Sub="#x78" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 120" Index="#x6040" Sub="#x79" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 121" Index="#x6040" Sub="#x7a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 122" Index="#x6040" Sub="#x7b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 123" Index="#x6040" Sub="#x7c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 124" Index="#x6040" Sub="#x7d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 125" Index="#x6040" Sub="#x7e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 126" Index="#x6040" Sub="#x7f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 127" Index="#x6040" Sub="#x80" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Outputs 128 Byte write" Index="#x1650" InOut="1" Flags="#x0291" SyncMan="2">
+				<Entry Name="WD__Write data byte 0" Index="#x7050" Sub="#x01" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 1" Index="#x7050" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 2" Index="#x7050" Sub="#x03" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 3" Index="#x7050" Sub="#x04" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 4" Index="#x7050" Sub="#x05" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 5" Index="#x7050" Sub="#x06" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 6" Index="#x7050" Sub="#x07" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 7" Index="#x7050" Sub="#x08" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 8" Index="#x7050" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 9" Index="#x7050" Sub="#x0a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 10" Index="#x7050" Sub="#x0b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 11" Index="#x7050" Sub="#x0c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 12" Index="#x7050" Sub="#x0d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 13" Index="#x7050" Sub="#x0e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 14" Index="#x7050" Sub="#x0f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 15" Index="#x7050" Sub="#x10" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 16" Index="#x7050" Sub="#x11" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 17" Index="#x7050" Sub="#x12" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 18" Index="#x7050" Sub="#x13" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 19" Index="#x7050" Sub="#x14" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 20" Index="#x7050" Sub="#x15" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 21" Index="#x7050" Sub="#x16" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 22" Index="#x7050" Sub="#x17" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 23" Index="#x7050" Sub="#x18" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 24" Index="#x7050" Sub="#x19" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 25" Index="#x7050" Sub="#x1a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 26" Index="#x7050" Sub="#x1b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 27" Index="#x7050" Sub="#x1c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 28" Index="#x7050" Sub="#x1d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 29" Index="#x7050" Sub="#x1e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 30" Index="#x7050" Sub="#x1f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 31" Index="#x7050" Sub="#x20" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 32" Index="#x7050" Sub="#x21" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 33" Index="#x7050" Sub="#x22" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 34" Index="#x7050" Sub="#x23" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 35" Index="#x7050" Sub="#x24" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 36" Index="#x7050" Sub="#x25" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 37" Index="#x7050" Sub="#x26" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 38" Index="#x7050" Sub="#x27" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 39" Index="#x7050" Sub="#x28" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 40" Index="#x7050" Sub="#x29" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 41" Index="#x7050" Sub="#x2a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 42" Index="#x7050" Sub="#x2b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 43" Index="#x7050" Sub="#x2c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 44" Index="#x7050" Sub="#x2d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 45" Index="#x7050" Sub="#x2e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 46" Index="#x7050" Sub="#x2f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 47" Index="#x7050" Sub="#x30" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 48" Index="#x7050" Sub="#x31" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 49" Index="#x7050" Sub="#x32" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 50" Index="#x7050" Sub="#x33" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 51" Index="#x7050" Sub="#x34" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 52" Index="#x7050" Sub="#x35" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 53" Index="#x7050" Sub="#x36" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 54" Index="#x7050" Sub="#x37" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 55" Index="#x7050" Sub="#x38" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 56" Index="#x7050" Sub="#x39" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 57" Index="#x7050" Sub="#x3a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 58" Index="#x7050" Sub="#x3b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 59" Index="#x7050" Sub="#x3c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 60" Index="#x7050" Sub="#x3d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 61" Index="#x7050" Sub="#x3e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 62" Index="#x7050" Sub="#x3f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 63" Index="#x7050" Sub="#x40" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 64" Index="#x7050" Sub="#x41" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 65" Index="#x7050" Sub="#x42" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 66" Index="#x7050" Sub="#x43" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 67" Index="#x7050" Sub="#x44" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 68" Index="#x7050" Sub="#x45" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 69" Index="#x7050" Sub="#x46" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 70" Index="#x7050" Sub="#x47" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 71" Index="#x7050" Sub="#x48" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 72" Index="#x7050" Sub="#x49" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 73" Index="#x7050" Sub="#x4a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 74" Index="#x7050" Sub="#x4b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 75" Index="#x7050" Sub="#x4c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 76" Index="#x7050" Sub="#x4d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 77" Index="#x7050" Sub="#x4e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 78" Index="#x7050" Sub="#x4f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 79" Index="#x7050" Sub="#x50" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 80" Index="#x7050" Sub="#x51" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 81" Index="#x7050" Sub="#x52" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 82" Index="#x7050" Sub="#x53" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 83" Index="#x7050" Sub="#x54" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 84" Index="#x7050" Sub="#x55" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 85" Index="#x7050" Sub="#x56" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 86" Index="#x7050" Sub="#x57" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 87" Index="#x7050" Sub="#x58" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 88" Index="#x7050" Sub="#x59" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 89" Index="#x7050" Sub="#x5a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 90" Index="#x7050" Sub="#x5b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 91" Index="#x7050" Sub="#x5c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 92" Index="#x7050" Sub="#x5d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 93" Index="#x7050" Sub="#x5e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 94" Index="#x7050" Sub="#x5f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 95" Index="#x7050" Sub="#x60" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 96" Index="#x7050" Sub="#x61" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 97" Index="#x7050" Sub="#x62" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 98" Index="#x7050" Sub="#x63" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 99" Index="#x7050" Sub="#x64" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 100" Index="#x7050" Sub="#x65" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 101" Index="#x7050" Sub="#x66" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 102" Index="#x7050" Sub="#x67" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 103" Index="#x7050" Sub="#x68" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 104" Index="#x7050" Sub="#x69" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 105" Index="#x7050" Sub="#x6a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 106" Index="#x7050" Sub="#x6b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 107" Index="#x7050" Sub="#x6c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 108" Index="#x7050" Sub="#x6d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 109" Index="#x7050" Sub="#x6e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 110" Index="#x7050" Sub="#x6f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 111" Index="#x7050" Sub="#x70" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 112" Index="#x7050" Sub="#x71" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 113" Index="#x7050" Sub="#x72" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 114" Index="#x7050" Sub="#x73" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 115" Index="#x7050" Sub="#x74" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 116" Index="#x7050" Sub="#x75" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 117" Index="#x7050" Sub="#x76" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 118" Index="#x7050" Sub="#x77" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 119" Index="#x7050" Sub="#x78" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 120" Index="#x7050" Sub="#x79" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 121" Index="#x7050" Sub="#x7a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 122" Index="#x7050" Sub="#x7b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 123" Index="#x7050" Sub="#x7c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 124" Index="#x7050" Sub="#x7d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 125" Index="#x7050" Sub="#x7e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 126" Index="#x7050" Sub="#x7f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 127" Index="#x7050" Sub="#x80" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Inputs HF compact" Index="#x1a60" Flags="#x0291" SyncMan="3">
+				<Entry Name="Resp__Response code" Index="#x6060" Sub="#x01" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Resp__Loop counter" Index="#x6060" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Tag present at r/w head" Index="#x6060" Sub="#x0b" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Antenna detuned at HF read/write head" Index="#x6060" Sub="#x0f" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Parameter not supported by read/write head" Index="#x6060" Sub="#x10" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Error reported by read/write head" Index="#x6060" Sub="#x11" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Not connected to read/write head" Index="#x6060" Sub="#x12" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__HF r/w head switched on" Index="#x6060" Sub="#x13" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Continuous mode active" Index="#x6060" Sub="#x14" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Length" Index="#x6060" Sub="#x1b" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Resp__Error code" Index="#x6060" Sub="#x1c" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Resp__Tag counter" Index="#x6060" Sub="#x1d" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Outputs HF compact" Index="#x1660" InOut="1" Flags="#x0291" SyncMan="2">
+				<Entry Name="Cmd__Command code" Index="#x7060" Sub="#x01" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Cmd__Loop counter" Index="#x7060" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__Start address" Index="#x7060" Sub="#x0b" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Cmd__Length" Index="#x7060" Sub="#x0c" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Cmd__Length of UID/EPC" Index="#x7060" Sub="#x0d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Inputs 128 Byte read" Index="#x1a70" Flags="#x0291" SyncMan="3">
+				<Entry Name="RD__Read data byte 0" Index="#x6070" Sub="#x01" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 1" Index="#x6070" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 2" Index="#x6070" Sub="#x03" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 3" Index="#x6070" Sub="#x04" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 4" Index="#x6070" Sub="#x05" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 5" Index="#x6070" Sub="#x06" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 6" Index="#x6070" Sub="#x07" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 7" Index="#x6070" Sub="#x08" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 8" Index="#x6070" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 9" Index="#x6070" Sub="#x0a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 10" Index="#x6070" Sub="#x0b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 11" Index="#x6070" Sub="#x0c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 12" Index="#x6070" Sub="#x0d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 13" Index="#x6070" Sub="#x0e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 14" Index="#x6070" Sub="#x0f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 15" Index="#x6070" Sub="#x10" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 16" Index="#x6070" Sub="#x11" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 17" Index="#x6070" Sub="#x12" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 18" Index="#x6070" Sub="#x13" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 19" Index="#x6070" Sub="#x14" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 20" Index="#x6070" Sub="#x15" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 21" Index="#x6070" Sub="#x16" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 22" Index="#x6070" Sub="#x17" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 23" Index="#x6070" Sub="#x18" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 24" Index="#x6070" Sub="#x19" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 25" Index="#x6070" Sub="#x1a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 26" Index="#x6070" Sub="#x1b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 27" Index="#x6070" Sub="#x1c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 28" Index="#x6070" Sub="#x1d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 29" Index="#x6070" Sub="#x1e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 30" Index="#x6070" Sub="#x1f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 31" Index="#x6070" Sub="#x20" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 32" Index="#x6070" Sub="#x21" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 33" Index="#x6070" Sub="#x22" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 34" Index="#x6070" Sub="#x23" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 35" Index="#x6070" Sub="#x24" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 36" Index="#x6070" Sub="#x25" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 37" Index="#x6070" Sub="#x26" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 38" Index="#x6070" Sub="#x27" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 39" Index="#x6070" Sub="#x28" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 40" Index="#x6070" Sub="#x29" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 41" Index="#x6070" Sub="#x2a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 42" Index="#x6070" Sub="#x2b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 43" Index="#x6070" Sub="#x2c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 44" Index="#x6070" Sub="#x2d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 45" Index="#x6070" Sub="#x2e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 46" Index="#x6070" Sub="#x2f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 47" Index="#x6070" Sub="#x30" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 48" Index="#x6070" Sub="#x31" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 49" Index="#x6070" Sub="#x32" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 50" Index="#x6070" Sub="#x33" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 51" Index="#x6070" Sub="#x34" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 52" Index="#x6070" Sub="#x35" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 53" Index="#x6070" Sub="#x36" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 54" Index="#x6070" Sub="#x37" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 55" Index="#x6070" Sub="#x38" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 56" Index="#x6070" Sub="#x39" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 57" Index="#x6070" Sub="#x3a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 58" Index="#x6070" Sub="#x3b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 59" Index="#x6070" Sub="#x3c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 60" Index="#x6070" Sub="#x3d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 61" Index="#x6070" Sub="#x3e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 62" Index="#x6070" Sub="#x3f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 63" Index="#x6070" Sub="#x40" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 64" Index="#x6070" Sub="#x41" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 65" Index="#x6070" Sub="#x42" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 66" Index="#x6070" Sub="#x43" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 67" Index="#x6070" Sub="#x44" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 68" Index="#x6070" Sub="#x45" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 69" Index="#x6070" Sub="#x46" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 70" Index="#x6070" Sub="#x47" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 71" Index="#x6070" Sub="#x48" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 72" Index="#x6070" Sub="#x49" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 73" Index="#x6070" Sub="#x4a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 74" Index="#x6070" Sub="#x4b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 75" Index="#x6070" Sub="#x4c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 76" Index="#x6070" Sub="#x4d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 77" Index="#x6070" Sub="#x4e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 78" Index="#x6070" Sub="#x4f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 79" Index="#x6070" Sub="#x50" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 80" Index="#x6070" Sub="#x51" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 81" Index="#x6070" Sub="#x52" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 82" Index="#x6070" Sub="#x53" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 83" Index="#x6070" Sub="#x54" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 84" Index="#x6070" Sub="#x55" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 85" Index="#x6070" Sub="#x56" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 86" Index="#x6070" Sub="#x57" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 87" Index="#x6070" Sub="#x58" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 88" Index="#x6070" Sub="#x59" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 89" Index="#x6070" Sub="#x5a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 90" Index="#x6070" Sub="#x5b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 91" Index="#x6070" Sub="#x5c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 92" Index="#x6070" Sub="#x5d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 93" Index="#x6070" Sub="#x5e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 94" Index="#x6070" Sub="#x5f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 95" Index="#x6070" Sub="#x60" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 96" Index="#x6070" Sub="#x61" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 97" Index="#x6070" Sub="#x62" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 98" Index="#x6070" Sub="#x63" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 99" Index="#x6070" Sub="#x64" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 100" Index="#x6070" Sub="#x65" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 101" Index="#x6070" Sub="#x66" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 102" Index="#x6070" Sub="#x67" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 103" Index="#x6070" Sub="#x68" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 104" Index="#x6070" Sub="#x69" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 105" Index="#x6070" Sub="#x6a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 106" Index="#x6070" Sub="#x6b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 107" Index="#x6070" Sub="#x6c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 108" Index="#x6070" Sub="#x6d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 109" Index="#x6070" Sub="#x6e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 110" Index="#x6070" Sub="#x6f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 111" Index="#x6070" Sub="#x70" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 112" Index="#x6070" Sub="#x71" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 113" Index="#x6070" Sub="#x72" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 114" Index="#x6070" Sub="#x73" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 115" Index="#x6070" Sub="#x74" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 116" Index="#x6070" Sub="#x75" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 117" Index="#x6070" Sub="#x76" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 118" Index="#x6070" Sub="#x77" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 119" Index="#x6070" Sub="#x78" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 120" Index="#x6070" Sub="#x79" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 121" Index="#x6070" Sub="#x7a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 122" Index="#x6070" Sub="#x7b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 123" Index="#x6070" Sub="#x7c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 124" Index="#x6070" Sub="#x7d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 125" Index="#x6070" Sub="#x7e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 126" Index="#x6070" Sub="#x7f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 127" Index="#x6070" Sub="#x80" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Outputs 128 Byte write" Index="#x1680" InOut="1" Flags="#x0291" SyncMan="2">
+				<Entry Name="WD__Write data byte 0" Index="#x7080" Sub="#x01" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 1" Index="#x7080" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 2" Index="#x7080" Sub="#x03" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 3" Index="#x7080" Sub="#x04" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 4" Index="#x7080" Sub="#x05" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 5" Index="#x7080" Sub="#x06" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 6" Index="#x7080" Sub="#x07" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 7" Index="#x7080" Sub="#x08" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 8" Index="#x7080" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 9" Index="#x7080" Sub="#x0a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 10" Index="#x7080" Sub="#x0b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 11" Index="#x7080" Sub="#x0c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 12" Index="#x7080" Sub="#x0d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 13" Index="#x7080" Sub="#x0e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 14" Index="#x7080" Sub="#x0f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 15" Index="#x7080" Sub="#x10" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 16" Index="#x7080" Sub="#x11" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 17" Index="#x7080" Sub="#x12" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 18" Index="#x7080" Sub="#x13" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 19" Index="#x7080" Sub="#x14" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 20" Index="#x7080" Sub="#x15" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 21" Index="#x7080" Sub="#x16" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 22" Index="#x7080" Sub="#x17" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 23" Index="#x7080" Sub="#x18" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 24" Index="#x7080" Sub="#x19" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 25" Index="#x7080" Sub="#x1a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 26" Index="#x7080" Sub="#x1b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 27" Index="#x7080" Sub="#x1c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 28" Index="#x7080" Sub="#x1d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 29" Index="#x7080" Sub="#x1e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 30" Index="#x7080" Sub="#x1f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 31" Index="#x7080" Sub="#x20" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 32" Index="#x7080" Sub="#x21" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 33" Index="#x7080" Sub="#x22" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 34" Index="#x7080" Sub="#x23" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 35" Index="#x7080" Sub="#x24" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 36" Index="#x7080" Sub="#x25" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 37" Index="#x7080" Sub="#x26" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 38" Index="#x7080" Sub="#x27" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 39" Index="#x7080" Sub="#x28" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 40" Index="#x7080" Sub="#x29" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 41" Index="#x7080" Sub="#x2a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 42" Index="#x7080" Sub="#x2b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 43" Index="#x7080" Sub="#x2c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 44" Index="#x7080" Sub="#x2d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 45" Index="#x7080" Sub="#x2e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 46" Index="#x7080" Sub="#x2f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 47" Index="#x7080" Sub="#x30" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 48" Index="#x7080" Sub="#x31" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 49" Index="#x7080" Sub="#x32" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 50" Index="#x7080" Sub="#x33" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 51" Index="#x7080" Sub="#x34" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 52" Index="#x7080" Sub="#x35" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 53" Index="#x7080" Sub="#x36" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 54" Index="#x7080" Sub="#x37" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 55" Index="#x7080" Sub="#x38" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 56" Index="#x7080" Sub="#x39" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 57" Index="#x7080" Sub="#x3a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 58" Index="#x7080" Sub="#x3b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 59" Index="#x7080" Sub="#x3c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 60" Index="#x7080" Sub="#x3d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 61" Index="#x7080" Sub="#x3e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 62" Index="#x7080" Sub="#x3f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 63" Index="#x7080" Sub="#x40" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 64" Index="#x7080" Sub="#x41" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 65" Index="#x7080" Sub="#x42" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 66" Index="#x7080" Sub="#x43" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 67" Index="#x7080" Sub="#x44" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 68" Index="#x7080" Sub="#x45" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 69" Index="#x7080" Sub="#x46" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 70" Index="#x7080" Sub="#x47" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 71" Index="#x7080" Sub="#x48" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 72" Index="#x7080" Sub="#x49" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 73" Index="#x7080" Sub="#x4a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 74" Index="#x7080" Sub="#x4b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 75" Index="#x7080" Sub="#x4c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 76" Index="#x7080" Sub="#x4d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 77" Index="#x7080" Sub="#x4e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 78" Index="#x7080" Sub="#x4f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 79" Index="#x7080" Sub="#x50" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 80" Index="#x7080" Sub="#x51" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 81" Index="#x7080" Sub="#x52" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 82" Index="#x7080" Sub="#x53" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 83" Index="#x7080" Sub="#x54" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 84" Index="#x7080" Sub="#x55" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 85" Index="#x7080" Sub="#x56" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 86" Index="#x7080" Sub="#x57" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 87" Index="#x7080" Sub="#x58" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 88" Index="#x7080" Sub="#x59" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 89" Index="#x7080" Sub="#x5a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 90" Index="#x7080" Sub="#x5b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 91" Index="#x7080" Sub="#x5c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 92" Index="#x7080" Sub="#x5d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 93" Index="#x7080" Sub="#x5e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 94" Index="#x7080" Sub="#x5f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 95" Index="#x7080" Sub="#x60" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 96" Index="#x7080" Sub="#x61" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 97" Index="#x7080" Sub="#x62" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 98" Index="#x7080" Sub="#x63" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 99" Index="#x7080" Sub="#x64" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 100" Index="#x7080" Sub="#x65" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 101" Index="#x7080" Sub="#x66" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 102" Index="#x7080" Sub="#x67" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 103" Index="#x7080" Sub="#x68" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 104" Index="#x7080" Sub="#x69" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 105" Index="#x7080" Sub="#x6a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 106" Index="#x7080" Sub="#x6b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 107" Index="#x7080" Sub="#x6c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 108" Index="#x7080" Sub="#x6d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 109" Index="#x7080" Sub="#x6e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 110" Index="#x7080" Sub="#x6f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 111" Index="#x7080" Sub="#x70" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 112" Index="#x7080" Sub="#x71" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 113" Index="#x7080" Sub="#x72" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 114" Index="#x7080" Sub="#x73" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 115" Index="#x7080" Sub="#x74" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 116" Index="#x7080" Sub="#x75" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 117" Index="#x7080" Sub="#x76" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 118" Index="#x7080" Sub="#x77" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 119" Index="#x7080" Sub="#x78" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 120" Index="#x7080" Sub="#x79" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 121" Index="#x7080" Sub="#x7a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 122" Index="#x7080" Sub="#x7b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 123" Index="#x7080" Sub="#x7c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 124" Index="#x7080" Sub="#x7d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 125" Index="#x7080" Sub="#x7e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 126" Index="#x7080" Sub="#x7f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 127" Index="#x7080" Sub="#x80" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Inputs HF compact" Index="#x1a90" Flags="#x0291" SyncMan="3">
+				<Entry Name="Resp__Response code" Index="#x6090" Sub="#x01" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Resp__Loop counter" Index="#x6090" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Tag present at r/w head" Index="#x6090" Sub="#x0b" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Antenna detuned at HF read/write head" Index="#x6090" Sub="#x0f" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Parameter not supported by read/write head" Index="#x6090" Sub="#x10" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Error reported by read/write head" Index="#x6090" Sub="#x11" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Not connected to read/write head" Index="#x6090" Sub="#x12" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__HF r/w head switched on" Index="#x6090" Sub="#x13" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Continuous mode active" Index="#x6090" Sub="#x14" Flags="#x00001000">
+					<Type>BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Resp__Length" Index="#x6090" Sub="#x1b" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Resp__Error code" Index="#x6090" Sub="#x1c" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Resp__Tag counter" Index="#x6090" Sub="#x1d" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Outputs HF compact" Index="#x1690" InOut="1" Flags="#x0291" SyncMan="2">
+				<Entry Name="Cmd__Command code" Index="#x7090" Sub="#x01" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Cmd__Loop counter" Index="#x7090" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__Start address" Index="#x7090" Sub="#x0b" Flags="#x00001000">
+					<Type>UDINT</Type>
+				</Entry>
+				<Entry Name="Cmd__Length" Index="#x7090" Sub="#x0c" Flags="#x00001000">
+					<Type>UINT</Type>
+				</Entry>
+				<Entry Name="Cmd__Length of UID/EPC" Index="#x7090" Sub="#x0d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+				<Entry Name="Cmd__">
+					<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Inputs 128 Byte read" Index="#x1aa0" Flags="#x0291" SyncMan="3">
+				<Entry Name="RD__Read data byte 0" Index="#x60a0" Sub="#x01" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 1" Index="#x60a0" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 2" Index="#x60a0" Sub="#x03" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 3" Index="#x60a0" Sub="#x04" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 4" Index="#x60a0" Sub="#x05" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 5" Index="#x60a0" Sub="#x06" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 6" Index="#x60a0" Sub="#x07" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 7" Index="#x60a0" Sub="#x08" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 8" Index="#x60a0" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 9" Index="#x60a0" Sub="#x0a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 10" Index="#x60a0" Sub="#x0b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 11" Index="#x60a0" Sub="#x0c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 12" Index="#x60a0" Sub="#x0d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 13" Index="#x60a0" Sub="#x0e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 14" Index="#x60a0" Sub="#x0f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 15" Index="#x60a0" Sub="#x10" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 16" Index="#x60a0" Sub="#x11" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 17" Index="#x60a0" Sub="#x12" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 18" Index="#x60a0" Sub="#x13" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 19" Index="#x60a0" Sub="#x14" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 20" Index="#x60a0" Sub="#x15" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 21" Index="#x60a0" Sub="#x16" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 22" Index="#x60a0" Sub="#x17" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 23" Index="#x60a0" Sub="#x18" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 24" Index="#x60a0" Sub="#x19" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 25" Index="#x60a0" Sub="#x1a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 26" Index="#x60a0" Sub="#x1b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 27" Index="#x60a0" Sub="#x1c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 28" Index="#x60a0" Sub="#x1d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 29" Index="#x60a0" Sub="#x1e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 30" Index="#x60a0" Sub="#x1f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 31" Index="#x60a0" Sub="#x20" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 32" Index="#x60a0" Sub="#x21" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 33" Index="#x60a0" Sub="#x22" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 34" Index="#x60a0" Sub="#x23" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 35" Index="#x60a0" Sub="#x24" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 36" Index="#x60a0" Sub="#x25" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 37" Index="#x60a0" Sub="#x26" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 38" Index="#x60a0" Sub="#x27" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 39" Index="#x60a0" Sub="#x28" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 40" Index="#x60a0" Sub="#x29" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 41" Index="#x60a0" Sub="#x2a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 42" Index="#x60a0" Sub="#x2b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 43" Index="#x60a0" Sub="#x2c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 44" Index="#x60a0" Sub="#x2d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 45" Index="#x60a0" Sub="#x2e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 46" Index="#x60a0" Sub="#x2f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 47" Index="#x60a0" Sub="#x30" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 48" Index="#x60a0" Sub="#x31" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 49" Index="#x60a0" Sub="#x32" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 50" Index="#x60a0" Sub="#x33" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 51" Index="#x60a0" Sub="#x34" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 52" Index="#x60a0" Sub="#x35" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 53" Index="#x60a0" Sub="#x36" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 54" Index="#x60a0" Sub="#x37" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 55" Index="#x60a0" Sub="#x38" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 56" Index="#x60a0" Sub="#x39" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 57" Index="#x60a0" Sub="#x3a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 58" Index="#x60a0" Sub="#x3b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 59" Index="#x60a0" Sub="#x3c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 60" Index="#x60a0" Sub="#x3d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 61" Index="#x60a0" Sub="#x3e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 62" Index="#x60a0" Sub="#x3f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 63" Index="#x60a0" Sub="#x40" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 64" Index="#x60a0" Sub="#x41" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 65" Index="#x60a0" Sub="#x42" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 66" Index="#x60a0" Sub="#x43" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 67" Index="#x60a0" Sub="#x44" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 68" Index="#x60a0" Sub="#x45" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 69" Index="#x60a0" Sub="#x46" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 70" Index="#x60a0" Sub="#x47" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 71" Index="#x60a0" Sub="#x48" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 72" Index="#x60a0" Sub="#x49" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 73" Index="#x60a0" Sub="#x4a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 74" Index="#x60a0" Sub="#x4b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 75" Index="#x60a0" Sub="#x4c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 76" Index="#x60a0" Sub="#x4d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 77" Index="#x60a0" Sub="#x4e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 78" Index="#x60a0" Sub="#x4f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 79" Index="#x60a0" Sub="#x50" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 80" Index="#x60a0" Sub="#x51" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 81" Index="#x60a0" Sub="#x52" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 82" Index="#x60a0" Sub="#x53" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 83" Index="#x60a0" Sub="#x54" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 84" Index="#x60a0" Sub="#x55" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 85" Index="#x60a0" Sub="#x56" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 86" Index="#x60a0" Sub="#x57" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 87" Index="#x60a0" Sub="#x58" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 88" Index="#x60a0" Sub="#x59" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 89" Index="#x60a0" Sub="#x5a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 90" Index="#x60a0" Sub="#x5b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 91" Index="#x60a0" Sub="#x5c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 92" Index="#x60a0" Sub="#x5d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 93" Index="#x60a0" Sub="#x5e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 94" Index="#x60a0" Sub="#x5f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 95" Index="#x60a0" Sub="#x60" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 96" Index="#x60a0" Sub="#x61" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 97" Index="#x60a0" Sub="#x62" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 98" Index="#x60a0" Sub="#x63" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 99" Index="#x60a0" Sub="#x64" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 100" Index="#x60a0" Sub="#x65" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 101" Index="#x60a0" Sub="#x66" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 102" Index="#x60a0" Sub="#x67" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 103" Index="#x60a0" Sub="#x68" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 104" Index="#x60a0" Sub="#x69" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 105" Index="#x60a0" Sub="#x6a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 106" Index="#x60a0" Sub="#x6b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 107" Index="#x60a0" Sub="#x6c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 108" Index="#x60a0" Sub="#x6d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 109" Index="#x60a0" Sub="#x6e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 110" Index="#x60a0" Sub="#x6f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 111" Index="#x60a0" Sub="#x70" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 112" Index="#x60a0" Sub="#x71" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 113" Index="#x60a0" Sub="#x72" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 114" Index="#x60a0" Sub="#x73" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 115" Index="#x60a0" Sub="#x74" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 116" Index="#x60a0" Sub="#x75" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 117" Index="#x60a0" Sub="#x76" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 118" Index="#x60a0" Sub="#x77" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 119" Index="#x60a0" Sub="#x78" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 120" Index="#x60a0" Sub="#x79" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 121" Index="#x60a0" Sub="#x7a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 122" Index="#x60a0" Sub="#x7b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 123" Index="#x60a0" Sub="#x7c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 124" Index="#x60a0" Sub="#x7d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 125" Index="#x60a0" Sub="#x7e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 126" Index="#x60a0" Sub="#x7f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="RD__Read data byte 127" Index="#x60a0" Sub="#x80" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<Pdo Name="Outputs 128 Byte write" Index="#x16b0" InOut="1" Flags="#x0291" SyncMan="2">
+				<Entry Name="WD__Write data byte 0" Index="#x70b0" Sub="#x01" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 1" Index="#x70b0" Sub="#x02" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 2" Index="#x70b0" Sub="#x03" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 3" Index="#x70b0" Sub="#x04" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 4" Index="#x70b0" Sub="#x05" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 5" Index="#x70b0" Sub="#x06" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 6" Index="#x70b0" Sub="#x07" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 7" Index="#x70b0" Sub="#x08" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 8" Index="#x70b0" Sub="#x09" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 9" Index="#x70b0" Sub="#x0a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 10" Index="#x70b0" Sub="#x0b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 11" Index="#x70b0" Sub="#x0c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 12" Index="#x70b0" Sub="#x0d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 13" Index="#x70b0" Sub="#x0e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 14" Index="#x70b0" Sub="#x0f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 15" Index="#x70b0" Sub="#x10" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 16" Index="#x70b0" Sub="#x11" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 17" Index="#x70b0" Sub="#x12" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 18" Index="#x70b0" Sub="#x13" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 19" Index="#x70b0" Sub="#x14" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 20" Index="#x70b0" Sub="#x15" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 21" Index="#x70b0" Sub="#x16" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 22" Index="#x70b0" Sub="#x17" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 23" Index="#x70b0" Sub="#x18" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 24" Index="#x70b0" Sub="#x19" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 25" Index="#x70b0" Sub="#x1a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 26" Index="#x70b0" Sub="#x1b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 27" Index="#x70b0" Sub="#x1c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 28" Index="#x70b0" Sub="#x1d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 29" Index="#x70b0" Sub="#x1e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 30" Index="#x70b0" Sub="#x1f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 31" Index="#x70b0" Sub="#x20" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 32" Index="#x70b0" Sub="#x21" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 33" Index="#x70b0" Sub="#x22" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 34" Index="#x70b0" Sub="#x23" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 35" Index="#x70b0" Sub="#x24" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 36" Index="#x70b0" Sub="#x25" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 37" Index="#x70b0" Sub="#x26" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 38" Index="#x70b0" Sub="#x27" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 39" Index="#x70b0" Sub="#x28" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 40" Index="#x70b0" Sub="#x29" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 41" Index="#x70b0" Sub="#x2a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 42" Index="#x70b0" Sub="#x2b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 43" Index="#x70b0" Sub="#x2c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 44" Index="#x70b0" Sub="#x2d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 45" Index="#x70b0" Sub="#x2e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 46" Index="#x70b0" Sub="#x2f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 47" Index="#x70b0" Sub="#x30" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 48" Index="#x70b0" Sub="#x31" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 49" Index="#x70b0" Sub="#x32" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 50" Index="#x70b0" Sub="#x33" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 51" Index="#x70b0" Sub="#x34" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 52" Index="#x70b0" Sub="#x35" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 53" Index="#x70b0" Sub="#x36" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 54" Index="#x70b0" Sub="#x37" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 55" Index="#x70b0" Sub="#x38" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 56" Index="#x70b0" Sub="#x39" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 57" Index="#x70b0" Sub="#x3a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 58" Index="#x70b0" Sub="#x3b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 59" Index="#x70b0" Sub="#x3c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 60" Index="#x70b0" Sub="#x3d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 61" Index="#x70b0" Sub="#x3e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 62" Index="#x70b0" Sub="#x3f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 63" Index="#x70b0" Sub="#x40" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 64" Index="#x70b0" Sub="#x41" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 65" Index="#x70b0" Sub="#x42" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 66" Index="#x70b0" Sub="#x43" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 67" Index="#x70b0" Sub="#x44" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 68" Index="#x70b0" Sub="#x45" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 69" Index="#x70b0" Sub="#x46" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 70" Index="#x70b0" Sub="#x47" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 71" Index="#x70b0" Sub="#x48" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 72" Index="#x70b0" Sub="#x49" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 73" Index="#x70b0" Sub="#x4a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 74" Index="#x70b0" Sub="#x4b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 75" Index="#x70b0" Sub="#x4c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 76" Index="#x70b0" Sub="#x4d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 77" Index="#x70b0" Sub="#x4e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 78" Index="#x70b0" Sub="#x4f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 79" Index="#x70b0" Sub="#x50" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 80" Index="#x70b0" Sub="#x51" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 81" Index="#x70b0" Sub="#x52" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 82" Index="#x70b0" Sub="#x53" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 83" Index="#x70b0" Sub="#x54" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 84" Index="#x70b0" Sub="#x55" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 85" Index="#x70b0" Sub="#x56" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 86" Index="#x70b0" Sub="#x57" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 87" Index="#x70b0" Sub="#x58" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 88" Index="#x70b0" Sub="#x59" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 89" Index="#x70b0" Sub="#x5a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 90" Index="#x70b0" Sub="#x5b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 91" Index="#x70b0" Sub="#x5c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 92" Index="#x70b0" Sub="#x5d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 93" Index="#x70b0" Sub="#x5e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 94" Index="#x70b0" Sub="#x5f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 95" Index="#x70b0" Sub="#x60" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 96" Index="#x70b0" Sub="#x61" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 97" Index="#x70b0" Sub="#x62" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 98" Index="#x70b0" Sub="#x63" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 99" Index="#x70b0" Sub="#x64" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 100" Index="#x70b0" Sub="#x65" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 101" Index="#x70b0" Sub="#x66" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 102" Index="#x70b0" Sub="#x67" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 103" Index="#x70b0" Sub="#x68" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 104" Index="#x70b0" Sub="#x69" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 105" Index="#x70b0" Sub="#x6a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 106" Index="#x70b0" Sub="#x6b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 107" Index="#x70b0" Sub="#x6c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 108" Index="#x70b0" Sub="#x6d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 109" Index="#x70b0" Sub="#x6e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 110" Index="#x70b0" Sub="#x6f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 111" Index="#x70b0" Sub="#x70" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 112" Index="#x70b0" Sub="#x71" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 113" Index="#x70b0" Sub="#x72" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 114" Index="#x70b0" Sub="#x73" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 115" Index="#x70b0" Sub="#x74" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 116" Index="#x70b0" Sub="#x75" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 117" Index="#x70b0" Sub="#x76" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 118" Index="#x70b0" Sub="#x77" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 119" Index="#x70b0" Sub="#x78" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 120" Index="#x70b0" Sub="#x79" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 121" Index="#x70b0" Sub="#x7a" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 122" Index="#x70b0" Sub="#x7b" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 123" Index="#x70b0" Sub="#x7c" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 124" Index="#x70b0" Sub="#x7d" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 125" Index="#x70b0" Sub="#x7e" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 126" Index="#x70b0" Sub="#x7f" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+				<Entry Name="WD__Write data byte 127" Index="#x70b0" Sub="#x80" Flags="#x00001000">
+					<Type>USINT</Type>
+				</Entry>
+			</Pdo>
+			<CoeProfile ProfileNo="5001"/>
+			<Slot Name="RFID control/status ch0">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>2663571</ModuleIdent>
+				<ModuleIdent>3728531</ModuleIdent>
+				<ModuleIdent>21038227</ModuleIdent>
+				<ModuleIdent>19440787</ModuleIdent>
+				<ModuleIdent>20505747</ModuleIdent>
+				<Module Id="#x03090001" Type="HF compact" Class="">
+					<Name>Module 1 (HF compact)</Name>
+					<ImageId>405</ImageId>
+					<ModuleData>9c00000093a42800000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6656</PdoIndex>
+					<PdoIndex>5632</PdoIndex>
+				</Module>
+			</Slot>
+			<Slot Name="RFID read data ch0">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>8650880</ModuleIdent>
+				<ModuleIdent>6553728</ModuleIdent>
+				<ModuleIdent>4718720</ModuleIdent>
+				<ModuleIdent>3145856</ModuleIdent>
+				<ModuleIdent>2097280</ModuleIdent>
+				<Module Id="#x03090002" Type="128 Byte read" Class="">
+					<Name>Module 2 (128 Byte read)</Name>
+					<ImageId>405</ImageId>
+					<ModuleData>9c00000080008400000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6672</PdoIndex>
+				</Module>
+			</Slot>
+			<Slot Name="RFID write data ch0">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>135296</ModuleIdent>
+				<ModuleIdent>102528</ModuleIdent>
+				<ModuleIdent>73856</ModuleIdent>
+				<ModuleIdent>49280</ModuleIdent>
+				<ModuleIdent>32896</ModuleIdent>
+				<Module Id="#x03090003" Type="128 Byte write" Class="">
+					<Name>Module 3 (128 Byte write)</Name>
+					<ImageId>405</ImageId>
+					<ModuleData>9c00000080100200000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>5664</PdoIndex>
+				</Module>
+			</Slot>
+			<Slot Name="RFID control/status ch1">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>2663571</ModuleIdent>
+				<ModuleIdent>3728531</ModuleIdent>
+				<ModuleIdent>21038227</ModuleIdent>
+				<ModuleIdent>19440787</ModuleIdent>
+				<ModuleIdent>20505747</ModuleIdent>
+				<Module Id="#x03090004" Type="HF compact" Class="">
+					<Name>Module 4 (HF compact)</Name>
+					<ImageId>405</ImageId>
+					<ModuleData>9c00000093a42800000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6704</PdoIndex>
+					<PdoIndex>5680</PdoIndex>
+				</Module>
+			</Slot>
+			<Slot Name="RFID read data ch1">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>8650880</ModuleIdent>
+				<ModuleIdent>6553728</ModuleIdent>
+				<ModuleIdent>4718720</ModuleIdent>
+				<ModuleIdent>3145856</ModuleIdent>
+				<ModuleIdent>2097280</ModuleIdent>
+				<Module Id="#x03090005" Type="128 Byte read" Class="">
+					<Name>Module 5 (128 Byte read)</Name>
+					<ImageId>405</ImageId>
+					<ModuleData>9c00000080008400000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6720</PdoIndex>
+				</Module>
+			</Slot>
+			<Slot Name="RFID write data ch1">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>135296</ModuleIdent>
+				<ModuleIdent>102528</ModuleIdent>
+				<ModuleIdent>73856</ModuleIdent>
+				<ModuleIdent>49280</ModuleIdent>
+				<ModuleIdent>32896</ModuleIdent>
+				<Module Id="#x03090006" Type="128 Byte write" Class="">
+					<Name>Module 6 (128 Byte write)</Name>
+					<ImageId>405</ImageId>
+					<ModuleData>9c00000080100200000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>5712</PdoIndex>
+				</Module>
+			</Slot>
+			<Slot Name="RFID control/status ch2">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>2663571</ModuleIdent>
+				<ModuleIdent>3728531</ModuleIdent>
+				<ModuleIdent>21038227</ModuleIdent>
+				<ModuleIdent>19440787</ModuleIdent>
+				<ModuleIdent>20505747</ModuleIdent>
+				<Module Id="#x03090007" Type="HF compact" Class="">
+					<Name>Module 7 (HF compact)</Name>
+					<ImageId>405</ImageId>
+					<ModuleData>9c00000093a42800000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6752</PdoIndex>
+					<PdoIndex>5728</PdoIndex>
+				</Module>
+			</Slot>
+			<Slot Name="RFID read data ch2">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>8650880</ModuleIdent>
+				<ModuleIdent>6553728</ModuleIdent>
+				<ModuleIdent>4718720</ModuleIdent>
+				<ModuleIdent>3145856</ModuleIdent>
+				<ModuleIdent>2097280</ModuleIdent>
+				<Module Id="#x03090008" Type="128 Byte read" Class="">
+					<Name>Module 8 (128 Byte read)</Name>
+					<ImageId>405</ImageId>
+					<ModuleData>9c00000080008400000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6768</PdoIndex>
+				</Module>
+			</Slot>
+			<Slot Name="RFID write data ch2">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>135296</ModuleIdent>
+				<ModuleIdent>102528</ModuleIdent>
+				<ModuleIdent>73856</ModuleIdent>
+				<ModuleIdent>49280</ModuleIdent>
+				<ModuleIdent>32896</ModuleIdent>
+				<Module Id="#x03090009" Type="128 Byte write" Class="">
+					<Name>Module 9 (128 Byte write)</Name>
+					<ImageId>405</ImageId>
+					<ModuleData>9c00000080100200000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>5760</PdoIndex>
+				</Module>
+			</Slot>
+			<Slot Name="RFID control/status ch3">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>2663571</ModuleIdent>
+				<ModuleIdent>3728531</ModuleIdent>
+				<ModuleIdent>21038227</ModuleIdent>
+				<ModuleIdent>19440787</ModuleIdent>
+				<ModuleIdent>20505747</ModuleIdent>
+				<Module Id="#x0309000a" Type="HF compact" Class="">
+					<Name>Module 10 (HF compact)</Name>
+					<ImageId>405</ImageId>
+					<ModuleData>9c00000093a42800000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6800</PdoIndex>
+					<PdoIndex>5776</PdoIndex>
+				</Module>
+			</Slot>
+			<Slot Name="RFID read data ch3">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>8650880</ModuleIdent>
+				<ModuleIdent>6553728</ModuleIdent>
+				<ModuleIdent>4718720</ModuleIdent>
+				<ModuleIdent>3145856</ModuleIdent>
+				<ModuleIdent>2097280</ModuleIdent>
+				<Module Id="#x0309000b" Type="128 Byte read" Class="">
+					<Name>Module 11 (128 Byte read)</Name>
+					<ImageId>405</ImageId>
+					<ModuleData>9c00000080008400000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>6816</PdoIndex>
+				</Module>
+			</Slot>
+			<Slot Name="RFID write data ch3">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>135296</ModuleIdent>
+				<ModuleIdent>102528</ModuleIdent>
+				<ModuleIdent>73856</ModuleIdent>
+				<ModuleIdent>49280</ModuleIdent>
+				<ModuleIdent>32896</ModuleIdent>
+				<Module Id="#x0309000c" Type="128 Byte write" Class="">
+					<Name>Module 12 (128 Byte write)</Name>
+					<ImageId>405</ImageId>
+					<ModuleData>9c00000080100200000004000000000000000000000000000000000000000000</ModuleData>
+					<PdoIndex>5808</PdoIndex>
+				</Module>
+			</Slot>
+			<Slot Name="RFID diagnostics">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>8912896</ModuleIdent>
+			</Slot>
+			<Slot Name="DXP">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>17309956</ModuleIdent>
+			</Slot>
+			<Slot Name="DXP diagnostics">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>168820736</ModuleIdent>
+			</Slot>
+			<Slot Name="Ext. Func. Digital 8">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>16777344</ModuleIdent>
+			</Slot>
+			<Slot Name="Ext. Func. Digital 9">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>16777344</ModuleIdent>
+			</Slot>
+			<Slot Name="Ext. Func. Digital 10">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>16777344</ModuleIdent>
+			</Slot>
+			<Slot Name="Ext. Func. Digital 11">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>16777344</ModuleIdent>
+			</Slot>
+			<Slot Name="Ext. Func. Digital 12">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>16777344</ModuleIdent>
+			</Slot>
+			<Slot Name="Ext. Func. Digital 13">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>16777344</ModuleIdent>
+			</Slot>
+			<Slot Name="Ext. Func. Digital 14">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>16777344</ModuleIdent>
+			</Slot>
+			<Slot Name="Ext. Func. Digital 15">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>16777344</ModuleIdent>
+			</Slot>
+			<Slot Name="VAUX control">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>33563136</ModuleIdent>
+			</Slot>
+			<Slot Name="Device Status/Control">
+				<SlotData>0000000001000000100000001000000000000000000000000000000000000000</SlotData>
+				<ModuleIdent>1056768</ModuleIdent>
+			</Slot>
+			<ModulePdoGroup>00000000000000000000000000000000</ModulePdoGroup>
+		</EtherCAT>
+	</Box>
+</TcSmItem>

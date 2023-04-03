@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="RfidInOut" Id="{dec4d8fa-9bb8-0943-11c5-5f92bed90649}">
+    <Declaration><![CDATA[TYPE
+    RfidInOut :
+    STRUCT
+
+        myReadData             : ARRAY[0..127] OF BYTE;
+        myWriteData            : ARRAY[0..127] OF BYTE;
+        xExecute               : BOOL;
+        xAbort                 : BOOL;
+        udiTimeOut             : UDINT;
+        eCommand               : RFID_FB_U.COMMAND;
+        udiStartAdress         : UDINT;
+        uiDataLenght           : UINT;
+        xDone                  : BOOL;
+        xBusy                  : BOOL;
+        xError                 : BOOL;
+        xAborted               : BOOL;
+        eErrorID               : RFID_FB_U.ERROR;
+        xTP                    : BOOL;
+        xRWHeadNotCOnnected    : BOOL;
+        uiDataRxLength         : UINT;
+        stCompactModeInputMap  : RFID_FB_U.CompactInput_t;
+        stCompactModeOutputMap : RFID_FB_U.CompactOutput_t;
+    END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

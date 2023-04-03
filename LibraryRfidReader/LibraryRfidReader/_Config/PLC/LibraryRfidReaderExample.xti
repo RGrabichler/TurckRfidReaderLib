@@ -1,0 +1,783 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.44" ClassName="CNestedPlcProjDef">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{01189EF6-028E-550F-1F5C-2F7998DDFBE2}" Namespace="RG.RFID_FB_U" AutoDeleteType="true">RESC</Name>
+			<Comment><![CDATA[ Response code]]></Comment>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[IDLE]]></Text>
+				<Enum>0</Enum>
+				<Comment><![CDATA[ Idle]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[INVENTORY]]></Text>
+				<Enum>1</Enum>
+				<Comment><![CDATA[ Inventory]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[READ]]></Text>
+				<Enum>2</Enum>
+				<Comment><![CDATA[ Read]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[WRITE]]></Text>
+				<Enum>4</Enum>
+				<Comment><![CDATA[ Write]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[WRITE_AND_VERIFY]]></Text>
+				<Enum>8</Enum>
+				<Comment><![CDATA[ Write and verify]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[CONTINUOUS_MODE]]></Text>
+				<Enum>16</Enum>
+				<Comment><![CDATA[ Continuous mode]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[GET_DATA_FROM_FIFO]]></Text>
+				<Enum>17</Enum>
+				<Comment><![CDATA[ Get data from buffer (Continuous mode)]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[STOP_CONTINUOUS_MODE]]></Text>
+				<Enum>18</Enum>
+				<Comment><![CDATA[ Continuous mode off]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[UHF_PRESENCE_SENSING_MODE]]></Text>
+				<Enum>32</Enum>
+				<Comment><![CDATA[ Continuous presence sensing mode]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[HF_RW_HEAD_OFF]]></Text>
+				<Enum>64</Enum>
+				<Comment><![CDATA[ HF read/write head off]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[RW_HEAD_IDENTIFICATION]]></Text>
+				<Enum>65</Enum>
+				<Comment><![CDATA[ Read/write head identification]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TAG_INFO]]></Text>
+				<Enum>80</Enum>
+				<Comment><![CDATA[ Tag info]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[DIRECT_COMMAND]]></Text>
+				<Enum>96</Enum>
+				<Comment><![CDATA[ Direct read/write head command ]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[GET_HF_RW_HEAD_ADDRESS]]></Text>
+				<Enum>112</Enum>
+				<Comment><![CDATA[ Get read/write head address]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SET_HF_RW_HEAD_ADDRESS]]></Text>
+				<Enum>113</Enum>
+				<Comment><![CDATA[ Set read/write head address]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TUNE_HF_RW_HEAD]]></Text>
+				<Enum>128</Enum>
+				<Comment><![CDATA[ Tune HF read/write head]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SET_RW_HEAD_PASSWORD]]></Text>
+				<Enum>256</Enum>
+				<Comment><![CDATA[ Set read/write head password]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[RESET_RW_HEAD_PASSWORD]]></Text>
+				<Enum>257</Enum>
+				<Comment><![CDATA[ Reset read/write head password]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SET_TAG_PASSWORD]]></Text>
+				<Enum>258</Enum>
+				<Comment><![CDATA[ Set tag password]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SET_TAG_PROTECTION_STATUS]]></Text>
+				<Enum>259</Enum>
+				<Comment><![CDATA[ Set tag protection]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[GET_HF_TAG_PROTECTION_STATUS]]></Text>
+				<Enum>260</Enum>
+				<Comment><![CDATA[ Get HF tag protection status]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SET_PERMA_LOCK]]></Text>
+				<Enum>261</Enum>
+				<Comment><![CDATA[ Set perma lock]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[KILL_TAG]]></Text>
+				<Enum>512</Enum>
+				<Comment><![CDATA[ Kill UHF tag]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[RESTORE_SETTINGS_UHF_RW_HEAD]]></Text>
+				<Enum>4096</Enum>
+				<Comment><![CDATA[ Restore settings of the UHF read/write head]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BACKUP_SETTINGS_UHF_RW_HEAD]]></Text>
+				<Enum>4097</Enum>
+				<Comment><![CDATA[ Backup settings of the UHF read/write head]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_INVENTORY]]></Text>
+				<Enum>16385</Enum>
+				<Comment><![CDATA[ Error - Inventory]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_READ]]></Text>
+				<Enum>16386</Enum>
+				<Comment><![CDATA[ Error - Read]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_WRITE]]></Text>
+				<Enum>16388</Enum>
+				<Comment><![CDATA[ Error - Write]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_WRITE_AND_VERIFY]]></Text>
+				<Enum>16392</Enum>
+				<Comment><![CDATA[ Error - Write and verify]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_CONTINUOUS_MODE]]></Text>
+				<Enum>16400</Enum>
+				<Comment><![CDATA[ Error - Continuous mode]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_GET_DATA_FROM_FIFO]]></Text>
+				<Enum>16401</Enum>
+				<Comment><![CDATA[ Error - Get data from buffer (Continuous mode)]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_STOP_CONTINUOUS_MODE]]></Text>
+				<Enum>16402</Enum>
+				<Comment><![CDATA[ Error - Continuous mode off]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_UHF_PRESENCE_SENSING_MODE]]></Text>
+				<Enum>16416</Enum>
+				<Comment><![CDATA[ Error - Continuous presence sensing mode]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_HF_RW_HEAD_OFF]]></Text>
+				<Enum>16448</Enum>
+				<Comment><![CDATA[ Error - HF read/write head off]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_RW_HEAD_IDENTIFICATION]]></Text>
+				<Enum>16449</Enum>
+				<Comment><![CDATA[ Error - Read/write head identification]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_TAG_INFO]]></Text>
+				<Enum>16464</Enum>
+				<Comment><![CDATA[ Error - Tag info]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_DIRECT_COMMAND]]></Text>
+				<Enum>16480</Enum>
+				<Comment><![CDATA[ Error - Direct read/write head command ]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_GET_HF_RW_HEAD_ADDRESS]]></Text>
+				<Enum>16496</Enum>
+				<Comment><![CDATA[ Error - Get read/write head address]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_SET_HF_RW_HEAD_ADDRESS]]></Text>
+				<Enum>16497</Enum>
+				<Comment><![CDATA[ Error - Set read/write head address]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_TUNE_HF_RW_HEAD]]></Text>
+				<Enum>16512</Enum>
+				<Comment><![CDATA[ Error - Tune HF read/write head]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_SET_RW_HEAD_PASSWORD]]></Text>
+				<Enum>16640</Enum>
+				<Comment><![CDATA[ Error - Set read/write head password]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_RESET_RW_HEAD_PASSWORD]]></Text>
+				<Enum>16641</Enum>
+				<Comment><![CDATA[ Error - Reset read/write head password]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_SET_TAG_PASSWORD]]></Text>
+				<Enum>16642</Enum>
+				<Comment><![CDATA[ Error - Set tag password]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_SET_TAG_PROTECTION_STATUS]]></Text>
+				<Enum>16643</Enum>
+				<Comment><![CDATA[ Error - Set tag protection]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_GET_HF_TAG_PROTECTION_STATUS]]></Text>
+				<Enum>16644</Enum>
+				<Comment><![CDATA[ Error - Get HF tag protection status]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_SET_PERMA_LOCK]]></Text>
+				<Enum>16645</Enum>
+				<Comment><![CDATA[ Error - Set perma lock]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_KILL_TAG]]></Text>
+				<Enum>16896</Enum>
+				<Comment><![CDATA[ Error - Kill UHF tag]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_RESTORE_SETTINGS_UHF_RW_HEAD]]></Text>
+				<Enum>20480</Enum>
+				<Comment><![CDATA[ Error - Restore settings of the UHF read/write head]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ERROR_BACKUP_SETTINGS_UHF_RW_HEAD]]></Text>
+				<Enum>20481</Enum>
+				<Comment><![CDATA[ Error - Backup settings of the UHF read/write head]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_INVENTORY]]></Text>
+				<Enum>32769</Enum>
+				<Comment><![CDATA[ Busy - Inventory]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_READ]]></Text>
+				<Enum>32770</Enum>
+				<Comment><![CDATA[ Busy - Read]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_WRITE]]></Text>
+				<Enum>32772</Enum>
+				<Comment><![CDATA[ Busy - Write]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_WRITE_AND_VERIFY]]></Text>
+				<Enum>32776</Enum>
+				<Comment><![CDATA[ Busy - Write and verify]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_CONTINUOUS_MODE]]></Text>
+				<Enum>32784</Enum>
+				<Comment><![CDATA[ Busy - Continuous mode]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_GET_DATA_FROM_FIFO]]></Text>
+				<Enum>32785</Enum>
+				<Comment><![CDATA[ Busy - Get data from buffer (Continuous mode)]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_STOP_CONTINUOUS_MODE]]></Text>
+				<Enum>32786</Enum>
+				<Comment><![CDATA[ Busy - Continuous mode off]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_UHF_PRESENCE_SENSING_MODE]]></Text>
+				<Enum>32800</Enum>
+				<Comment><![CDATA[ Busy - Continuous presence sensing mode]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_HF_RW_HEAD_OFF]]></Text>
+				<Enum>32832</Enum>
+				<Comment><![CDATA[ Busy - HF read/write head off]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_RW_HEAD_IDENTIFICATION]]></Text>
+				<Enum>32833</Enum>
+				<Comment><![CDATA[ Busy - Read/write head identification]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_TAG_INFO]]></Text>
+				<Enum>32848</Enum>
+				<Comment><![CDATA[ Busy - Tag info]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_DIRECT_COMMAND]]></Text>
+				<Enum>32864</Enum>
+				<Comment><![CDATA[ Busy - Direct read/write head command ]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_GET_HF_RW_HEAD_ADDRESS]]></Text>
+				<Enum>32880</Enum>
+				<Comment><![CDATA[ Busy - Get read/write head address]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_SET_HF_RW_HEAD_ADDRESS]]></Text>
+				<Enum>32881</Enum>
+				<Comment><![CDATA[ Busy - Set read/write head address]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_TUNE_HF_RW_HEAD]]></Text>
+				<Enum>32896</Enum>
+				<Comment><![CDATA[ Busy - Tune HF read/write head]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_SET_RW_HEAD_PASSWORD]]></Text>
+				<Enum>33024</Enum>
+				<Comment><![CDATA[ Busy - Set read/write head password]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_RESET_RW_HEAD_PASSWORD]]></Text>
+				<Enum>33025</Enum>
+				<Comment><![CDATA[ Busy - Reset read/write head password]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_SET_TAG_PASSWORD]]></Text>
+				<Enum>33026</Enum>
+				<Comment><![CDATA[ Busy - Set tag password]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_SET_TAG_PROTECTION_STATUS]]></Text>
+				<Enum>33027</Enum>
+				<Comment><![CDATA[ Busy - Set tag protection]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_GET_HF_TAG_PROTECTION_STATUS]]></Text>
+				<Enum>33028</Enum>
+				<Comment><![CDATA[ Busy - Get HF tag protection status]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_SET_PERMA_LOCK]]></Text>
+				<Enum>33029</Enum>
+				<Comment><![CDATA[ Busy - Set perma lock]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_KILL_TAG]]></Text>
+				<Enum>33280</Enum>
+				<Comment><![CDATA[ Busy - Kill UHF tag]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_RESTORE_SETTINGS_UHF_RW_HEAD]]></Text>
+				<Enum>36864</Enum>
+				<Comment><![CDATA[ Busy - Restore settings of the UHF read/write head]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BUSY_BACKUP_SETTINGS_UHF_RW_HEAD]]></Text>
+				<Enum>36865</Enum>
+				<Comment><![CDATA[ Busy - Backup settings of the UHF read/write head]]></Comment>
+			</EnumInfo>
+			<Properties>
+				<Property>
+					<Name>qualified_only</Name>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
+			<Name GUID="{73121912-06B5-9E8F-0E3D-ABEA97E002B6}" Namespace="RG.RFID_FB_U" AutoDeleteType="true">Status_t</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>xTagPresent</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[Tag present at read/write head]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xBit1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+				<Properties>
+					<Property>
+						<Name>conditionalshow</Name>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>xBit2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+				<Properties>
+					<Property>
+						<Name>conditionalshow</Name>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>xBit3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+				<Properties>
+					<Property>
+						<Name>conditionalshow</Name>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>xRWHeadDetuned</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[Antenna detuned at HF read/write head]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xParameterNotSupportedByRWHead</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[Parameter not supported by read/write head]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xRWHeadReportsError</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[Error reported by read/write head]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xRWHeadNotConnected</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[Not connected to read/write head]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xRWHeadSwitchedOn</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[HF Read/write head switched on]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xContinuousModeActive</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[Continuous (Presence Sensing) Mode active]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{12D8791C-B472-F7A0-5DC3-AE7FB54D237D}" Namespace="RG.RFID_FB_U" AutoDeleteType="true">CompactInput_t</Name>
+			<BitSize>96</BitSize>
+			<SubItem>
+				<Name>eResponseCode</Name>
+				<Type GUID="{01189EF6-028E-550F-1F5C-2F7998DDFBE2}" Namespace="RG.RFID_FB_U">RESC</Type>
+				<Comment><![CDATA[Response code]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>usiLoopCounter</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<Comment><![CDATA[Loop counter]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>usiReserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>24</BitOffs>
+				<Properties>
+					<Property>
+						<Name>conditionalshow</Name>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>stStatus</Name>
+				<Type GUID="{73121912-06B5-9E8F-0E3D-ABEA97E002B6}" Namespace="RG.RFID_FB_U">Status_t</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>uiLength</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<Comment><![CDATA[Length]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>wErrorCode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<Comment><![CDATA[Error code]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>uiTagCounter</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<Comment><![CDATA[Tag counter]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>80</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{53AB2BCA-C5AB-B7CE-D17C-430953A42679}" IecBaseType="true" AutoDeleteType="true">ARRAY [0..127] OF BYTE</Name>
+			<BitSize>1024</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>128</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{EC38F2FD-6083-882B-38EB-02C7760AA632}" Namespace="RG.RFID_FB_U" AutoDeleteType="true">COMMAND</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000004}">WORD</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[IDLE]]></Text>
+				<Enum>0</Enum>
+				<Comment><![CDATA[ Idle]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[INVENTORY]]></Text>
+				<Enum>1</Enum>
+				<Comment><![CDATA[ Inventory]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[READ]]></Text>
+				<Enum>2</Enum>
+				<Comment><![CDATA[ Read]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[WRITE]]></Text>
+				<Enum>4</Enum>
+				<Comment><![CDATA[ Write]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[WRITE_AND_VERIFY]]></Text>
+				<Enum>8</Enum>
+				<Comment><![CDATA[ Write and verify]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[CONTINUOUS_MODE]]></Text>
+				<Enum>16</Enum>
+				<Comment><![CDATA[ Continuous mode]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[GET_DATA_FROM_FIFO]]></Text>
+				<Enum>17</Enum>
+				<Comment><![CDATA[ Get data from buffer (Continuous mode)]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[STOP_CONTINUOUS_MODE]]></Text>
+				<Enum>18</Enum>
+				<Comment><![CDATA[ Continuous mode off]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[UHF_PRESENCE_SENSING_MODE]]></Text>
+				<Enum>32</Enum>
+				<Comment><![CDATA[ Continuous presence sensing mode]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[RW_HEAD_OFF]]></Text>
+				<Enum>64</Enum>
+				<Comment><![CDATA[ HF read/write head off]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[RW_HEAD_IDENTIFICATION]]></Text>
+				<Enum>65</Enum>
+				<Comment><![CDATA[ Read/write head identification]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TAG_INFO]]></Text>
+				<Enum>80</Enum>
+				<Comment><![CDATA[ Tag info]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[DIRECT_COMMAND]]></Text>
+				<Enum>96</Enum>
+				<Comment><![CDATA[ Direct read/write head command ]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[GET_HF_RW_HEAD_ADDRESS]]></Text>
+				<Enum>112</Enum>
+				<Comment><![CDATA[ Get read/write head address]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SET_HF_RW_HEAD_ADDRESS]]></Text>
+				<Enum>113</Enum>
+				<Comment><![CDATA[ Set read/write head address]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TUNE_HF_RW_HEAD]]></Text>
+				<Enum>128</Enum>
+				<Comment><![CDATA[ Tune HF read/write head]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SET_RW_HEAD_PASSWORD]]></Text>
+				<Enum>256</Enum>
+				<Comment><![CDATA[ Set read/write head password]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[RESET_RW_HEAD_PASSWORD]]></Text>
+				<Enum>257</Enum>
+				<Comment><![CDATA[ Reset read/write head password]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SET_TAG_PASSWORD]]></Text>
+				<Enum>258</Enum>
+				<Comment><![CDATA[ Set tag password]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SET_TAG_PROTECTION_STATUS]]></Text>
+				<Enum>259</Enum>
+				<Comment><![CDATA[ Set tag protection]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[GET_HF_TAG_PROTECTION_STATUS]]></Text>
+				<Enum>260</Enum>
+				<Comment><![CDATA[ Get HF tag protection status]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[SET_PERMA_LOCK]]></Text>
+				<Enum>261</Enum>
+				<Comment><![CDATA[ Set perma lock]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[KILL_TAG]]></Text>
+				<Enum>512</Enum>
+				<Comment><![CDATA[ Kill UHF tag]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[RESTORE_SETTINGS_UHF_RW_HEAD]]></Text>
+				<Enum>4096</Enum>
+				<Comment><![CDATA[ Restore settings of the UHF read/write head]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[BACKUP_SETTINGS_UHF_RW_HEAD]]></Text>
+				<Enum>4097</Enum>
+				<Comment><![CDATA[ Backup settings of the UHF read/write head]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[MASK]]></Text>
+				<Enum>57343</Enum>
+				<Comment><![CDATA[ Internal usage]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[LOOP_MASK]]></Text>
+				<Enum>8192</Enum>
+				<Comment><![CDATA[ Internal usage]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[RESET]]></Text>
+				<Enum>32768</Enum>
+				<Comment><![CDATA[ Reset (can take up to 1 second)]]></Comment>
+			</EnumInfo>
+			<Properties>
+				<Property>
+					<Name>qualified_only</Name>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
+			<Name GUID="{BFDD1194-7B6F-FAE7-DC5A-39AB83E0E48E}" Namespace="RG.RFID_FB_U" AutoDeleteType="true">CompactOutput_t</Name>
+			<BitSize>96</BitSize>
+			<SubItem>
+				<Name>eCommandCode</Name>
+				<Type GUID="{EC38F2FD-6083-882B-38EB-02C7760AA632}" Namespace="RG.RFID_FB_U">COMMAND</Type>
+				<Comment><![CDATA[Command code]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>usiLoopCounter</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<Comment><![CDATA[Loop counter]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>usiUHFMemoryArea</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<Comment><![CDATA[UHF: Memory area]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>dwAddress</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<Comment><![CDATA[Start address]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>uiLength</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<Comment><![CDATA[Length]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>siLengthOfUidEpc</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000003}">SINT</Type>
+				<Comment><![CDATA[Length of UID/EPC]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>80</BitOffs>
+			</SubItem>
+		</DataType>
+	</DataTypes>
+	<Project GUID="{FD342A83-5C09-43AC-9622-2F479BEF4A6A}" Name="LibraryRfidReaderExample" PrjFilePath="..\..\LibraryRfidReaderExample\LibraryRfidReaderExample.plcproj" TmcFilePath="..\..\LibraryRfidReaderExample\LibraryRfidReaderExample.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
+		<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="LibraryRfidReaderExample\LibraryRfidReaderExample.tmc" TmcHash="{5498DAF5-4448-AB1C-1481-4F103ECDE9B2}">
+			<Name>LibraryRfidReaderExample Instance</Name>
+			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+			<Vars VarGrpType="1">
+				<Name>PlcTask Inputs</Name>
+				<Var>
+					<Name>MAIN._app._mainStation.compactRfid.stCompactModeInputMap</Name>
+					<Comment><![CDATA[ Create mapping to the I/O data of the corresponding channel]]></Comment>
+					<Type GUID="{12D8791C-B472-F7A0-5DC3-AE7FB54D237D}" Namespace="RG.RFID_FB_U">CompactInput_t</Type>
+				</Var>
+				<Var>
+					<Name>MAIN._app._mainStation.compactRfid.abyRxDataMapCompactMode</Name>
+					<Comment><![CDATA[ The Rx & Tx data mapping shown below is for example purposes only.
+ The actual array size can be 8,16,32,64 or 128 depending on slot configuration of the TBEC-LL-4RFID-8DXP box in the IO tree]]></Comment>
+					<Type GUID="{53AB2BCA-C5AB-B7CE-D17C-430953A42679}">ARRAY [0..127] OF BYTE</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="2" AreaNo="1">
+				<Name>PlcTask Outputs</Name>
+				<Var>
+					<Name>MAIN._app._mainStation.compactRfid.stCompactModeOutputMap</Name>
+					<Type GUID="{BFDD1194-7B6F-FAE7-DC5A-39AB83E0E48E}" Namespace="RG.RFID_FB_U">CompactOutput_t</Type>
+				</Var>
+				<Var>
+					<Name>MAIN._app._mainStation.compactRfid.abyTxDataMapCompactMode</Name>
+					<Type GUID="{53AB2BCA-C5AB-B7CE-D17C-430953A42679}">ARRAY [0..127] OF BYTE</Type>
+				</Var>
+			</Vars>
+			<Contexts>
+				<Context>
+					<Id NeedCalleeCall="true">0</Id>
+					<Name>PlcTask</Name>
+					<ManualConfig>
+						<OTCID>#x02010030</OTCID>
+					</ManualConfig>
+					<Priority>20</Priority>
+					<CycleTime>1000000</CycleTime>
+				</Context>
+			</Contexts>
+			<TaskPouOids>
+				<TaskPouOid Prio="20" OTCID="#x08502041"/>
+			</TaskPouOids>
+		</Instance>
+	</Project>
+	<Mappings>
+		<OwnerA Name="LibraryRfidReaderExample Instance">
+			<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (TBEC-LL-4RFID-8DXP)">
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation.compactRfid.abyRxDataMapCompactMode" VarB="Module 2 (128 Byte read)^Inputs 128 Byte read^RD"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation.compactRfid.stCompactModeInputMap" VarB="Module 1 (HF compact)^Inputs HF compact^Resp"/>
+				<Link VarA="PlcTask Outputs^MAIN._app._mainStation.compactRfid.abyTxDataMapCompactMode" VarB="Module 3 (128 Byte write)^Outputs 128 Byte write^WD"/>
+				<Link VarA="PlcTask Outputs^MAIN._app._mainStation.compactRfid.stCompactModeOutputMap" VarB="Module 1 (HF compact)^Outputs HF compact^Cmd"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmItem>

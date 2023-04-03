@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="Rfid_FB_Compact_Wrapper" Id="{751c88d3-ad3b-0e15-1054-be1483a66528}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Rfid_FB_Compact_Wrapper IMPLEMENTS IRfidHeadWrapper
+VAR
+    //Instantiate the function block
+    turckRfid : RFID_FB_U.FB_Compact;
+
+    // Create mapping to the I/O data of the corresponding channel
+    stCompactModeInputMap  AT %I* : RFID_FB_U.CompactInput_t;
+    stCompactModeOutputMap AT %Q* : RFID_FB_U.CompactOutput_t;
+    // The Rx & Tx data mapping shown below is for example purposes only.
+    // The actual array size can be 8,16,32,64 or 128 depending on slot configuration of the TBEC-LL-4RFID-8DXP box in the IO tree
+    abyRxDataMapCompactMode AT %I* : ARRAY[0..127] OF BYTE;
+    abyTxDataMapCompactMode AT %Q* : ARRAY[0..127] OF BYTE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Execute" Id="{7d1224c3-2d5a-0727-1424-d759ae618ea1}">
+      <Declaration><![CDATA[METHOD Execute
+VAR_INPUT
+    xExecute               : BOOL;
+    xAbort                 : BOOL;
+    udiTimeOut             : UDINT;
+    eCommand               : RFID_FB_U.COMMAND;
+    udiStartAdress         : UDINT;
+    uiDataLenght           : UINT;
+    myWriteData            : ARRAY[0..127] OF BYTE;
+END_VAR
+VAR_OUTPUT
+    myReadData            : ARRAY[0..127] OF BYTE;
+    xDone                 : BOOL;
+    xBusy                 : BOOL;
+    xError                : BOOL;
+    xAborted              : BOOL;
+    eErrorID              : RFID_FB_U.ERROR;
+    xTP                   : BOOL;
+    xRWHeadNotCOnnected   : BOOL;
+    uiDataRxLength        : UINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[turckRfid
+(
+    xExecute              := xExecute
+    , xAbort              := xAbort
+    , udiTimeOut          := udiTimeOut
+    , xDone               => xDone
+    , xBusy               => xBusy
+    , xError              => xError
+    , xAborted            => xAborted
+    , eCommand            := eCommand
+    , rStatusMapping      := stCompactModeInputMap
+    , rControlMapping     := stCompactModeOutputMap
+    , udiStartAddress     := udiStartAdress
+    , uiDataLength        := uiDataLenght
+    , eErrorID            => eErrorID
+    , xTP                 => xTP
+    , xRWHeadNotConnected => xRWHeadNotCOnnected
+    , uiDataRxLength      => uiDataRxLength
+    , pReadDataMapping    := abyRxDataMapCompactMode
+    , pWriteDataMapping   := abyTxDataMapCompactMode
+    , pDataTx             := myWriteData
+    , pDataRx             := myReadData
+);
+]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

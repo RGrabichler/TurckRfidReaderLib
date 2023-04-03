@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="RfidMockNoRfidInRange" Id="{413b001f-4596-0ce2-2ea1-40cfd1439b45}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK RfidMockNoRfidInRange IMPLEMENTS IRfidHeadWrapper
+VAR
+    _timeOut        : Tc2_Standard.TON;
+    _executionTimer : Tc2_Standard.TON;
+
+    _udintToMillis : UDINT := 1000;
+    _busy          : BOOL;
+
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Execute" Id="{56b95d89-ddf0-064b-1d00-a4a95d55876f}">
+      <Declaration><![CDATA[METHOD Execute
+VAR_INPUT
+    xExecute               : BOOL;
+    xAbort                 : BOOL;
+    udiTimeOut             : UDINT;
+    eCommand               : RFID_FB_U.COMMAND;
+    udiStartAdress         : UDINT;
+    uiDataLenght           : UINT;
+    myWriteData            : ARRAY[0..127] OF BYTE;
+END_VAR
+VAR_OUTPUT
+    myReadData            : ARRAY[0..127] OF BYTE;
+    xDone                 : BOOL;
+    xBusy                 : BOOL;
+    xError                : BOOL;
+    xAborted              : BOOL;
+    eErrorID              : RFID_FB_U.ERROR;
+    xTP                   : BOOL;
+    xRWHeadNotCOnnected   : BOOL;
+    uiDataRxLength        : UINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF xExecute THEN
+    _busy := TRUE;
+END_IF
+
+//28 blocks, 4 bytes each, => 112 bytes max user Memory!
+uiDataRxLength := uiDataLenght;
+xBusy          := _busy;
+
+_timeOut(in := _busy, PT := UDINT_TO_TIME(udiTimeOut) / _udintToMillis);
+
+xTP := FALSE;
+
+IF _timeOut.Q THEN
+    xBusy    := FALSE;
+    xError   := TRUE;
+    eErrorId := RFID_FB_U.ERROR.TIME_OUT;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="RfidMockWorking" Id="{72f9ba0d-e3ea-0cff-253f-e04d33fc0954}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK RfidMockWorking IMPLEMENTS IRfidHeadWrapper
+VAR
+    _timeOut        : Tc2_Standard.TON;
+    _executionTimer : Tc2_Standard.TON := (PT := _executionTime);
+    _executionTime  : TIME             := t#5ms;
+
+    _udIntToMillis : UDINT := 1000;
+
+    _resultUid : ARRAY[0..7] OF BYTE :=
+    [
+        16#E0
+        , 16#04
+        , 16#01
+        , 16#50
+        , 16#AC
+        , 16#F4
+        , 16#F3
+        , 16#AD
+    ];
+
+    _states :
+        (Idle
+        , Busy
+        , ElectedMethod
+        , ReadUid
+        , ReadData
+        , WriteData
+        , Error
+        , Restore);
+    _index : INT;
+
+    _rfidInOut : RfidInOut;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[{warning disable C0371}
+//28 blocks, 4 bytes each, => 112 bytes max user Memory!
+
+CASE _states OF
+    Idle:
+        _rfidInOut.xbusy := _rfidInOut.xExecute;
+        _rfidInOut.xTP   := TRUE;
+
+        IF _rfidInOut.xbusy THEN
+            _states := Busy;
+        END_IF
+
+    Busy:
+
+        _rfidInOut.uiDataRxLength := _rfidInOut.uiDataLenght;
+        _timeOut(in := _rfidInOut.xbusy, PT := UDINT_TO_TIME(_rfidInOut.udiTimeOut) / _udintToMillis);
+        _executionTimer(in := _rfidInOut.xBusy);
+
+        IF _timeOut.Q THEN
+            _states             := Error;
+            _rfidInOut.eErrorID := RFID_FB_U.ERROR.TIME_OUT;
+            RETURN;
+
+        ELSIF _executionTimer.Q THEN
+            _states := ElectedMethod;
+        END_IF
+
+    ElectedMethod:
+        IF _rfidInOut.uiDataLenght > 112 THEN
+            _states             := Error;
+            _rfidInOut.eErrorID := RFID_FB_U.ERROR.COMMAND_LENGTH_OUTSIDE_TAG_SPECS;
+            RETURN;
+        ELSIF _rfidInOut.udiStartAdress > 112 THEN
+            _states             := Error;
+            _rfidInOut.eErrorID := RFID_FB_U.ERROR.COMMAND_ADDRESS_OUTSIDE_TAG_SPECS;
+            RETURN;
+        END_IF
+
+        IF _rfidInOut.eCommand = RFID_FB_U.COMMAND.INVENTORY THEN
+            FOR _index := 0 TO 7 DO
+                _rfidInOut.myReadData[_index] := _resultUid[_index];
+            END_FOR
+
+            _rfidInOut.xbusy := FALSE;
+            _rfidInOut.xDone := TRUE;
+        ELSIF _rfidInOut.eCommand = RFID_FB_U.COMMAND.READ THEN
+
+            FOR _index := 0 TO UINT_TO_INT(_rfidInOut.uiDataLenght) - 1 DO
+                _rfidInOut.myReadData[_index] := 16#05 + INT_TO_BYTE(_index + UDINT_TO_INT(_rfidInOut.udiStartAdress));
+            END_FOR
+
+            _rfidInOut.xbusy := FALSE;
+            _rfidInOut.xDone := TRUE; //
+
+        ELSIF _rfidInOut.eCommand = RFID_FB_U.COMMAND.WRITE THEN
+            _rfidInOut.xbusy := FALSE;
+            _rfidInOut.xDone := TRUE;
+
+        ELSIF _rfidInOut.eCommand = RFID_FB_U.COMMAND.SET_PERMA_LOCK THEN
+            _rfidInOut.xbusy := FALSE;
+            _rfidInOut.xDone := TRUE;
+        END_IF
+
+    Error:
+        _executionTimer(in := FALSE);
+        _timeOut(in := FALSE);
+        _rfidInOut.xbusy  := FALSE;
+        _rfidInOut.xError := TRUE;
+
+        IF NOT _rfidInOut.xExecute THEN
+            _States := Restore;
+        END_IF
+    Restore:
+        _rfidInOut.xDone    := FALSE;
+        _rfidInOut.xError   := FALSE;
+        _rfidInOut.eErrorID := RFID_FB_U.ERROR.NO_ERROR;
+        _States             := Idle;
+END_CASE
+]]></ST>
+    </Implementation>
+    <Method Name="Execute" Id="{a817b633-6e13-01d8-1d5a-85f8a1955d32}">
+      <Declaration><![CDATA[METHOD Execute
+VAR_INPUT
+    xExecute               : BOOL;
+    xAbort                 : BOOL;
+    udiTimeOut             : UDINT := 10000;
+    eCommand               : RFID_FB_U.COMMAND;
+    udiStartAdress         : UDINT;
+    uiDataLenght           : UINT;
+    myWriteData            : ARRAY[0..127] OF BYTE;
+END_VAR
+VAR_OUTPUT
+    myReadData            : ARRAY[0..127] OF BYTE;
+    xDone                 : BOOL;
+    xBusy                 : BOOL;
+    xError                : BOOL;
+    xAborted              : BOOL;
+    eErrorID              : RFID_FB_U.ERROR;
+    xTP                   : BOOL;
+    xRWHeadNotCOnnected   : BOOL;
+    uiDataRxLength        : UINT;
+END_VAR
+VAR_INST
+    _busy : BOOL;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^();
+
+_rfidInOut.xExecute       := xExecute;
+_rfidInOut.xAbort         := xAbort;
+_rfidInOut.udiTimeOut     := udiTimeOut;
+_rfidInOut.eCommand       := eCommand;
+_rfidInOut.udiStartAdress := udiStartAdress;
+_rfidInOut.uiDataLenght   := uiDataLenght;
+_rfidInOut.myWriteData    := myWriteData;
+
+myReadData          := _rfidInOut.myReadData;
+xDone               := _rfidInOut.xDone;
+xBusy               := _rfidInOut.xBusy;
+xError              := _rfidInOut.xError;
+xAborted            := _rfidInOut.xAborted;
+eErrorID            := _rfidInOut.eErrorID;
+xTP                 := _rfidInOut.xTP;
+xRWHeadNotCOnnected := _rfidInOut.xRWHeadNotCOnnected;
+uiDataRxLength      := _rfidInOut.uiDataRxLength;]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

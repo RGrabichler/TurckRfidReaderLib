@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="IRfidHeadWrapper" Id="{02906f77-8844-08bb-2a8e-ac4b792bd718}">
+    <Declaration><![CDATA[INTERFACE IRfidHeadWrapper]]></Declaration>
+    <Method Name="Execute" Id="{19db9ec4-3ade-0acb-112e-dbee4dec1cf4}">
+      <Declaration><![CDATA[METHOD Execute
+VAR_INPUT
+    xExecute       : BOOL;
+    xAbort         : BOOL;
+    udiTimeOut     : UDINT;
+    eCommand       : RFID_FB_U.COMMAND;
+    udiStartAdress : UDINT;
+    uiDataLenght   : UINT;
+    myWriteData    : ARRAY[0..127] OF BYTE;
+END_VAR
+VAR_OUTPUT
+    myReadData          : ARRAY[0..127] OF BYTE;
+    xDone               : BOOL;
+    xBusy               : BOOL;
+    xError              : BOOL;
+    xAborted            : BOOL;
+    eErrorID            : RFID_FB_U.ERROR;
+    xTP                 : BOOL;
+    xRWHeadNotCOnnected : BOOL;
+    uiDataRxLength      : UINT;
+END_VAR]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

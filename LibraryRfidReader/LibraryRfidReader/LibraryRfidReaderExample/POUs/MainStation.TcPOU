@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MainStation" Id="{133c6404-7ee3-4d52-81ac-dadf34168d5f}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK MainStation EXTENDS TcoCore.TcoObject
+VAR
+    counter : INT;
+END_VAR
+
+VAR
+    compactRfid : RG.Rfid_FB_Compact_Wrapper;
+    mockNoRfid : RG.RfidMockNoRfidInRange;
+    MockWorking : RG.RfidMockWorking;
+    turckRfidHead : RG.RfidHead(THIS^, compactRfid, T#200MS,);
+    result : T_MaxString;
+    _uid, readData, _reset, _write, _lock : BOOL;
+
+    _isError : BOOL;
+    _uiDataRxLength : UINT;
+    _uiDataLenght : UINT := 4;
+	_startAdress : UINT := 0;
+	_length : BYTE := 0;
+
+    _errorId : RG.RFID_FB_U.ERROR;
+
+    _offset : byte;
+    _data : ARRAY[0..8] OF BYTE := [0, 2, 4, 6];
+
+    _statusLocked : bool;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//counter := counter + 1;
+
+//IF (THIS^.counter MOD 13 = 0) THEN
+//    THIS^.Messenger.Info('opalalla').Pin();
+//END_IF
+
+//IF (THIS^.counter MOD 400 = 0) THEN
+//    THIS^.Messenger.Error('ich Poste').Pin();
+//END_IF
+
+turckRfidHead();
+_errorId := turckRfidHead.ErrorId;
+
+IF _uid THEN
+    IF turckRfidHead.ReadUidMethod().Error THEN
+        _isError := turckRfidHead.IsError;
+        _errorId := turckRfidHead.ErrorId;
+    ELSIF turckRfidHead.ReadUidMethod().Done THEN
+        result := turckRfidHead.Uid;
+        _uid   := FALSE;
+    END_IF
+END_IF
+
+IF _lock THEN
+    _statusLocked := FALSE;
+
+    IF turckRfidHead.LockMethod(StartAdress := _startAdress, udiDataLength := _length).Error THEN
+        _isError := turckRfidHead.IsError;
+        _errorId := turckRfidHead.ErrorId;
+    ELSIF turckRfidHead.LockTask.Done THEN
+        _lock         := FALSE;
+        _statusLocked := TRUE;
+    END_IF
+END_IF
+
+IF readData THEN
+    IF turckRfidHead.ReadDataMethod(_uiDataLenght, _offset).Error THEN
+        _isError := turckRfidHead.IsError;
+        _errorId := turckRfidHead.ErrorId;
+    ELSIF turckRfidHead.ReadDataTask.Done THEN
+        _uiDataRxLength := turckRfidHead.DataRxLength;
+        readData        := FALSE;
+        result          := turckRfidHead.Data;
+    END_IF
+END_IF
+
+IF _write THEN
+    IF turckRfidHead.WriteDataMethod(_data, _offset).Error THEN
+        _isError := turckRfidHead.IsError;
+        _errorId := turckRfidHead.ErrorId;
+    ELSIF turckRfidHead.WriteDataTask.Done THEN
+        _uiDataRxLength := turckRfidHead.DataRxLength;
+        _write          := FALSE;
+
+    END_IF
+END_IF
+
+IF _reset THEN
+    _reset := FALSE;
+    turckRfidHead.Restore();
+    _isError := false;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

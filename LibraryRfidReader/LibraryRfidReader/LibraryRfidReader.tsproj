@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.44">
+	<Project ProjectGUID="{A739F4FA-9EB5-4026-A35A-CB1162590930}" TargetNetId="5.109.28.160.1.1" Target64Bit="true" ShowHideConfigurations="#x106">
+		<System>
+			<Settings MaxCpus="2">
+				<Cpu CpuId="1"/>
+			</Settings>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="10000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project File="LibraryRfidReader.xti"/>
+			<Project File="LibraryRfidReaderExample.xti"/>
+		</Plc>
+		<Io>
+			<Device File="Device 2 (EtherCAT).xti" Id="2"/>
+		</Io>
+	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{00000000-2041-0850-4020-500810000403}" Id="#x02030010"/>
+	</Mappings>
+</TcSmProject>
